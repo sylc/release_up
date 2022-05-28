@@ -1,5 +1,5 @@
 import type { ReleaseConfig } from "./config.ts";
-import type { Action } from "./mod.ts";
+import type { Action } from "./cli.ts";
 import type { Repo } from "./src/repo.ts";
 
 export type { ReleaseConfig } from "./config.ts";
