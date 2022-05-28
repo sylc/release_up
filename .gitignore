@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+.cache
+
+# IDE
+.vscode
+
+# testing
+test
+test_2
