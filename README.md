@@ -1,5 +1,7 @@
 # release-me
 
+A fork of [release](https://github.com/denosaurs/release)
+
 ## Installation
 
 ```
@@ -14,8 +16,9 @@ usage: release-me [options] <type> [...]
 example: release-me major
 
 [options]:
-  -h --help     Show this message
-  --dry         Prevent changes to git
+  -h --help          Show this message
+  --dry              Prevent changes to git
+  --allowUncommited  Allow some changes to be uncommited
 
 [type]:
   release type:
@@ -29,10 +32,9 @@ example: release-me major
 
 ## Credits
 
-Big Credits to https://github.com/denosaurs. This project is mainly based on
-https://github.com/denosaurs/release, where I have done some minor refacatoring.
-However due to the lack of development on the original package, I have done some
-update to suit my needs
+Big Credits to https://github.com/denosaurs. This project is a fork of
+https://github.com/denosaurs/release. However due to the lack of development on the original package, 
+I have done some update.
 
 ## Plugins
 

@@ -3,15 +3,12 @@ import { colors, delay, log, semver, wait } from "./deps.ts";
 import type { ReleaseConfig } from "./config.ts";
 import { fetchRepo, Repo } from "./src/repo.ts";
 import { ezgit } from "./src/git.ts";
-import { zen } from "./zen.ts";
 
 // Plugins
 import { github } from "./plugins/github/mod.ts";
 import { changelog } from "./plugins/changelog/mod.ts";
 import { regex } from "./plugins/regex/mod.ts";
 import { versionFile } from "./plugins/versionFile/mod.ts";
-
-const logger = log.create("r");
 
 import version from "./version.json" assert { type: "json" };
 
@@ -24,7 +21,6 @@ export type Action =
   | "premajor";
 
 if (import.meta.main) {
-  await log.setup({ filter: "INFO" });
   const args = [...Deno.args];
 
   if (~args.indexOf("--help") || ~args.indexOf("-h") || args.length === 0) {
@@ -64,6 +60,7 @@ example: ${colors.yellow("release")} major
   const config: ReleaseConfig = {
     plugins: [github, changelog, regex, versionFile],
     dry: false,
+    allowUncommitted: false
   };
 
   if (~args.indexOf("--dry")) {
@@ -71,6 +68,11 @@ example: ${colors.yellow("release")} major
     args.splice(args.indexOf("--dry"), 1);
   }
 
+  if (~args.indexOf("--allowUncommitted")) {
+    config.allowUncommitted = true;
+    args.splice(args.indexOf("--allowUncommitted"), 1);
+  }
+  
   const actions = [
     "patch",
     "minor",
@@ -82,7 +84,7 @@ example: ${colors.yellow("release")} major
 
   let arg = args[0];
   if (!actions.includes(arg)) {
-    logger.critical(`"${arg}" is not a valid action!`);
+    log.critical(`"${arg}" is not a valid action!`);
     Deno.exit(1);
   }
   if (arg === "pre") arg = "prerelease";
@@ -111,7 +113,7 @@ example: ${colors.yellow("release")} major
     try {
       await plugin.setup();
     } catch (err) {
-      logger.critical(err.message);
+      log.critical(err.message);
       Deno.exit(1);
     }
   }
@@ -133,8 +135,13 @@ example: ${colors.yellow("release")} major
   const integrity = wait("Checking the project").start();
   await delay(1000);
   if (repo.status.raw.length !== 0) {
-    integrity.fail("Uncommitted changes on your repository!");
-    Deno.exit(1);
+    if (!config.allowUncommitted) {
+      integrity.fail("Uncommitted changes on your repository - allowUncommitted is true passing... ");
+    } else {
+      integrity.fail("Uncommitted changes on your repository!");
+      Deno.exit(1);
+
+    }
   } else if (!repo.commits.some((_) => _.belongs === null)) {
     integrity.fail(`No changes since the last release!`);
     Deno.exit(1);
@@ -147,7 +154,7 @@ example: ${colors.yellow("release")} major
       try {
         await plugin.preCommit(repo, action, from, to, config);
       } catch (err) {
-        logger.critical(err.message);
+        log.critical(err.message);
         Deno.exit(1);
       }
     }
@@ -156,7 +163,7 @@ example: ${colors.yellow("release")} major
   try {
     repo = await fetchRepo(Deno.cwd());
   } catch (err) {
-    logger.critical(err.message);
+    log.critical(err.message);
     Deno.exit(1);
   }
 
@@ -178,7 +185,7 @@ example: ${colors.yellow("release")} major
       await ezgit(repo.path, "push --tags");
     } catch (err) {
       bump.fail(`Unable to release ${colors.bold(to)}\n`);
-      logger.critical(err.message);
+      log.critical(err.message);
       Deno.exit(1);
     }
     bump.succeed(`Released ${colors.bold(to)}!`);
@@ -198,7 +205,7 @@ example: ${colors.yellow("release")} major
       try {
         await plugin.postCommit(repo, action, from, to, config);
       } catch (err) {
-        logger.critical(err.message);
+        log.critical(err.message);
         Deno.exit(1);
       }
     }
