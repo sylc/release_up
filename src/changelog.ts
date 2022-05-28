@@ -87,7 +87,7 @@ export function pushTag(
     doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
   }
 
-  for (let filter of filters) {
+  for (const filter of filters) {
     const filtered = commits.filter((_) => _.cc.type === filter.type);
     if (filtered.length > 0) {
       pushChanges(doc, repo, filter.title, filtered);

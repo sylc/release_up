@@ -1,6 +1,5 @@
 # release-me
 
-
 ## Installation
 
 ```
@@ -30,8 +29,19 @@ example: release-me major
 
 ## Credits
 
-Big Credits to https://github.com/denosaurs. This project is mainly based on https://github.com/denosaurs/release, where I have done some minor refacatoring.
-However due to the lack of development on the original package, I have done some update to suit my needs
+Big Credits to https://github.com/denosaurs. This project is mainly based on
+https://github.com/denosaurs/release, where I have done some minor refacatoring.
+However due to the lack of development on the original package, I have done some
+update to suit my needs
+
+## Plugins
+
+Release-me supports plugins. the current ones are
+
+- [changelog](./plugin/changelog/mod.ts)
+- github
+- regex
+- versionFile
 
 ### Contribution
 

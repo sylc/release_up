@@ -3,16 +3,17 @@ import { colors, delay, log, semver, wait } from "./deps.ts";
 import type { ReleaseConfig } from "./config.ts";
 import { fetchRepo, Repo } from "./src/repo.ts";
 import { ezgit } from "./src/git.ts";
+import { zen } from "./zen.ts";
 
+// Plugins
 import { github } from "./plugins/github/mod.ts";
 import { changelog } from "./plugins/changelog/mod.ts";
 import { regex } from "./plugins/regex/mod.ts";
-import { zen } from "./zen.ts";
 import { versionFile } from "./plugins/versionFile/mod.ts";
 
 const logger = log.create("r");
 
-const VERSION = "0.1.2";
+import version from "./version.json" assert { type: "json" };
 
 export type Action =
   | "patch"
@@ -27,8 +28,7 @@ if (import.meta.main) {
   const args = [...Deno.args];
 
   if (~args.indexOf("--help") || ~args.indexOf("-h") || args.length === 0) {
-    console.log(`${colors.bold("RELEASE")} v${VERSION}
-${colors.dim("the denosaurs team")}
+    console.log(`${colors.bold("RELEASE")} v${version}
 ${colors.dim(`zen: ${colors.italic(zen())}`)}
 
 usage: ${colors.yellow("release")} [options] <type> [...]

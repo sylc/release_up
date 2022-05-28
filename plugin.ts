@@ -1,9 +1,9 @@
 import type { ReleaseConfig } from "./config.ts";
-import type { Action } from "./release.ts";
+import type { Action } from "./mod.ts";
 import type { Repo } from "./src/repo.ts";
 
 export type { ReleaseConfig } from "./config.ts";
-export type { Action } from "./release.ts";
+export type { Action } from "./mod.ts";
 export type { Repo } from "./src/repo.ts";
 export type { Tag } from "./src/tags.ts";
 export type { Commit } from "./src/commits.ts";
