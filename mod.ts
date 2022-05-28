@@ -60,7 +60,7 @@ example: ${colors.yellow("release")} major
   const config: ReleaseConfig = {
     plugins: [github, changelog, regex, versionFile],
     dry: false,
-    allowUncommitted: false
+    allowUncommitted: false,
   };
 
   if (~args.indexOf("--dry")) {
@@ -72,7 +72,7 @@ example: ${colors.yellow("release")} major
     config.allowUncommitted = true;
     args.splice(args.indexOf("--allowUncommitted"), 1);
   }
-  
+
   const actions = [
     "patch",
     "minor",
@@ -136,11 +136,12 @@ example: ${colors.yellow("release")} major
   await delay(1000);
   if (repo.status.raw.length !== 0) {
     if (!config.allowUncommitted) {
-      integrity.fail("Uncommitted changes on your repository - allowUncommitted is true passing... ");
+      integrity.fail(
+        "Uncommitted changes on your repository - allowUncommitted is true passing... ",
+      );
     } else {
       integrity.fail("Uncommitted changes on your repository!");
       Deno.exit(1);
-
     }
   } else if (!repo.commits.some((_) => _.belongs === null)) {
     integrity.fail(`No changes since the last release!`);

@@ -1,11 +1,6 @@
 import { log } from "./deps.ts";
 
-import {
-  Action,
-  ReleaseConfig,
-  ReleasePlugin,
-  Repo,
-} from "../../plugin.ts";
+import { Action, ReleaseConfig, ReleasePlugin, Repo } from "../../plugin.ts";
 import {
   Document,
   Filter,
@@ -19,7 +14,7 @@ import { ReleaseError } from "../../src/error.ts";
 
 const logger = log.create("gh");
 
-const GITHUB_TOKEN = 'GITHUB_TOKEN'
+const GITHUB_TOKEN = "GITHUB_TOKEN";
 
 export const github = <ReleasePlugin> {
   name: "GitHub",
@@ -28,7 +23,7 @@ export const github = <ReleasePlugin> {
     if (!token) {
       logger.warning("GitHub token not found!");
       logger.info("Please set your github token as environment variable");
-      Deno.exit(0)
+      Deno.exit(0);
     }
     const res = await gh.verifyToken(token);
     if (!res.ok || !token) {

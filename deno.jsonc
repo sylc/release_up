@@ -1,5 +1,5 @@
 {
-  "tasks":{
+  "tasks": {
     "test": "deno run -A ./mod.ts --dry"
   }
 }

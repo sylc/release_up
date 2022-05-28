@@ -33,8 +33,8 @@ example: release-me major
 ## Credits
 
 Big Credits to https://github.com/denosaurs. This project is a fork of
-https://github.com/denosaurs/release. However due to the lack of development on the original package, 
-I have done some update.
+https://github.com/denosaurs/release. However due to the lack of development on
+the original package, I have done some update.
 
 ## Plugins
 
@@ -50,6 +50,7 @@ To develop new plugins, refer to [./plugins.ts](/plugins.ts)
 ## Secrets
 
 Release-me uses dotenv to load environment variables
+
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
