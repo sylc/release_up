@@ -12,8 +12,6 @@ import {
 import * as gh from "./api.ts";
 import { ReleaseError } from "../../src/error.ts";
 
-const logger = log.create("gh");
-
 const GITHUB_TOKEN = "GITHUB_TOKEN";
 
 export const github = <ReleasePlugin> {
@@ -21,13 +19,13 @@ export const github = <ReleasePlugin> {
   async setup(): Promise<void> {
     const token = Deno.env.get(GITHUB_TOKEN);
     if (!token) {
-      logger.warning("GitHub token not found!");
-      logger.info("Please set your github token as environment variable");
+      log.warning("GitHub token not found!");
+      log.info("Please set your github token as environment variable");
       Deno.exit(0);
     }
     const res = await gh.verifyToken(token);
     if (!res.ok || !token) {
-      logger.critical(`GitHub token is not valid! (err: ${res.err})`);
+      log.critical(`GitHub token is not valid! (err: ${res.err})`);
       Deno.exit(1);
     }
   },
