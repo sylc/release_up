@@ -28,8 +28,7 @@ if (import.meta.main) {
   const args = [...Deno.args];
 
   if (~args.indexOf("--help") || ~args.indexOf("-h") || args.length === 0) {
-    console.log(`${colors.bold("RELEASE")} v${version}
-${colors.dim(`zen: ${colors.italic(zen())}`)}
+    console.log(`${colors.bold("RELEASE")} v${version.version}
 
 usage: ${colors.yellow("release")} [options] <type> [...]
 

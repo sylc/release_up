@@ -1,11 +1,10 @@
-import { log, readLines } from "./deps.ts";
+import { log } from "./deps.ts";
 
 import {
   Action,
   ReleaseConfig,
   ReleasePlugin,
   Repo,
-  store,
 } from "../../plugin.ts";
 import {
   Document,
@@ -19,28 +18,22 @@ import * as gh from "./api.ts";
 import { ReleaseError } from "../../src/error.ts";
 
 const logger = log.create("gh");
-const encoder = new TextEncoder();
+
+const GITHUB_TOKEN = 'GITHUB_TOKEN'
 
 export const github = <ReleasePlugin> {
   name: "GitHub",
   async setup(): Promise<void> {
-    let token = await store.get(store.known.github);
+    const token = Deno.env.get(GITHUB_TOKEN);
     if (!token) {
       logger.warning("GitHub token not found!");
-      logger.info("Please enter your GitHub token with <repo> score");
-      logger.info("(for more info https://git.io/JJyrT)");
-      await Deno.stdout.write(encoder.encode("> "));
-      for await (const line of readLines(Deno.stdin)) {
-        token = line;
-        break;
-      }
-      const res = await gh.verifyToken(token!);
-      if (!res.ok || !token) {
-        logger.critical(`GitHub token is not valid! (err: ${res.err})`);
-        Deno.exit(1);
-      }
-      logger.info("Token saved to local store!");
-      await store.set(store.known.github, token.trim());
+      logger.info("Please set your github token as environment variable");
+      Deno.exit(0)
+    }
+    const res = await gh.verifyToken(token);
+    if (!res.ok || !token) {
+      logger.critical(`GitHub token is not valid! (err: ${res.err})`);
+      Deno.exit(1);
     }
   },
   async postCommit(
@@ -71,7 +64,7 @@ export const github = <ReleasePlugin> {
     pushTag(doc, repo, belonging, filters, latest, parent, "Changelog");
 
     if (!config.dry) {
-      const token = (await store.get(store.known.github)) as string;
+      const token = Deno.env.get(GITHUB_TOKEN)!;
       const { user, name } = repo.remote.github;
       const result = await gh.createRelease(token, user, name, {
         tag_name: to,

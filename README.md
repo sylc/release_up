@@ -38,11 +38,16 @@ update to suit my needs
 
 Release-me supports plugins. the current ones are
 
-- [changelog](./plugin/changelog/mod.ts)
-- github
-- regex
-- versionFile
+- [changelog](./plugin/changelog/mod.ts): Create a changelog
+- github: Create a release on Github
+- regex: Apply a regex on the Readme to update the version number
+- versionFile: Create a file with the new version
 
+To develop new plugins, refer to [./plugins.ts](/plugins.ts)
+
+## Secrets
+
+Release-me uses dotenv to load environment variables
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with

@@ -5,3 +5,6 @@
 # testing
 test
 test_2
+
+# secrets
+.env

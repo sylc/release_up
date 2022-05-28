@@ -13,3 +13,4 @@ export { readLines } from "https://deno.land/std@0.107.0/io/mod.ts";
 export { join } from "https://deno.land/std@0.107.0/path/mod.ts";
 export { ensureFile, exists } from "https://deno.land/std@0.107.0/fs/mod.ts";
 export { delay } from "https://deno.land/std@0.107.0/async/delay.ts";
+import "https://deno.land/std@0.141.0/dotenv/load.ts";

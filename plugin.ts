@@ -8,8 +8,6 @@ export type { Repo } from "./src/repo.ts";
 export type { Tag } from "./src/tags.ts";
 export type { Commit } from "./src/commits.ts";
 
-export * as store from "./src/store.ts";
-
 export interface ReleasePlugin {
   name: string;
   setup?: () => Promise<void>;
