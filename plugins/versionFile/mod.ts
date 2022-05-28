@@ -4,7 +4,7 @@ import type {
   ReleasePlugin,
   Repo,
 } from "../../plugin.ts";
-import { EOL, join } from "./deps.ts";
+import { join } from "./deps.ts";
 
 /**
  * Export a version file with the new version number

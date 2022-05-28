@@ -72,7 +72,7 @@ export async function fetchCommits(
   let all: Commit[] = [];
 
   async function add(rev: string | undefined, belongs: Tag | null) {
-    let commits = await fetchRawCommits(repo, rev);
+    const commits = await fetchRawCommits(repo, rev);
     all = all.concat(
       commits.map((_) => ({
         ..._,
@@ -105,32 +105,3 @@ export async function fetchCommits(
 
   return all;
 }
-
-// export interface NewCommits {
-//   all: Commit[],
-//   latest: Commit | undefined
-// }
-
-// export async function fetchNewCommits(repo: string, tags: Tag[]): Promise<NewCommits> {
-//   const [release, parent] = tags;
-//   let loadAll = false;
-
-//   if (!release || !parent || !parent.hash || !release.hash) {
-//     loadAll = true;
-//   }
-
-//   const rev = loadAll ? undefined : `${parent.hash}..${release.hash}`;
-
-//   // Load the commits using `git rev-list`
-//   const all = await fetchCommits(repo, rev);
-
-//   // Find the latest commit, as it's the release reference
-//   const latest = all.find((commit) => commit.hash === release.hash);
-//   const latestIndex = all.indexOf(latest as Commit);
-
-//   // Remove the latest commit from the collection
-//   all.splice(latestIndex, 1);
-
-//   // Hand back the commits
-//   return { all, latest };
-// }

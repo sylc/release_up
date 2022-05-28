@@ -16,9 +16,9 @@ export async function git(
     stdout: "piped",
     stderr: "piped",
   });
-  let output = await process.output();
-  let err = await process.stderrOutput();
-  let status = await process.status();
+  const output = await process.output();
+  const err = await process.stderrOutput();
+  const status = await process.status();
   process.close();
   return [status, decoder.decode(output), decoder.decode(err)];
 }
@@ -37,11 +37,11 @@ export async function fetchConfig(repo: string): Promise<GitConfig> {
   source = source.replace(/\[(\S+) "(.*)"\]/g, (m, $1, $2) => {
     return $1 && $2 ? `[${$1} "${$2.split(".").join("\\.")}"]` : m;
   });
-  let config = ini.decode(source);
-  for (let key of Object.keys(config)) {
-    let m = /(\S+) "(.*)"/.exec(key);
+  const config = ini.decode(source);
+  for (const key of Object.keys(config)) {
+    const m = /(\S+) "(.*)"/.exec(key);
     if (!m) continue;
-    let prop = m[1];
+    const prop = m[1];
     config[prop] = config[prop] || {};
     config[prop][m[2]] = config[key];
     delete config[key];

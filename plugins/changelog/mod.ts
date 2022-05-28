@@ -19,8 +19,8 @@ export const changelog = <ReleasePlugin> {
   name: "Changelog",
   async preCommit(
     repo: Repo,
-    action: Action,
-    from: string,
+    _action: Action,
+    _from: string,
     to: string,
     config: ReleaseConfig,
   ): Promise<void> {

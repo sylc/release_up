@@ -30,7 +30,7 @@ export const github = <ReleasePlugin> {
       logger.info("Please enter your GitHub token with <repo> score");
       logger.info("(for more info https://git.io/JJyrT)");
       await Deno.stdout.write(encoder.encode("> "));
-      for await (let line of readLines(Deno.stdin)) {
+      for await (const line of readLines(Deno.stdin)) {
         token = line;
         break;
       }
@@ -46,7 +46,7 @@ export const github = <ReleasePlugin> {
   async postCommit(
     repo: Repo,
     action: Action,
-    from: string,
+    _from: string,
     to: string,
     config: ReleaseConfig,
   ): Promise<void> {
@@ -71,7 +71,7 @@ export const github = <ReleasePlugin> {
     pushTag(doc, repo, belonging, filters, latest, parent, "Changelog");
 
     if (!config.dry) {
-      let token = (await store.get(store.known.github)) as string;
+      const token = (await store.get(store.known.github)) as string;
       const { user, name } = repo.remote.github;
       const result = await gh.createRelease(token, user, name, {
         tag_name: to,

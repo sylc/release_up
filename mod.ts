@@ -157,6 +157,7 @@ example: ${colors.yellow("release")} major
   try {
     repo = await fetchRepo(Deno.cwd());
   } catch (err) {
+    logger.critical(err.message);
     Deno.exit(1);
   }
 

@@ -39,7 +39,7 @@ export function pushChanges(
 ): void {
   doc.sections.push(`### ${title}`);
   const list: string[] = [];
-  for (let commit of commits) {
+  for (const commit of commits) {
     const { hash } = commit;
     const { subject } = commit.cc;
     const shortid = `\`${hash.substr(0, 7)}\``;
@@ -67,9 +67,9 @@ export function pushTag(
   parent?: Tag,
   title?: string,
 ): void {
-  let year = tag.date.getUTCFullYear();
-  let month = String(tag.date.getUTCMonth() + 1).padStart(2, "0");
-  let day = String(tag.date.getUTCDate()).padStart(2, "0");
+  const year = tag.date.getUTCFullYear();
+  const month = String(tag.date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(tag.date.getUTCDate()).padStart(2, "0");
 
   if (repo.remote && repo.remote.github) {
     const { user, name } = repo.remote.github;
@@ -112,7 +112,7 @@ export function polyfillVersion(repo: Repo, to: string): [Tag[], Commit[]] {
   const tags = [newtag, ...repo.tags];
   const commits = [...repo.commits];
 
-  for (let commit of commits) {
+  for (const commit of commits) {
     if (commit.belongs !== null) break;
     commit.belongs = newtag;
   }
