@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "test": "deno run -A ./cli.ts --dry"
+    "test": "deno run -A ./cli.ts --dry --allowUncommitted"
   }
 }

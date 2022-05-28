@@ -135,7 +135,7 @@ example: ${colors.yellow("release-me")} major
   const integrity = wait("Checking the project").start();
   await delay(1000);
   if (repo.status.raw.length !== 0) {
-    if (!config.allowUncommitted) {
+    if (config.allowUncommitted) {
       integrity.fail(
         "Uncommitted changes on your repository - allowUncommitted is true passing... ",
       );

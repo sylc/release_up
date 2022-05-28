@@ -1,11 +1,12 @@
 # release-me
 
-A fork of [release](https://github.com/denosaurs/release)
+A fork of [release](https://github.com/denosaurs/release) by
+[denosaurs](https://github.com/denosaurs)
 
 ## Installation
 
 ```
-$ deno install -A -f --no-check -n release-me -r https://raw.githubusercontent.com/sylc/release-me/main/cli.ts
+$ deno install -A -f --no-check -n release-me -r https://raw.githubusercontent.com/sylc/release-me/0.0.1/cli.ts
 ```
 
 ## Usage
@@ -30,22 +31,18 @@ example: release-me major
     * premajor <name>   eg: 1.2.3 -> 1.2.4-name
 ```
 
-## Credits
-
-Big Credits to https://github.com/denosaurs. This project is a fork of
-https://github.com/denosaurs/release. However due to the lack of development on
-the original package, I have done some update.
-
 ## Plugins
 
-Release-me supports plugins. the current ones are
+Release-me supports plugins. The current ones are
 
 - [changelog](./plugin/changelog/mod.ts): Create a changelog
-- github: Create a release on Github
-- regex: Apply a regex on the Readme to update the version number
-- versionFile: Create a file with the new version
+- github: Create a draft release on Github
+- regex: Apply a regex on the Readme to update the version number following `@` to the new one
+- versionFile: Create a `version.json` file with the new version number
 
-To develop new plugins, refer to [./plugins.ts](/plugins.ts)
+They are currently all enabled, but this will change soon...
+
+To develop new plugins, refer to [./plugins.ts](/plugins.ts) api
 
 ## Secrets
 
@@ -55,3 +52,9 @@ Release-me uses dotenv to load environment variables
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
 deno fmt and commit messages are done following Conventional Commits spec.
+
+## Credits
+
+Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
+of [release](https://github.com/denosaurs/release). However due to the lack of
+development on the original package, I have done some update.
