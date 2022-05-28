@@ -26,9 +26,9 @@ if (import.meta.main) {
   if (~args.indexOf("--help") || ~args.indexOf("-h") || args.length === 0) {
     console.log(`${colors.bold("RELEASE")} v${version.version}
 
-usage: ${colors.yellow("release")} [options] <type> [...]
+usage: ${colors.yellow("release-me")} [options] <type> [...]
 
-example: ${colors.yellow("release")} major
+example: ${colors.yellow("release-me")} major
 
 [options]:
   ${colors.bold("-h --help")}     ${colors.dim("Show this message")}
