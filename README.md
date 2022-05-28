@@ -5,7 +5,7 @@ A fork of [release](https://github.com/denosaurs/release)
 ## Installation
 
 ```
-$ deno install -A -f --unstable ...
+$ deno install -A -f --no-check -n release-me -r https://raw.githubusercontent.com/sylc/release-me/main/cli.ts
 ```
 
 ## Usage
