@@ -64,10 +64,9 @@ await new Command()
     }
 
     // Load config, if any
-    // deno-lint-ignore no-explicit-any
-    let config: any = {};
+    let config: ReleaseConfig<unknown> = { options: opts };
     try {
-      config = JSON.parse(Deno.readTextFileSync(opts.config));
+      config = { ...(JSON.parse(Deno.readTextFileSync(opts.config))), ...config} ;
     } catch (err) {
       if (err.code !== "ENOENT") {
         log.error(`error parsing the config file at ${opts.config}`);
@@ -76,8 +75,10 @@ await new Command()
       }
     }
 
-    const plugins: ReleasePlugin[] = [];
+    // deno-lint-ignore no-explicit-any
+    const plugins: ReleasePlugin<any>[] = [];
     for (const [key, val] of Object.entries(config)) {
+      if (key === "options") continue;
       if (key === "github") plugins.push(github);
       else if (key === "changelog") plugins.push(changelog);
       else if (key === "regex") plugins.push(regex);
@@ -89,10 +90,7 @@ await new Command()
         plugins.push(remotePlugin); 
       }
     }
-    
-    // attached options to config so pluging can access it
-    config = { ... config, options: opts }
-    
+        
     log.debug(`plugins loaded: ${plugins.map(p => p.name).join(', ')}`)
 
     // Plugins setup

@@ -9,7 +9,7 @@ export type { Repo } from "./src/repo.ts";
 export type { Tag } from "./src/tags.ts";
 export type { Commit } from "./src/commits.ts";
 
-export interface ReleasePlugin {
+export interface ReleasePlugin<T = unknown> {
   name: string;
   setup?: (logs: typeof log) => Promise<void>;
   preCommit?: (
@@ -17,7 +17,7 @@ export interface ReleasePlugin {
     releaseType: ReleaseType,
     from: string,
     to: string,
-    config: ReleaseConfig,
+    config: ReleaseConfig<T>,
     logger: typeof log
   ) => Promise<void>;
   postCommit?: (
@@ -25,7 +25,7 @@ export interface ReleasePlugin {
     releaseType: ReleaseType,
     from: string,
     to: string,
-    config: ReleaseConfig,
+    config: ReleaseConfig<T>,
     logger: typeof log
   ) => Promise<void>;
 }

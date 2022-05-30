@@ -1,8 +1,10 @@
 // import type { ReleasePlugin } from "./plugin.ts";
 
-export interface ReleaseConfig {
+interface CliConfig {
   options: {
-    dry: boolean;
-    allowUncommitted: boolean;
+    dry?: boolean;
+    allowUncommitted?: boolean;
   }
 }
+
+export type ReleaseConfig<T> = T & CliConfig

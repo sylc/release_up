@@ -6,7 +6,7 @@ import { join } from "./deps.ts";
 /**
  * Export a version file with the new version number
  */
-export const versionFile = <ReleasePlugin> {
+export const versionFile: ReleasePlugin = {
   name: "VersionFile",
   async preCommit(
     repo,
@@ -28,7 +28,7 @@ export const versionFile = <ReleasePlugin> {
           "\n",
       );
     } else {
-      log.info(versionFile);
+      log.info('dryRun: Would have created version.json file');
     }
   },
 };
