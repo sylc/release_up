@@ -1,8 +1,5 @@
 import type {
-  Action,
-  ReleaseConfig,
   ReleasePlugin,
-  Repo,
 } from "../../plugin.ts";
 import { join } from "./deps.ts";
 
@@ -10,19 +7,20 @@ import { join } from "./deps.ts";
  * Export a version file with the new version number
  */
 export const versionFile = <ReleasePlugin> {
-  name: "versionFile",
+  name: "VersionFile",
   async preCommit(
-    repo: Repo,
-    _action: Action,
-    _from: string,
-    to: string,
-    config: ReleaseConfig,
+    repo,
+    _releaseType,
+    _from,
+    to,
+    config,
+    log
   ): Promise<void> {
     const versionFile = "version.json";
     const version = {
       version: to,
     };
-    if (!config.dry) {
+    if (!config.options.dry) {
       await Deno.writeTextFile(
         join(repo.path, versionFile),
         JSON.stringify(version, null, 2) +
@@ -30,7 +28,7 @@ export const versionFile = <ReleasePlugin> {
           "\n",
       );
     } else {
-      console.log(versionFile);
+      log.info(versionFile);
     }
   },
 };

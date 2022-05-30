@@ -1,6 +1,6 @@
-import { log } from "./deps.ts";
-
-import { Action, ReleaseConfig, ReleasePlugin, Repo } from "../../plugin.ts";
+import {
+  ReleasePlugin,
+} from "../../plugin.ts";
 import {
   Document,
   Filter,
@@ -16,12 +16,12 @@ const GITHUB_TOKEN = "GITHUB_TOKEN";
 
 export const github = <ReleasePlugin> {
   name: "GitHub",
-  async setup(): Promise<void> {
+  async setup(log): Promise<void> {
     const token = Deno.env.get(GITHUB_TOKEN);
     if (!token) {
-      log.warning("GitHub token not found!");
-      log.info("Please set your github token as environment variable");
-      Deno.exit(0);
+      log.error("GitHub token not found!");
+      log.error("Please set your github token as environment variable");
+      Deno.exit(1);
     }
     const res = await gh.verifyToken(token);
     if (!res.ok || !token) {
@@ -30,11 +30,12 @@ export const github = <ReleasePlugin> {
     }
   },
   async postCommit(
-    repo: Repo,
-    action: Action,
-    _from: string,
-    to: string,
-    config: ReleaseConfig,
+    repo,
+    releaseType,
+    _from,
+    to,
+    config,
+    log,
   ): Promise<void> {
     if (!repo.remote || !repo.remote.github) return;
     const doc: Document = { sections: [], links: [] };
@@ -56,17 +57,19 @@ export const github = <ReleasePlugin> {
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);
     pushTag(doc, repo, belonging, filters, latest, parent, "Changelog");
 
-    if (!config.dry) {
+    if (!config.options.dry) {
       const token = Deno.env.get(GITHUB_TOKEN)!;
       const { user, name } = repo.remote.github;
       const result = await gh.createRelease(token, user, name, {
         tag_name: to,
         name: `v${to}`,
         body: render(doc),
-        prerelease: action.startsWith("pre"),
+        prerelease: releaseType.startsWith("pre"),
         draft: true,
       });
       if (!result.ok) throw new ReleaseError("PLUGIN", result.err);
+    } else {
+      log.info("dryRun: skipping creating release");
     }
   },
 };

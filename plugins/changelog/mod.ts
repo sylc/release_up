@@ -1,10 +1,7 @@
 import { join } from "./deps.ts";
 
 import type {
-  Action,
-  ReleaseConfig,
   ReleasePlugin,
-  Repo,
 } from "../../plugin.ts";
 import {
   Document,
@@ -18,11 +15,12 @@ import {
 export const changelog = <ReleasePlugin> {
   name: "Changelog",
   async preCommit(
-    repo: Repo,
-    _action: Action,
-    _from: string,
-    to: string,
-    config: ReleaseConfig,
+    repo,
+    _releaseType,
+    _from,
+    to,
+    config,
+    log
   ): Promise<void> {
     const doc: Document = { sections: [], links: [] };
     pushHeader(doc);
@@ -47,10 +45,10 @@ export const changelog = <ReleasePlugin> {
     }
 
     const md = render(doc);
-    if (!config.dry) {
+    if (!config.options.dry) {
       await Deno.writeTextFile(join(repo.path, "CHANGELOG.md"), md);
     } else {
-      console.log(md);
+      log.info(md);
     }
   },
 };

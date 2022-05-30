@@ -1,29 +1,31 @@
-// force github update
+import { log } from './deps.ts'
 import type { ReleaseConfig } from "./config.ts";
-import type { Action } from "./cli.ts";
+import type { ReleaseType } from "./cli.ts";
 import type { Repo } from "./src/repo.ts";
 
 export type { ReleaseConfig } from "./config.ts";
-export type { Action } from "./cli.ts";
+export type { ReleaseType } from "./cli.ts";
 export type { Repo } from "./src/repo.ts";
 export type { Tag } from "./src/tags.ts";
 export type { Commit } from "./src/commits.ts";
 
 export interface ReleasePlugin {
   name: string;
-  setup?: () => Promise<void>;
+  setup?: (logs: typeof log) => Promise<void>;
   preCommit?: (
     repo: Repo,
-    action: Action,
+    releaseType: ReleaseType,
     from: string,
     to: string,
     config: ReleaseConfig,
+    logger: typeof log
   ) => Promise<void>;
   postCommit?: (
     repo: Repo,
-    action: Action,
+    releaseType: ReleaseType,
     from: string,
     to: string,
     config: ReleaseConfig,
+    logger: typeof log
   ) => Promise<void>;
 }

@@ -15,3 +15,4 @@ export { parse as ccparse } from "https://deno.land/x/commit@0.1.5/mod.ts";
 
 export * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
 export * as ini from "https://deno.land/x/ini@v2.1.0/mod.ts";
+export { Command, EnumType } from "https://deno.land/x/cliffy@v0.24.2/command/mod.ts";
