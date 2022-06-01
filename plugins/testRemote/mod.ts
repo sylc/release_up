@@ -5,7 +5,7 @@ import { join } from "./deps.ts";
  * Export a version file with the new version number
  */
 const plugin: ReleasePlugin = {
-  name: "VersionFile",
+  name: "TestRemote",
   async preCommit(
     repo,
     _releaseType,
@@ -14,7 +14,7 @@ const plugin: ReleasePlugin = {
     config,
     log,
   ): Promise<void> {
-    const versionFile = "version.json";
+    const versionFile = "versionTest.json";
     const version = {
       version: to,
     };

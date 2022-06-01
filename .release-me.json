@@ -1,0 +1,16 @@
+{
+  "changelog": {},
+  "github": {
+    "release": true
+  },
+  "regex": {
+    "patterns": [
+      "/(?<=@)(.*)(?=\/)/gm",
+      "(?<=release-me\/)(.*)(?=\/cli)"
+    ]
+  },
+  "versionFile": {},
+  "testRemote": {
+    "path": "./plugins/testRemote/mod.ts"
+  }
+}
