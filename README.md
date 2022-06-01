@@ -60,7 +60,8 @@ matching the plugin. Example of configuration.
 ### Baked-in plugins
 
 - [github](./plugin/github/mod.ts): Create a draft release on Github.
-- [changelog](./plugin/changelog/README>md): Create a changelog based on filtered commits.
+- [changelog](./plugin/changelog/README>md): Create a changelog based on
+  filtered commits.
 - [regex](./plugin/regex/mod.ts): Apply a regex on the Readme the regex can be
   configure in the config file. For to update the version number following `@`
   to the new one.
