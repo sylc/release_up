@@ -9,8 +9,5 @@
       "(?<=release-me\/)(.*)(?=\/cli)"
     ]
   },
-  "versionFile": {},
-  "testRemote": {
-    "path": "./plugins/testRemote/mod.ts"
-  }
+  "versionFile": {}
 }
