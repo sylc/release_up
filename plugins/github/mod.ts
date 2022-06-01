@@ -1,6 +1,4 @@
-import {
-  ReleasePlugin,
-} from "../../plugin.ts";
+import { ReleasePlugin } from "../../plugin.ts";
 import {
   Document,
   Filter,
@@ -14,7 +12,7 @@ import { ReleaseError } from "../../src/error.ts";
 
 const GITHUB_TOKEN = "GITHUB_TOKEN";
 
-export const github = <ReleasePlugin> {
+const plugin: ReleasePlugin = {
   name: "GitHub",
   async setup(log): Promise<void> {
     const token = Deno.env.get(GITHUB_TOKEN);
@@ -73,3 +71,5 @@ export const github = <ReleasePlugin> {
     }
   },
 };
+
+export default plugin;

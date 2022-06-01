@@ -4,7 +4,13 @@
     "release": true
   },
   "regex": {
-    "patterns": ["/(?<=@)(.*)(?=\/)/gm", "(?<=release-me\/)(.*)(?=\/cli)"] 
+    "patterns": [
+      "/(?<=@)(.*)(?=\/)/gm",
+      "(?<=release-me\/)(.*)(?=\/cli)"
+    ]
   },
-  "versionFile": {}
+  "versionFile": {},
+  "testRemote": {
+    "path": "./plugins/testRemote/mod.ts"
+  }
 }

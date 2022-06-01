@@ -6,10 +6,10 @@ import { fetchRepo, Repo } from "./src/repo.ts";
 import { ezgit } from "./src/git.ts";
 
 // Plugins
-import { github } from "./plugins/github/mod.ts";
-import { changelog } from "./plugins/changelog/mod.ts";
-import { regex } from "./plugins/regex/mod.ts";
-import { versionFile } from "./plugins/versionFile/mod.ts";
+import github from "./plugins/github/mod.ts";
+import changelog from "./plugins/changelog/mod.ts";
+import regex from "./plugins/regex/mod.ts";
+import versionFile from "./plugins/versionFile/mod.ts";
 
 import version from "./version.json" assert { type: "json" };
 import { ReleasePlugin } from "./plugin.ts";
@@ -55,9 +55,9 @@ await new Command()
     default: ".release-me.json",
   })
   .action(async (opts, release_type, name) => {
-    await initLogger(opts.debug)
+    await initLogger(opts.debug);
     log.debug(opts, release_type, name);
-    
+
     let suffix: string | undefined = undefined;
     if (["prepatch", "preminor", "premajor"].includes(release_type)) {
       suffix = (name as string | undefined) ?? "canary";
@@ -66,7 +66,10 @@ await new Command()
     // Load config, if any
     let config: ReleaseConfig<unknown> = { options: opts };
     try {
-      config = { ...(JSON.parse(Deno.readTextFileSync(opts.config))), ...config} ;
+      config = {
+        ...(JSON.parse(Deno.readTextFileSync(opts.config))),
+        ...config,
+      };
     } catch (err) {
       if (err.code !== "ENOENT") {
         log.error(`error parsing the config file at ${opts.config}`);
@@ -84,14 +87,14 @@ await new Command()
       else if (key === "regex") plugins.push(regex);
       else if (key === "versionFile") plugins.push(versionFile);
       else {
-        const def = val as { path: string; };
-        if (!def.path) throw Error(`Invalid config entry ${val}`)
-        const remotePlugin = await import(def.path) 
-        plugins.push(remotePlugin); 
+        const def = val as { path: string };
+        if (!def.path) throw Error(`Invalid config entry ${val}`);
+        const remotePlugin = await import(def.path);
+        plugins.push(remotePlugin.default);
       }
     }
-        
-    log.debug(`plugins loaded: ${plugins.map(p => p.name).join(', ')}`)
+
+    log.debug(`plugins loaded: ${plugins.map((p) => p.name).join(", ")}`);
 
     // Plugins setup
     for (const plugin of plugins) {
@@ -140,7 +143,7 @@ await new Command()
     for (const plugin of plugins) {
       if (!plugin.preCommit) continue;
       try {
-        log.debug(`Executing preCommit ${plugin.name}`)
+        log.debug(`Executing preCommit ${plugin.name}`);
         await plugin.preCommit(repo, release_type, from, to, config, log);
       } catch (err) {
         log.critical(err.message);
@@ -190,7 +193,7 @@ await new Command()
     for (const plugin of plugins) {
       if (!plugin.postCommit) continue;
       try {
-        log.debug(`Executing postCommit ${plugin.name}`)
+        log.debug(`Executing postCommit ${plugin.name}`);
         await plugin.postCommit(repo, release_type, from, to, config, log);
       } catch (err) {
         log.critical(err.message);

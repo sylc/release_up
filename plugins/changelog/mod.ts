@@ -1,8 +1,6 @@
 import { join } from "./deps.ts";
 
-import type {
-  ReleasePlugin,
-} from "../../plugin.ts";
+import type { ReleasePlugin } from "../../plugin.ts";
 import {
   Document,
   Filter,
@@ -12,7 +10,7 @@ import {
   render,
 } from "../../src/changelog.ts";
 
-export const changelog = <ReleasePlugin> {
+const plugin: ReleasePlugin = {
   name: "Changelog",
   async preCommit(
     repo,
@@ -20,7 +18,7 @@ export const changelog = <ReleasePlugin> {
     _from,
     to,
     config,
-    log
+    log,
   ): Promise<void> {
     const doc: Document = { sections: [], links: [] };
     pushHeader(doc);
@@ -52,3 +50,5 @@ export const changelog = <ReleasePlugin> {
     }
   },
 };
+
+export default plugin;

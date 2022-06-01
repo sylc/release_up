@@ -33,28 +33,64 @@ example: release-me major
 
 ## Plugins
 
-Release-me supports plugins. The current ones are
+Release-me supports local and remote plugins. By default, plugins are **NOT**
+enabled. To enable them, create a `.release-me.json` file that has a key
+matching the plugin. Example of configuration.
 
+```json
+// .release-me.json
+{
+  "changelog": {},
+  "github": {
+    "release": true
+  },
+  "regex": {
+    "patterns": [
+      "/(?<=@)(.*)(?=\/)/gm",
+      "(?<=release-me\/)(.*)(?=\/cli)"
+    ]
+  },
+  "versionFile": {},
+  "myRemotePlugin": {
+    "path": "./plugins/testRemote/mod.ts"
+  }
+}
+```
+
+### Baked-in plugins
+
+- [github](./plugin/github/mod.ts): Create a draft release on Github
 - [changelog](./plugin/changelog/mod.ts): Create a changelog
-- github: Create a draft release on Github
-- regex: Apply a regex on the Readme to update the version number following `@` to the new one
-- versionFile: Create a `version.json` file with the new version number
+- [regex](./plugin/regex/mod.ts): Apply a regex on the Readme the regex can be
+  configure in the config file. For to update the version number following `@`
+  to the new one
+- [versionFile](./plugin/versionFile/mod.ts): Create a `version.json` file with
+  the new version number
 
-They are currently all enabled, but this will change soon...
+### Remote plugins
 
-To develop new plugins, refer to [./plugins.ts](/plugins.ts) api
+Plugins can also be defined externally. In that case they must have a "path"
+property in their config. The path can be either a local path or http(s) path.
+
+A plugin must contain a default export with the signature defined at
+[./plugins.ts](/plugins.ts)
 
 ## Secrets
 
-Release-me uses dotenv to load environment variables
+Release-me uses dotenv to load environment variables. For example for
+interactiong with Github, set a `.env` file with the below
+
+```
+GITHUB_TOKEN=<my secret token>
+```
+
+## Credits
+
+Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
+of [release](https://github.com/denosaurs/release). The current core features
+have been implemented by it.
 
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
 deno fmt.
-
-## Credits
-
-Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
-of [release](https://github.com/denosaurs/release). However due to the lack of
-development on the original package, I have done some update.
