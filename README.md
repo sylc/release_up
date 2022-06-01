@@ -92,7 +92,9 @@ have been implemented by it.
 
 ### Inspiration
 
-this project is inspired by node project [release-it](https://github.com/release-it/release-it)
+this project is inspired by node project
+[release-it](https://github.com/release-it/release-it)
+
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
