@@ -90,6 +90,9 @@ Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
 of [release](https://github.com/denosaurs/release). The current core features
 have been implemented by it.
 
+### Inspiration
+
+this project is inspired by node project [release-it](https://github.com/release-it/release-it)
 ### Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
