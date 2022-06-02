@@ -35,14 +35,14 @@ export function pushChanges(
   for (const commit of commits) {
     const { hash } = commit;
     const { header } = commit.cc;
-    const shortid = `\`${hash.slice(0, 7)}\``;
+    const shortid = hash.slice(0, 7);
 
     if (repo.remote && repo.remote.github && style === "md") {
       const { user, name } = repo.remote.github;
       let url = `https://github.com/${user}/${name}/`;
       url = `${url}commit/${hash}`;
 
-      list.push(`- ${header} ([${shortid}])`);
+      list.push(`- ${header} ([\`${shortid}\`])`);
       doc.links.push(fmtLink(shortid, url));
     } else {
       // on github release we do not need to use url
