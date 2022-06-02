@@ -14,14 +14,12 @@ const GITHUB_TOKEN = "GITHUB_TOKEN";
 
 interface GithubConfig {
   github: {
-
     /**
      * Perform a release. Can also be set to 'draft' to performa draft release
      */
-    release?: boolean | 'draft'
-  }
+    release?: boolean | "draft";
+  };
 }
-
 
 const plugin: ReleasePlugin<GithubConfig> = {
   name: "GitHub",
@@ -63,12 +61,11 @@ const plugin: ReleasePlugin<GithubConfig> = {
         type: "fix",
         title: "Bug Fixes",
       },
-      
     ];
 
     const latest = tags[0];
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);
-    pushTag(doc, repo, belonging, filters, latest);
+    pushTag(doc, belonging, filters, latest);
 
     if (!config.options.dry && config.github.release) {
       const token = Deno.env.get(GITHUB_TOKEN)!;
@@ -78,7 +75,7 @@ const plugin: ReleasePlugin<GithubConfig> = {
         name: `v${to}`,
         body: render(doc),
         prerelease: releaseType.startsWith("pre"),
-        draft: config.github.release === 'draft',
+        draft: config.github.release === "draft",
       });
       if (!result.ok) throw new ReleaseError("PLUGIN", result.err);
     } else {

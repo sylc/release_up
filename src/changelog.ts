@@ -17,23 +17,13 @@ export function fmtLink(name: string, to: string): string {
 }
 
 export function pushHeader(doc: Document): void {
-  doc.links.push(
-    fmtLink("keep a changelog", "https://keepachangelog.com/en/1.0.0/"),
-  );
-  doc.links.push(
-    fmtLink("semantic versioning", "https://semver.org/spec/v2.0.0.html"),
-  );
   doc.sections.push(`# Changelog
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog], and this project adheres to
-[Semantic Versioning].`);
+All notable changes to this project will be documented in this file.`);
 }
 
 export function pushChanges(
   doc: Document,
-  repo: Repo,
   title: string,
   commits: Commit[],
 ): void {
@@ -42,55 +32,29 @@ export function pushChanges(
   for (const commit of commits) {
     const { hash } = commit;
     const { subject } = commit.cc;
-    const shortid = `\`${hash.substr(0, 7)}\``;
+    const shortid = `\`${hash.slice(0, 7)}\``;
 
-    if (repo.remote && repo.remote.github) {
-      const { user, name } = repo.remote.github;
-      let url = `https://github.com/${user}/${name}/`;
-      url = `${url}commit/${hash}`;
-
-      list.push(`- ${subject} ([${shortid}])`);
-      doc.links.push(fmtLink(shortid, url));
-    } else {
-      list.push(`- ${subject} (${shortid})`);
-    }
+    list.push(`- ${subject} (${shortid})`);
   }
   doc.sections.push(list.join("\n"));
 }
 
 export function pushTag(
   doc: Document,
-  repo: Repo,
   commits: Commit[],
   filters: Filter[],
   tag: Tag,
-  parent?: Tag,
-  title?: string,
 ): void {
   const year = tag.date.getUTCFullYear();
   const month = String(tag.date.getUTCMonth() + 1).padStart(2, "0");
   const day = String(tag.date.getUTCDate()).padStart(2, "0");
 
-  if (repo.remote && repo.remote.github) {
-    const { user, name } = repo.remote.github;
-    let url = `https://github.com/${user}/${name}/`;
-
-    url = parent
-      ? `${url}compare/${parent.version}...${tag.version}`
-      : `${url}compare/${tag.version}`;
-    doc.links.push(fmtLink(tag.version, url));
-  }
-
-  if (title) {
-    doc.sections.push(`## ${title}`);
-  } else {
-    doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
-  }
+  doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
 
   for (const filter of filters) {
     const filtered = commits.filter((_) => _.cc.type === filter.type);
     if (filtered.length > 0) {
-      pushChanges(doc, repo, filter.title, filtered);
+      pushChanges(doc, filter.title, filtered);
     }
   }
 }

@@ -14,8 +14,8 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Run deno fmt
+      - name: Verify formatting
         run: deno fmt --check
 
-      - name: Run deno lint
+      - name: Verify lint
         run: deno lint

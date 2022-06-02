@@ -42,7 +42,7 @@ const plugin: ReleasePlugin = {
     for (let i = 0; i < tags.length; i++) {
       const tag = tags[i];
       const belonging = commits.filter((_) => _.belongs?.hash === tag.hash);
-      pushTag(doc, repo, belonging, filters, tag);
+      pushTag(doc, belonging, filters, tag);
     }
 
     const md = render(doc);
