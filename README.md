@@ -59,13 +59,13 @@ matching the plugin. Example of configuration.
 
 ### Baked-in plugins
 
-- [github](./plugin/github/mod.ts): Create a draft release on Github.
-- [changelog](./plugin/changelog/README>md): Create a changelog based on
+- [github](./doc/doc.md#github): Create a release on Github.
+- [changelog](./doc/doc.md#changelog): Create a changelog based on
   filtered commits.
-- [regex](./plugin/regex/mod.ts): Apply a regex on the Readme the regex can be
+- [regex](./plugins/regex/mod.ts): Apply a regex on the Readme the regex can be
   configure in the config file. For to update the version number following `@`
   to the new one.
-- [versionFile](./plugin/versionFile/mod.ts): Create a `version.json` file with
+- [versionFile](./plugins/versionFile/mod.ts): Create a `version.json` file with
   the new version number.
 
 ### Remote plugins
