@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2022-06-02
+
+### Bug Fixes
+
+- fix: release links ([`426f43a`])
+
 ## [0.2.0] - 2022-06-02
 
 ### Features
@@ -26,13 +32,15 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.2.1]: https://github.com/sylc/release-me/compare/0.2.1
+[426f43a]: https://github.com/sylc/release-me/commit/426f43adda6c487cf7d82b7c427dbc9ab7ed764a
 [0.2.0]: https://github.com/sylc/release-me/compare/0.2.0
-[`ade5620`]: https://github.com/sylc/release-me/commit/ade562078141be72d2caf7522778749b8bb82746
-[`d4f08a2`]: https://github.com/sylc/release-me/commit/d4f08a260c42f70026501cd80b2644c377912f24
-[`dde99a9`]: https://github.com/sylc/release-me/commit/dde99a99fc75b11e3efd59c162d65445132beb2e
-[`4d75e14`]: https://github.com/sylc/release-me/commit/4d75e14bd718d8378d27fff51fb7b5ea48b786f9
+[ade5620]: https://github.com/sylc/release-me/commit/ade562078141be72d2caf7522778749b8bb82746
+[d4f08a2]: https://github.com/sylc/release-me/commit/d4f08a260c42f70026501cd80b2644c377912f24
+[dde99a9]: https://github.com/sylc/release-me/commit/dde99a99fc75b11e3efd59c162d65445132beb2e
+[4d75e14]: https://github.com/sylc/release-me/commit/4d75e14bd718d8378d27fff51fb7b5ea48b786f9
 [0.1.1]: https://github.com/sylc/release-me/compare/0.1.1
-[`1f041eb`]: https://github.com/sylc/release-me/commit/1f041ebd2dd227913054d31eb30adfebee9ef570
+[1f041eb]: https://github.com/sylc/release-me/commit/1f041ebd2dd227913054d31eb30adfebee9ef570
 [0.1.0]: https://github.com/sylc/release-me/compare/0.1.0
 [0.0.2]: https://github.com/sylc/release-me/compare/0.0.2
 [0.0.1]: https://github.com/sylc/release-me/compare/0.0.1
