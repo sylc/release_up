@@ -26,6 +26,10 @@ const plugin: ReleasePlugin = {
     const [tags, commits] = polyfillVersion(repo, to);
     const filters: Filter[] = [
       {
+        type: "breaking",
+        title: "Breaking",
+      },
+      {
         type: "feat",
         title: "Features",
       },
@@ -37,9 +41,8 @@ const plugin: ReleasePlugin = {
 
     for (let i = 0; i < tags.length; i++) {
       const tag = tags[i];
-      const parent = tags[i + 1]; // last is undefined
       const belonging = commits.filter((_) => _.belongs?.hash === tag.hash);
-      pushTag(doc, repo, belonging, filters, tag, parent);
+      pushTag(doc, repo, belonging, filters, tag);
     }
 
     const md = render(doc);
