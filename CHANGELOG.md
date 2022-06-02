@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2022-06-02
+
 ## [0.2.2-canary.0] - 2022-06-02
 
 ## [0.2.1-canary.0] - 2022-06-02
@@ -33,6 +35,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.2.2]: https://github.com/sylc/release-me/compare/0.2.2
 [0.2.2-canary.0]: https://github.com/sylc/release-me/compare/0.2.2-canary.0
 [0.2.1-canary.0]: https://github.com/sylc/release-me/compare/0.2.1-canary.0
 [`dde99a9`]: https://github.com/sylc/release-me/commit/dde99a99fc75b11e3efd59c162d65445132beb2e
