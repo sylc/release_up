@@ -36,7 +36,7 @@ export function pushChanges(
     const { hash } = commit;
     const { header } = commit.cc;
     const shortid = `\`${hash.slice(0, 7)}\``;
-    console.log("sub", header);
+
     if (repo.remote && repo.remote.github && style === "md") {
       const { user, name } = repo.remote.github;
       let url = `https://github.com/${user}/${name}/`;
