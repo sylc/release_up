@@ -60,8 +60,8 @@ matching the plugin. Example of configuration.
 ### Baked-in plugins
 
 - [github](./doc/doc.md#github): Create a release on Github.
-- [changelog](./doc/doc.md#changelog): Create a changelog based on
-  filtered commits.
+- [changelog](./doc/doc.md#changelog): Create a changelog based on filtered
+  commits.
 - [regex](./doc/doc.md#changelog): Apply a regex on `README.md`
 - [versionFile](./plugins/versionFile/mod.ts): Create a `version.json` file with
   the new version number.
