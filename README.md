@@ -62,9 +62,7 @@ matching the plugin. Example of configuration.
 - [github](./doc/doc.md#github): Create a release on Github.
 - [changelog](./doc/doc.md#changelog): Create a changelog based on
   filtered commits.
-- [regex](./plugins/regex/mod.ts): Apply a regex on the Readme the regex can be
-  configure in the config file. For to update the version number following `@`
-  to the new one.
+- [regex](./doc/doc.md#changelog): Apply a regex on `README.md`
 - [versionFile](./plugins/versionFile/mod.ts): Create a `version.json` file with
   the new version number.
 
