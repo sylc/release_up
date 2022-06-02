@@ -12,6 +12,7 @@ export interface Document {
   links: string[];
 }
 
+// links definition for markdown (they are not inline)
 export function fmtLink(name: string, to: string): string {
   return `[${name}]: ${to}`;
 }
@@ -24,37 +25,63 @@ All notable changes to this project will be documented in this file.`);
 
 export function pushChanges(
   doc: Document,
+  repo: Repo,
   title: string,
   commits: Commit[],
+  style: "github" | "md",
 ): void {
   doc.sections.push(`### ${title}`);
   const list: string[] = [];
   for (const commit of commits) {
     const { hash } = commit;
-    const { subject } = commit.cc;
+    const { header } = commit.cc;
     const shortid = `\`${hash.slice(0, 7)}\``;
+    console.log("sub", header);
+    if (repo.remote && repo.remote.github && style === "md") {
+      const { user, name } = repo.remote.github;
+      let url = `https://github.com/${user}/${name}/`;
+      url = `${url}commit/${hash}`;
 
-    list.push(`- ${subject} (${shortid})`);
+      list.push(`- ${header} ([${shortid}])`);
+      doc.links.push(fmtLink(shortid, url));
+    } else {
+      // on github release we do not need to use url
+      list.push(`- ${header} (${shortid})`);
+    }
   }
   doc.sections.push(list.join("\n"));
 }
 
 export function pushTag(
   doc: Document,
+  repo: Repo,
   commits: Commit[],
   filters: Filter[],
   tag: Tag,
+  style: "github" | "md",
+  parent?: Tag,
 ): void {
   const year = tag.date.getUTCFullYear();
   const month = String(tag.date.getUTCMonth() + 1).padStart(2, "0");
   const day = String(tag.date.getUTCDate()).padStart(2, "0");
 
-  doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
+  if (repo.remote && repo.remote.github && style === "md") {
+    const { user, name } = repo.remote.github;
+    let url = `https://github.com/${user}/${name}/`;
+
+    url = parent
+      ? `${url}compare/${parent.version}...${tag.version}`
+      : `${url}compare/${tag.version}`;
+    doc.links.push(fmtLink(tag.version, url));
+    doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
+  } else {
+    doc.sections.push(`## ${tag.version} - ${year}-${month}-${day}`);
+  }
 
   for (const filter of filters) {
     const filtered = commits.filter((_) => _.cc.type === filter.type);
     if (filtered.length > 0) {
-      pushChanges(doc, filter.title, filtered);
+      pushChanges(doc, repo, filter.title, filtered, style);
     }
   }
 }
