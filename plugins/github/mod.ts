@@ -12,7 +12,18 @@ import { ReleaseError } from "../../src/error.ts";
 
 const GITHUB_TOKEN = "GITHUB_TOKEN";
 
-const plugin: ReleasePlugin = {
+interface GithubConfig {
+  github: {
+
+    /**
+     * Perform a release. Can also be set to 'draft' to performa draft release
+     */
+    release?: boolean | 'draft'
+  }
+}
+
+
+const plugin: ReleasePlugin<GithubConfig> = {
   name: "GitHub",
   async setup(log): Promise<void> {
     const token = Deno.env.get(GITHUB_TOKEN);
@@ -41,6 +52,10 @@ const plugin: ReleasePlugin = {
     const [tags, commits] = polyfillVersion(repo, to);
     const filters: Filter[] = [
       {
+        type: "breaking",
+        title: "Breakeage",
+      },
+      {
         type: "feat",
         title: "Features",
       },
@@ -48,14 +63,14 @@ const plugin: ReleasePlugin = {
         type: "fix",
         title: "Bug Fixes",
       },
+      
     ];
 
     const latest = tags[0];
-    const parent = tags[1];
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);
-    pushTag(doc, repo, belonging, filters, latest, parent);
+    pushTag(doc, repo, belonging, filters, latest);
 
-    if (!config.options.dry) {
+    if (!config.options.dry && config.github.release) {
       const token = Deno.env.get(GITHUB_TOKEN)!;
       const { user, name } = repo.remote.github;
       const result = await gh.createRelease(token, user, name, {
@@ -63,7 +78,7 @@ const plugin: ReleasePlugin = {
         name: `v${to}`,
         body: render(doc),
         prerelease: releaseType.startsWith("pre"),
-        draft: true,
+        draft: config.github.release === 'draft',
       });
       if (!result.ok) throw new ReleaseError("PLUGIN", result.err);
     } else {
