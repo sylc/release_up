@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2022-06-04
+
 ## [0.2.2] - 2022-06-04
 
 ### Features
@@ -38,6 +40,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.2.3]: https://github.com/sylc/release_up/compare/0.2.3
 [0.2.2]: https://github.com/sylc/release_up/compare/0.2.2
 [305081e]: https://github.com/sylc/release_up/commit/305081ed2c3603fb0d9e1c9598511ff69e4ae34e
 [0.2.1]: https://github.com/sylc/release_up/compare/0.2.1
