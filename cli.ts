@@ -33,7 +33,7 @@ const actions: ReleaseType[] = [
 ];
 
 await new Command()
-  .name("release-me")
+  .name("release-up")
   .version(version.version)
   .description(
     `Automate semver release tasks
@@ -52,7 +52,7 @@ await new Command()
   .option("--debug", "enable debug logging")
   .option("--allowUncommitted", "Allow uncommited change in the repo")
   .option("--config <confi_path>", "define the path of the config", {
-    default: ".release-me.json",
+    default: ".release-up.json",
   })
   .action(async (opts, release_type, name) => {
     await initLogger(opts.debug);

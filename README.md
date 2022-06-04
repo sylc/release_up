@@ -1,4 +1,4 @@
-# release-me
+# release-up
 
 A fork of [release](https://github.com/denosaurs/release) by
 [denosaurs](https://github.com/denosaurs)
@@ -6,15 +6,15 @@ A fork of [release](https://github.com/denosaurs/release) by
 ## Installation
 
 ```
-$ deno install -A -f --no-check -n release-me -r https://raw.githubusercontent.com/sylc/release-me/0.2.1/cli.ts
+$ deno install -A -f --no-check -n release-up -r https://raw.githubusercontent.com/sylc/release-up/0.2.1/cli.ts
 ```
 
 ## Usage
 
 ```
-usage: release-me [options] <type> [...]
+usage: release-up [options] <type> [...]
 
-example: release-me major
+example: release-up major
 
 [options]:
   -h --help          Show this message
@@ -33,12 +33,12 @@ example: release-me major
 
 ## Plugins
 
-Release-me supports local and remote plugins. By default, plugins are **NOT**
-enabled. To enable them, create a `.release-me.json` file that has a key
+release-up supports local and remote plugins. By default, plugins are **NOT**
+enabled. To enable them, create a `.release-up.json` file that has a key
 matching the plugin. Example of configuration.
 
 ```json
-// .release-me.json
+// .release-up.json
 {
   "changelog": {},
   "github": {
@@ -47,7 +47,7 @@ matching the plugin. Example of configuration.
   "regex": {
     "patterns": [
       "/(?<=@)(.*)(?=\/)/gm",
-      "(?<=release-me\/)(.*)(?=\/cli)"
+      "(?<=release-up\/)(.*)(?=\/cli)"
     ]
   },
   "versionFile": {},
@@ -76,7 +76,7 @@ A plugin must contain a default export with the signature defined at
 
 ## Secrets
 
-Release-me uses dotenv to load environment variables. For example for
+release-up uses dotenv to load environment variables. For example for
 interactiong with Github, set a `.env` file with the below
 
 ```
