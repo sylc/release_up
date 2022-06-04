@@ -46,8 +46,7 @@ matching the plugin. Example of configuration.
   },
   "regex": {
     "patterns": [
-      "/(?<=@)(.*)(?=\/)/gm",
-      "(?<=release_up\/)(.*)(?=\/cli)"
+      "(?<=@)(.*)(?=\/cli)"
     ]
   },
   "versionFile": {},
