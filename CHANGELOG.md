@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2022-06-04
+
+### Features
+
+- feat: publish to deno/x ([`305081e`])
+
 ## [0.2.1] - 2022-06-02
 
 ### Bug Fixes
@@ -32,6 +38,8 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.2.2]: https://github.com/sylc/release_up/compare/0.2.2
+[305081e]: https://github.com/sylc/release_up/commit/305081ed2c3603fb0d9e1c9598511ff69e4ae34e
 [0.2.1]: https://github.com/sylc/release_up/compare/0.2.1
 [426f43a]: https://github.com/sylc/release_up/commit/426f43adda6c487cf7d82b7c427dbc9ab7ed764a
 [0.2.0]: https://github.com/sylc/release_up/compare/0.2.0
