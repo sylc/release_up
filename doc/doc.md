@@ -30,7 +30,7 @@ e.g:
 "regex": {
     "patterns": [
       "/(?<=@)(.*)(?=\/)/gm",
-      "(?<=release-up\/)(.*)(?=\/cli)"
+      "(?<=release_up\/)(.*)(?=\/cli)"
     ]
   },
 ```
