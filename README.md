@@ -6,7 +6,7 @@ A fork of [release](https://github.com/denosaurs/release) by
 ## Installation
 
 ```
-$ deno install -A -f --no-check -n release_up -r https://raw.githubusercontent.com/sylc/release_up/0.2.1/cli.ts
+$ deno install -A -f --no-check -n release_up -r https://deno.land/x/release@0.2.2/release_up.ts
 ```
 
 ## Usage
