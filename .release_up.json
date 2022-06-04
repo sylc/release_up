@@ -1,13 +1,8 @@
 {
-  "changelog": {},
-  "github": {
-    "release": true
-  },
+  
   "regex": {
     "patterns": [
-      "/(?<=@)(.*)(?=\/)/gm",
-      "(?<=release_up\/)(.*)(?=\/cli)"
-    ]
+      "(?<=@)(.*)(?=\/cli)"    ]
   },
   "versionFile": {}
 }
