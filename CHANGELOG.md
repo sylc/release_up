@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2022-06-12
+
+### Features
+
+- feat: Extend list of conventional commit filters with `core` and `docs` ([`95a4a1e`])
+- feat: Add support for enabling plugins via cli flags (#15) ([`11d6236`])
+
+## [0.2.4] - 2022-06-04
+
 ## [0.2.3] - 2022-06-04
 
 ## [0.2.2] - 2022-06-04
@@ -40,6 +49,10 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.3.0]: https://github.com/sylc/release_up/compare/0.3.0
+[95a4a1e]: https://github.com/sylc/release_up/commit/95a4a1e900b75e6b39126edbf7e898487300cef8
+[11d6236]: https://github.com/sylc/release_up/commit/11d62362e72318cf79033530d277fab2cad9e816
+[0.2.4]: https://github.com/sylc/release_up/compare/0.2.4
 [0.2.3]: https://github.com/sylc/release_up/compare/0.2.3
 [0.2.2]: https://github.com/sylc/release_up/compare/0.2.2
 [305081e]: https://github.com/sylc/release_up/commit/305081ed2c3603fb0d9e1c9598511ff69e4ae34e
