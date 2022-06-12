@@ -14,7 +14,8 @@ release change log
 interface GithubConfig {
   github: {
     /**
-     * Perform a release. Can also be set to 'draft' to performa draft release
+     * Perform a release. Can also be set to 'draft' to perform a draft release
+     * default is true
      */
     release?: boolean | "draft";
   };

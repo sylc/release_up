@@ -3,7 +3,7 @@ import { join } from "./deps.ts";
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
   Document,
-  Filter,
+  filters,
   polyfillVersion,
   pushHeader,
   pushTag,
@@ -24,20 +24,6 @@ const plugin: ReleasePlugin = {
     pushHeader(doc);
 
     const [tags, commits] = polyfillVersion(repo, to);
-    const filters: Filter[] = [
-      {
-        type: "breaking",
-        title: "Breaking",
-      },
-      {
-        type: "feat",
-        title: "Features",
-      },
-      {
-        type: "fix",
-        title: "Bug Fixes",
-      },
-    ];
 
     for (let i = 0; i < tags.length; i++) {
       const tag = tags[i];

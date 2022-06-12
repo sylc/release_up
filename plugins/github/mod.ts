@@ -1,7 +1,7 @@
 import { ReleasePlugin } from "../../plugin.ts";
 import {
   Document,
-  Filter,
+  filters,
   polyfillVersion,
   pushTag,
   render,
@@ -49,20 +49,6 @@ const plugin: ReleasePlugin<GithubConfig> = {
     const doc: Document = { sections: [], links: [] };
 
     const [tags, commits] = polyfillVersion(repo, to);
-    const filters: Filter[] = [
-      {
-        type: "breaking",
-        title: "Breakeage",
-      },
-      {
-        type: "feat",
-        title: "Features",
-      },
-      {
-        type: "fix",
-        title: "Bug Fixes",
-      },
-    ];
 
     const latest = tags[0];
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);

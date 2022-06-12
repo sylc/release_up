@@ -7,6 +7,29 @@ export interface Filter {
   title: string;
 }
 
+export const filters: Filter[] = [
+  {
+    type: "breaking",
+    title: "Breaking",
+  },
+  {
+    type: "feat",
+    title: "Features",
+  },
+  {
+    type: "fix",
+    title: "Bug Fixes",
+  },
+  {
+    type: "docs",
+    title: "Docs",
+  },
+  {
+    type: "core",
+    title: "Core",
+  },
+];
+
 export interface Document {
   sections: string[];
   links: string[];
