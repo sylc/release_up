@@ -15,7 +15,8 @@ const GITHUB_TOKEN = "GITHUB_TOKEN";
 interface GithubConfig {
   github: {
     /**
-     * Perform a release. Can also be set to 'draft' to performa draft release
+     * Perform a release. Can also be set to 'draft' to perform a draft release.
+     * The default is true
      */
     release?: boolean | "draft";
   };
@@ -67,7 +68,7 @@ const plugin: ReleasePlugin<GithubConfig> = {
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);
     pushTag(doc, repo, belonging, filters, latest, "github");
 
-    if (!config.options.dry && config.github.release) {
+    if (!config.options.dry) {
       const token = Deno.env.get(GITHUB_TOKEN)!;
       const { user, name } = repo.remote.github;
       const result = await gh.createRelease(token, user, name, {

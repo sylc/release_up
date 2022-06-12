@@ -1,7 +1,7 @@
 # release_up
 
-A fork of [release](https://github.com/denosaurs/release) by
-[denosaurs](https://github.com/denosaurs)
+A fork of [release](https://github.com/denosaurs/release), by
+[denosaurs](https://github.com/denosaurs), with more config options
 
 ## Installation
 
@@ -12,30 +12,44 @@ $ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.2
 ## Usage
 
 ```
-usage: release_up [options] <type> [...]
+  Usage:   release_up <release_type> [name]
+  Version: 0.2.4
 
-example: release_up major
+  Description:
 
-[options]:
-  -h --help          Show this message
-  --dry              Prevent changes to git
-  --allowUncommited  Allow some changes to be uncommited
+    Automate semver releases.
+    Example: release_up major --github
 
-[type]:
-  release type:
-    * patch             eg: 1.2.3 -> 1.2.4
-    * minor             eg: 1.2.3 -> 1.3.0
-    * major             eg: 1.2.3 -> 2.0.0
-    * prepatch <name>   eg: 1.2.3 -> 1.2.4-name
-    * preminor <name>   eg: 1.2.3 -> 1.2.4-name
-    * premajor <name>   eg: 1.2.3 -> 1.2.4-name
+    Release type:
+      * patch             eg: 1.2.3 -> 1.2.4
+      * minor             eg: 1.2.3 -> 1.3.0
+      * major             eg: 1.2.3 -> 2.0.0
+      * prepatch <name>   eg: 1.2.3 -> 1.2.4-name.0
+      * preminor <name>   eg: 1.2.3 -> 1.3.0-name.0
+      * premajor <name>   eg: 1.2.3 -> 2.0.0-name.0
+
+  Options:
+
+    -h, --help                          - Show this help.
+    -V, --version                       - Show the version number for this program.
+    --config            <confi_path>    - Define the path of the config. (Default: ".release_up.json")
+    --github                            - Enable Github plugin.
+    --changelog                         - Enable Changelog plugin.
+    --versionFile                       - Enable VersionFile plugin.
+    --regex             <pattern>  - Enable Regex plugin. The regex need to be provided as string.
+    --dry                               - Dry run, Does not commit any changes.
+    --allowUncommitted                  - Allow uncommited change in the repo.
+    --debug                             - Enable debug logging.
 ```
 
 ## Plugins
 
 release_up supports local and remote plugins. By default, plugins are **NOT**
-enabled. To enable them, create a `.release_up.json` file that has a key
-matching the plugin. Example of configuration.
+enabled. To enable them, either
+
+- Use a cli flag
+- Create a `.release_up.json` file that has a key matching the plugin. Example
+  of configuration.
 
 ```json
 // .release_up.json
