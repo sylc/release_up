@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2022-06-12
+
+### Bug Fixes
+
+- fix: config.github might be undefined ([`266d13e`])
+
 ## [0.3.0] - 2022-06-12
 
 ### Features
@@ -49,6 +55,8 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1] - 2022-05-28
 
+[0.3.1]: https://github.com/sylc/release_up/compare/0.3.1
+[266d13e]: https://github.com/sylc/release_up/commit/266d13e91cc6b331b6fdbb0bbb082648c45300ea
 [0.3.0]: https://github.com/sylc/release_up/compare/0.3.0
 [95a4a1e]: https://github.com/sylc/release_up/commit/95a4a1e900b75e6b39126edbf7e898487300cef8
 [11d6236]: https://github.com/sylc/release_up/commit/11d62362e72318cf79033530d277fab2cad9e816
