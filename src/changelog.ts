@@ -65,7 +65,7 @@ export function pushChanges(
       let url = `https://github.com/${user}/${name}/`;
       url = `${url}commit/${hash}`;
 
-      list.push(`- ${header} ([\`${shortid}\`])`);
+      list.push(`- ${header} ([${shortid}])`);
       doc.links.push(fmtLink(shortid, url));
     } else {
       // on github release we do not need to use url
