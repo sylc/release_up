@@ -32,28 +32,37 @@ const actions: ReleaseType[] = [
   "premajor",
 ];
 
+const DEFAULT_CONFIG_PATH = ".release_up.json";
+
 await new Command()
   .name("release_up")
   .version(version.version)
-  .description(
-    `Automate semver release tasks
+  .description(`
+    Automate semver releases. 
+    Example: release_up major --github
 
-    release type:
+    Release type:
       * patch             ${colors.dim("eg: 1.2.3 -> 1.2.4")}
       * minor             ${colors.dim("eg: 1.2.3 -> 1.3.0")}
       * major             ${colors.dim("eg: 1.2.3 -> 2.0.0")}
-      * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name")}
-      * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name")}
-      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name")}`,
-  )
+      * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name.0")}
+      * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-name.0")}
+      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}`)
   .type("semver", new EnumType(actions))
-  .arguments("<release_type:semver>  [name:string]")
-  .option("--dry", "Dry run, Does not commit any changes")
-  .option("--debug", "enable debug logging")
-  .option("--allowUncommitted", "Allow uncommited change in the repo")
-  .option("--config <confi_path>", "define the path of the config", {
-    default: ".release_up.json",
+  .arguments("<release_type:semver> [name:string]")
+  .option("--config <confi_path>", "Define the path of the config.", {
+    default: `${DEFAULT_CONFIG_PATH}`,
   })
+  .option("--github", "Enable Github plugin.")
+  .option("--changelog", "Enable Changelog plugin.")
+  .option("--versionFile", "Enable VersionFile plugin.")
+  .option(
+    "--regex <pattern:string>",
+    "Enable Regex plugin. The regex need to be provided as string.",
+  )
+  .option("--dry", "Dry run, Does not commit any changes.")
+  .option("--allowUncommitted", "Allow uncommited change in the repo.")
+  .option("--debug", "Enable debug logging.")
   .action(async (opts, release_type, name) => {
     await initLogger(opts.debug);
     log.debug(opts, release_type, name);
@@ -71,6 +80,10 @@ await new Command()
         ...config,
       };
     } catch (err) {
+      if (err.code === "ENOENT" && opts.config !== DEFAULT_CONFIG_PATH) {
+        log.error(`Cannot find config file at ${opts.config}`);
+        Deno.exit(1);
+      }
       if (err.code !== "ENOENT") {
         log.error(`error parsing the config file at ${opts.config}`);
         log.error(err);
@@ -78,25 +91,45 @@ await new Command()
       }
     }
 
+    // Enable Plugins
+
     // deno-lint-ignore no-explicit-any
-    const plugins: ReleasePlugin<any>[] = [];
+    const pluginsList: any = {};
+
+    // Enable from cli flags
+    if (opts.github) pluginsList.github = github;
+    if (opts.changelog) pluginsList.changelog = changelog;
+    if (opts.regex) {
+      pluginsList.regex = regex;
+      // deno-lint-ignore no-explicit-any
+      (config as any).regex = { patterns: [opts.regex] };
+    }
+    if (opts.versionFile) pluginsList.versionFile = versionFile;
+
+    // Enable Plugins from config
     for (const [key, val] of Object.entries(config)) {
       if (key === "options") continue;
-      if (key === "github") plugins.push(github);
-      else if (key === "changelog") plugins.push(changelog);
-      else if (key === "regex") plugins.push(regex);
-      else if (key === "versionFile") plugins.push(versionFile);
-      else {
+      if (key === "github" && !pluginsList.github) pluginsList.github = github;
+      else if (key === "changelog" && !pluginsList.changelog) {
+        pluginsList.changelog = changelog;
+      } else if (key === "regex") pluginsList.regex = regex;
+      else if (key === "versionFile" && !pluginsList.versionFile) {
+        pluginsList.versionFile = versionFile;
+      } else {
+        console.log(key, val);
         const def = val as { path: string };
-        if (!def.path) throw Error(`Invalid config entry ${val}`);
+        if (!def.path) throw Error(`Invalid config entry ${key}, ${val}`);
         const remotePlugin = await import(def.path);
-        plugins.push(remotePlugin.default);
+        pluginsList.key = remotePlugin.default;
       }
     }
 
+    // deno-lint-ignore no-explicit-any
+    const plugins: ReleasePlugin<any>[] = Object.values(pluginsList);
+
     log.debug(`plugins loaded: ${plugins.map((p) => p.name).join(", ")}`);
 
-    // Plugins setup
+    // Setup Plugins
     for (const plugin of plugins) {
       if (!plugin.setup) continue;
       try {

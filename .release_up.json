@@ -1,8 +1,2 @@
 {
-  "regex": {
-    "patterns": [
-      "(?<=@)(.*)(?=\/cli)"
-    ]
-  },
-  "versionFile": {}
 }
