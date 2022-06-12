@@ -13,7 +13,7 @@ import { ReleaseError } from "../../src/error.ts";
 const GITHUB_TOKEN = "GITHUB_TOKEN";
 
 interface GithubConfig {
-  github: {
+  github?: {
     /**
      * Perform a release. Can also be set to 'draft' to perform a draft release.
      * The default is true
@@ -62,7 +62,7 @@ const plugin: ReleasePlugin<GithubConfig> = {
         name: `v${to}`,
         body: render(doc),
         prerelease: releaseType.startsWith("pre"),
-        draft: config.github.release === "draft",
+        draft: config.github?.release === "draft",
       });
       if (!result.ok) throw new ReleaseError("PLUGIN", result.err);
     } else {
