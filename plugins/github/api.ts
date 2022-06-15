@@ -24,6 +24,7 @@ export async function verifyToken(token: string): Promise<Response> {
   if (scopes && scopes.includes("repo")) {
     return { ok: true };
   } else {
+    console.log(scopes)
     return { ok: false, err: "Missing <repo> scope" };
   }
 }
