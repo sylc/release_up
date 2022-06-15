@@ -20,14 +20,16 @@ export async function verifyToken(token: string): Promise<Response> {
   if (body.message === "Bad credentials") {
     return { ok: false, err: "Bad credentials" };
   }
+  
+  if(Deno.env.get("GITHUB_ACTION")){
+    // TODO: check for Permission 
+    // in the response ?
+    return { ok: true };
+  }
   const scopes = res.headers.get("X-OAuth-Scopes");
   if (scopes && scopes.includes("repo")) {
     return { ok: true };
   } else {
-    // Display the key/value pairs
-    for (const pair of res.headers.entries()) {
-      console.log(pair[0] + ": " + pair[1]);
-    }
     return { ok: false, err: "Missing <repo> scope" };
   }
 }
