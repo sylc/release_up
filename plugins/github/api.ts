@@ -24,7 +24,10 @@ export async function verifyToken(token: string): Promise<Response> {
   if (scopes && scopes.includes("repo")) {
     return { ok: true };
   } else {
-    console.log(scopes);
+    // Display the key/value pairs
+    for (const pair of res.headers.entries()) {
+      console.log(pair[0] + ": " + pair[1]);
+    }
     return { ok: false, err: "Missing <repo> scope" };
   }
 }
