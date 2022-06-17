@@ -20,8 +20,8 @@ export async function verifyToken(token: string): Promise<Response> {
   if (body.message === "Bad credentials") {
     return { ok: false, err: "Bad credentials" };
   }
-  
-  if(Deno.env.get("GITHUB_ACTION")){
+
+  if (Deno.env.get("GITHUB_ACTION")) {
     // TODO: check that the token
     // provided byt github action has enough permission
     // It does not seem possible currently ?

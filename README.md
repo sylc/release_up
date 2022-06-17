@@ -97,7 +97,8 @@ GITHUB_TOKEN=<my secret token>
 ```
 
 ## Examples
-  - [Github Actions worflow](.github/workflows/bump.yml)
+
+- [Github Actions worflow](.github/workflows/bump.yml)
 
 ## Credits
 
