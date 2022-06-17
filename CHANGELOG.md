@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2022-06-17
+
+### Features
+
+- feat: add bump_example ([91be4a4])
+
+### Bug Fixes
+
+- fix: github actions workflow (#16) ([d4d2553])
+
 ## [0.3.2] - 2022-06-12
 
 ### Bug Fixes
@@ -52,6 +62,9 @@ All notable changes to this project will be documented in this file.
 
 - feat: changelog doc (#9) ([1f041eb])
 
+[0.4.0]: https://github.com/sylc/release_up/compare/0.4.0
+[91be4a4]: https://github.com/sylc/release_up/commit/91be4a41f12bf7912d8cfbc6d99c06d2e58e75cd
+[d4d2553]: https://github.com/sylc/release_up/commit/d4d2553f1b94254ebaa86e407af873959192ef74
 [0.3.2]: https://github.com/sylc/release_up/compare/0.3.2
 [b76c830]: https://github.com/sylc/release_up/commit/b76c830a620361c9334ce71b3edb3bde80c93530
 [5fa357d]: https://github.com/sylc/release_up/commit/5fa357d9479336e1bf5d7e95dfb6dce3098597b6
