@@ -42,4 +42,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          deno task test ${{github.event.inputs.releaseKind}}
+          deno task release ${{github.event.inputs.releaseKind}}
