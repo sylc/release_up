@@ -22,8 +22,9 @@ export async function verifyToken(token: string): Promise<Response> {
   }
   
   if(Deno.env.get("GITHUB_ACTION")){
-    // TODO: check for Permission 
-    // in the response ?
+    // TODO: check that the token
+    // provided byt github action has enough permission
+    // It does not seem possible currently ?
     return { ok: true };
   }
   const scopes = res.headers.get("X-OAuth-Scopes");

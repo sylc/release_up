@@ -96,6 +96,9 @@ interactiong with Github, set a `.env` file with the below
 GITHUB_TOKEN=<my secret token>
 ```
 
+## Examples
+  - [Github Actions worflow](.github/workflows/bump.yml)
+
 ## Credits
 
 Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
