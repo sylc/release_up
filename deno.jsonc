@@ -2,7 +2,8 @@
   "tasks": {
     "dev": "deno run -A ./cli.ts --dry --allowUncommitted --regex \"(?<=@)(.*)(?=\/cli)\" --regex \"(?<=Version: )(.*)\n\" --changelog --github",
     "release": "deno fmt --check && deno lint && deno run -A ./cli.ts --regex \"(?<=@)(.*)(?=\/cli)\" --regex \"(?<=Version: )(.*)$\" --github --versionFile --changelog",
-    "test": "deno test -A"
+    "test": "deno test -A",
+    "check": "deno fmt && deno lint"
   },
   "fmt": {
     "files": {

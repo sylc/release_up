@@ -32,7 +32,7 @@ const release_type: ReleaseType[] = [
   "preminor",
   "premajor",
   "premajor",
-  "prerelease"
+  "prerelease",
 ];
 
 const DEFAULT_CONFIG_PATH = ".release_up.json";
@@ -62,7 +62,8 @@ await new Command()
   .option("--versionFile", "Enable VersionFile plugin.")
   .option(
     "--regex <pattern:string>",
-    "Enable Regex plugin. The regex need to be provided as string. --regex can be specified multiple times", { collect: true }
+    "Enable Regex plugin. The regex need to be provided as string. --regex can be specified multiple times",
+    { collect: true },
   )
   .option("--dry", "Dry run, Does not commit any changes.")
   .option("--allowUncommitted", "Allow uncommited change in the repo.")
