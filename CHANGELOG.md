@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1-canary.0] - 2022-06-23
+
+### Features
+
+- feat: add support for prerelease (#17) ([08c062b])
+
 ## [0.4.0] - 2022-06-17
 
 ### Features
@@ -62,6 +68,8 @@ All notable changes to this project will be documented in this file.
 
 - feat: changelog doc (#9) ([1f041eb])
 
+[0.4.1-canary.0]: https://github.com/sylc/release_up/compare/0.4.1-canary.0
+[08c062b]: https://github.com/sylc/release_up/commit/08c062b1de4ae94f92d23495138c5d34403e3e42
 [0.4.0]: https://github.com/sylc/release_up/compare/0.4.0
 [91be4a4]: https://github.com/sylc/release_up/commit/91be4a41f12bf7912d8cfbc6d99c06d2e58e75cd
 [d4d2553]: https://github.com/sylc/release_up/commit/d4d2553f1b94254ebaa86e407af873959192ef74
