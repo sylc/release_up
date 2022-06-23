@@ -14,15 +14,14 @@ A fork of [release](https://github.com/denosaurs/release), by
 ## Installation
 
 ```
-$ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.4.1-canary.0/cli.ts
+$ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.5.0/cli.ts
 ```
 
 ## Usage
 
 ```
   Usage:   release_up <release_type> [name]
-  Version: 0.2.4
-
+  Version: 0.5.0
   Description:
 
     Automate semver releases.
