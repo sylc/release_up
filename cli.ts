@@ -21,15 +21,18 @@ export type ReleaseType =
   | "major"
   | "prepatch"
   | "preminor"
-  | "premajor";
+  | "premajor"
+  | "prerelease";
 
-const actions: ReleaseType[] = [
+const release_type: ReleaseType[] = [
   "patch",
   "minor",
   "major",
   "prepatch",
   "preminor",
   "premajor",
+  "premajor",
+  "prerelease",
 ];
 
 const DEFAULT_CONFIG_PATH = ".release_up.json";
@@ -47,8 +50,9 @@ await new Command()
       * major             ${colors.dim("eg: 1.2.3 -> 2.0.0")}
       * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name.0")}
       * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-name.0")}
-      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}`)
-  .type("semver", new EnumType(actions))
+      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}
+      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}`)
+  .type("semver", new EnumType(release_type))
   .arguments("<release_type:semver> [name:string]")
   .option("--config <confi_path>", "Define the path of the config.", {
     default: `${DEFAULT_CONFIG_PATH}`,
@@ -58,7 +62,8 @@ await new Command()
   .option("--versionFile", "Enable VersionFile plugin.")
   .option(
     "--regex <pattern:string>",
-    "Enable Regex plugin. The regex need to be provided as string.",
+    "Enable Regex plugin. The regex need to be provided as string. --regex can be specified multiple times",
+    { collect: true },
   )
   .option("--dry", "Dry run, Does not commit any changes.")
   .option("--allowUncommitted", "Allow uncommited change in the repo.")
@@ -68,7 +73,9 @@ await new Command()
     log.debug(opts, release_type, name);
 
     let suffix: string | undefined = undefined;
-    if (["prepatch", "preminor", "premajor"].includes(release_type)) {
+    if (
+      ["prepatch", "preminor", "premajor", "prerelease"].includes(release_type)
+    ) {
       suffix = (name as string | undefined) ?? "canary";
     }
 
@@ -102,7 +109,7 @@ await new Command()
     if (opts.regex) {
       pluginsList.regex = regex;
       // deno-lint-ignore no-explicit-any
-      (config as any).regex = { patterns: [opts.regex] };
+      (config as any).regex = { patterns: opts.regex };
     }
     if (opts.versionFile) pluginsList.versionFile = versionFile;
 

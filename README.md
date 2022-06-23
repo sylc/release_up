@@ -1,4 +1,12 @@
-# release_up
+[![deno module](https://shield.deno.dev/x/release_up)](https://deno.land/x/release_up)
+
+<h1 align="center">
+  🌱 release_up
+</h1>
+
+<p align="center">
+  <b>Automate semver releases in Deno 🦕</b>
+</p>
 
 A fork of [release](https://github.com/denosaurs/release), by
 [denosaurs](https://github.com/denosaurs), with more config options
@@ -27,6 +35,7 @@ $ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.4
       * prepatch <name>   eg: 1.2.3 -> 1.2.4-name.0
       * preminor <name>   eg: 1.2.3 -> 1.3.0-name.0
       * premajor <name>   eg: 1.2.3 -> 2.0.0-name.0
+      * prerelease <name> eg: 1.2.3-name.0 -> 1.2.3-name.1
 
   Options:
 
