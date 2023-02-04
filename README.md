@@ -8,16 +8,26 @@
   <b>Automate semver releases in Deno 🦕</b>
 </p>
 
-A fork of [release](https://github.com/denosaurs/release), by
-[denosaurs](https://github.com/denosaurs), with more config options
+# Motivation
 
-## Installation
+This projects allows to perform automatically tasks required at release time
+like for example:
+
+- Creating a new tag based on existing ones
+- Updating versions number in a file, according to the new tag.
+- Updating links in readme.
+- Creating a changelog.
+- Pushing a release to github.
+
+Most changes are optionals and configurable.
+
+# Installation
 
 ```
 $ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.5.0/cli.ts
 ```
 
-## Usage
+# Usage
 
 ```
   Usage:   release_up <release_type> [name]
@@ -44,13 +54,13 @@ $ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.5
     --github                            - Enable Github plugin.
     --changelog                         - Enable Changelog plugin.
     --versionFile                       - Enable VersionFile plugin.
-    --regex             <pattern>  - Enable Regex plugin. The regex need to be provided as string.
+    --regex             <pattern>       - Enable Regex plugin. The regex need to be provided as string.
     --dry                               - Dry run, Does not commit any changes.
     --allowUncommitted                  - Allow uncommited change in the repo.
     --debug                             - Enable debug logging.
 ```
 
-## Plugins
+# Plugins
 
 release_up supports local and remote plugins. By default, plugins are **NOT**
 enabled. To enable them, either
@@ -78,7 +88,7 @@ enabled. To enable them, either
 }
 ```
 
-### Baked-in plugins
+## Baked-in plugins
 
 - [github](./doc/doc.md#github): Create a release on Github.
 - [changelog](./doc/doc.md#changelog): Create a changelog based on filtered
@@ -87,7 +97,7 @@ enabled. To enable them, either
 - [versionFile](./plugins/versionFile/mod.ts): Create a `version.json` file with
   the new version number.
 
-### Remote plugins
+## Remote plugins
 
 Plugins can also be defined externally. In that case they must have a "path"
 property in their config. The path can be either a local path or http(s) path.
@@ -95,7 +105,7 @@ property in their config. The path can be either a local path or http(s) path.
 A plugin must contain a default export with the signature defined at
 [./plugins.ts](/plugins.ts)
 
-## Secrets
+# Secrets
 
 release_up uses dotenv to load environment variables. For example for
 interactiong with Github, set a `.env` file with the below
@@ -104,22 +114,26 @@ interactiong with Github, set a `.env` file with the below
 GITHUB_TOKEN=<my secret token>
 ```
 
-## Examples
+# Examples
 
 - [Github Actions worflow](.github/workflows/bump.yml)
 
-## Credits
+# Credits
 
 Big Credits to [denosaurs](https://github.com/denosaurs). This project is a fork
 of [release](https://github.com/denosaurs/release). The current core features
 have been implemented by it.
 
-### Inspiration
+## Inspiration
 
-this project is inspired by node project
+This project is inspired by node project
 [release-it](https://github.com/release-it/release-it)
 
-### Contribution
+## Contribution
 
 Pull request, issues and feedback are very welcome. Code style is formatted with
 deno fmt.
+
+## LICENSE
+
+MIT
