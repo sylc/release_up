@@ -93,7 +93,7 @@ export function pushTag(
     let url = `https://github.com/${user}/${name}/`;
     url = parent
       ? `${url}compare/${parent.version}...${tag.version}`
-      : `${url}compare/${repo.commits[0].hash}...${tag.version}`;
+      : `${url}compare/${repo.commits.pop()?.hash}...${tag.version}`;
     doc.links.push(fmtLink(tag.version, url));
     doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
   } else {
