@@ -13,9 +13,9 @@ export { Spinner, wait } from "https://deno.land/x/wait@0.1.12/mod.ts";
 export type { Commit as CCCommit } from "https://deno.land/x/commit@0.1.5/mod.ts";
 export { parse as ccparse } from "https://deno.land/x/commit@0.1.5/mod.ts";
 
-export * as semver from "https://deno.land/x/semver@v1.4.0/mod.ts";
+export * as semver from "https://deno.land/x/semver@v1.4.1/mod.ts";
 export * as ini from "https://deno.land/x/ini@v2.1.0/mod.ts";
 export {
   Command,
   EnumType,
-} from "https://deno.land/x/cliffy@v0.24.2/command/mod.ts";
+} from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
