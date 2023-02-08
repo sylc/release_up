@@ -91,10 +91,9 @@ export function pushTag(
   if (repo.remote && repo.remote.github && style === "md") {
     const { user, name } = repo.remote.github;
     let url = `https://github.com/${user}/${name}/`;
-
     url = parent
       ? `${url}compare/${parent.version}...${tag.version}`
-      : `${url}compare/${tag.version}`;
+      : `${url}compare/${repo.commits.pop()?.hash}...${tag.version}`;
     doc.links.push(fmtLink(tag.version, url));
     doc.sections.push(`## [${tag.version}] - ${year}-${month}-${day}`);
   } else {
@@ -107,6 +106,14 @@ export function pushTag(
       pushChanges(doc, repo, filter.title, filtered, style);
     }
   }
+  if (repo.remote && repo.remote.github && parent) {
+    const linkName = `${parent.version}...${tag.version}`;
+    doc.sections.push(`Full Changelog: [${linkName}]`);
+    const { user, name } = repo.remote.github;
+    const url =
+      `https://github.com/${user}/${name}/compare/${parent.version}...${tag.version}`;
+    doc.links.push(fmtLink(linkName, url));
+  }
 }
 
 export function render(doc: Document): string {
@@ -116,6 +123,10 @@ export function render(doc: Document): string {
   return `${full.join("\n\n").trim()}\n`;
 }
 
+/**
+ * Add the new tag to the list of tags. beeing the latest it is the first one
+ * @returns array of tags and commits
+ */
 export function polyfillVersion(repo: Repo, to: string): [Tag[], Commit[]] {
   const newtag: Tag = {
     tag: to,

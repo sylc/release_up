@@ -52,7 +52,8 @@ const plugin: ReleasePlugin<GithubConfig> = {
 
     const latest = tags[0];
     const belonging = commits.filter((_) => _.belongs?.hash === latest.hash);
-    pushTag(doc, repo, belonging, filters, latest, "github");
+    const parent = tags.length > 0 ? tags[1] : undefined;
+    pushTag(doc, repo, belonging, filters, latest, "github", parent);
 
     if (!config.options.dry) {
       const token = Deno.env.get(GITHUB_TOKEN)!;
