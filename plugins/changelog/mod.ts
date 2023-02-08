@@ -27,13 +27,14 @@ const plugin: ReleasePlugin = {
 
     for (let i = 0; i < tags.length; i++) {
       const tag = tags[i];
+      const parent = i < tags.length - 1 ? tags[i + 1] : undefined;
       const belonging = commits.filter((_) => _.belongs?.hash === tag.hash);
       const filteredTypes = filters.map((f) => f.type);
       const filteredCommits = belonging.filter((_) =>
         filteredTypes.includes(_.cc.type || "")
       );
       if (filteredCommits.length) {
-        pushTag(doc, repo, belonging, filters, tag, "md");
+        pushTag(doc, repo, belonging, filters, tag, "md", parent);
       }
     }
 
