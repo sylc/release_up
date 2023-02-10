@@ -24,7 +24,7 @@ interface GithubConfig {
 
 # Regex
 
-Apply a regex on the `README.md`. The regex can be configure in the config file.
+Apply a regex on the `README.md` or any other files with the new version or any other value. The regex can be configured in the config file.
 e.g:
 
 ```json

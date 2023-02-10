@@ -14,7 +14,7 @@ This projects allows to perform automatically tasks required at release time
 like for example:
 
 - Creating a new tag based on existing ones
-- Updating versions number in a file, according to the new tag.
+- Updating version numbers in the readme, according to the new tag.
 - Updating links in readme.
 - Creating a changelog.
 - Pushing a release to github.

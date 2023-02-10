@@ -17,17 +17,31 @@ const plugin: ReleasePlugin<RegexConfig> = {
     config,
     log,
   ): Promise<void> {
-    const readmePath = "README.md";
-    let text = await Deno.readTextFile(readmePath);
-    // apply regex. This should come from a config loaded on setup step
-    // as a prototype, it is harcoded to update versions in urls
-    for (const pattern of config.regex.patterns) {
-      text = text.replace(new RegExp(pattern), to);
+
+    // the below allow for future expansion to change more files
+    const changeDefs = [];
+    if (config.regex.patterns.length) {
+      changeDefs.push({
+        filePath: "README.md",
+        transforms: [
+          { value: to, patterns: config.regex.patterns || [] },
+        ],
+      })
     }
-    if (config.options.dry) {
-      log.info(text);
-    } else {
-      await Deno.writeTextFile(join(repo.path, readmePath), text);
+
+    for (const changeDef of changeDefs) {
+      let text = await Deno.readTextFile(changeDef.filePath);
+      // apply regex.
+      for (const transforms of changeDef.transforms) {
+        for (const pattern of transforms.patterns) {
+          text = text.replace(new RegExp(pattern), transforms.value);
+        }
+      }
+      if (config.options.dry) {
+        log.info(text);
+      } else {
+        await Deno.writeTextFile(join(repo.path, changeDef.filePath), text);
+      }
     }
   },
 };
