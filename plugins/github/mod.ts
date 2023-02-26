@@ -1,7 +1,7 @@
 import { ReleasePlugin } from "../../plugin.ts";
 import {
-  Document,
   defaultFilters,
+  Document,
   polyfillVersion,
   pushTag,
   render,

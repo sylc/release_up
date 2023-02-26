@@ -2,8 +2,8 @@ import { join } from "./deps.ts";
 
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
-  Document,
   defaultFilters,
+  Document,
   polyfillVersion,
   pushHeader,
   pushTag,

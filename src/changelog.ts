@@ -54,7 +54,7 @@ export function pushChanges(
   commits: Commit[],
   style: "github" | "md",
 ): void {
-  if (title !== '') doc.sections.push(`### ${title}`);
+  if (title !== "") doc.sections.push(`### ${title}`);
   const list: string[] = [];
   for (const commit of commits) {
     const { hash } = commit;
@@ -104,18 +104,18 @@ export function pushTag(
   let hasConventionalCommit = false;
   // capture all commits by their types
   for (const filter of filters) {
-    let title = filter.title
+    let title = filter.title;
     let filtered;
-    if (filter.type === '!') {
+    if (filter.type === "!") {
       // process breaking change
-      filtered = commits.filter((commit) => commit.cc.type?.endsWith('!'));
-      if (filtered.length > 0) hasConventionalCommit = true
+      filtered = commits.filter((commit) => commit.cc.type?.endsWith("!"));
+      if (filtered.length > 0) hasConventionalCommit = true;
     } else if (filter.type !== "") {
       // use conventional commmits as defined in filters
       filtered = commits.filter((commit) =>
         commit.cc.type?.toLocaleLowerCase() === filter.type.toLocaleLowerCase()
       );
-      if (filtered.length > 0) hasConventionalCommit = true
+      if (filtered.length > 0) hasConventionalCommit = true;
     } else {
       // capture other commits
       const types = filters.map((f) => f.type);
@@ -125,7 +125,7 @@ export function pushTag(
     }
     if (filtered.length > 0) {
       if (!hasConventionalCommit) {
-        title = '' 
+        title = "";
       }
       pushChanges(doc, repo, title, filtered, style);
     }
