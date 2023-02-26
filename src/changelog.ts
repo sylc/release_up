@@ -7,9 +7,13 @@ export interface Filter {
   title: string;
 }
 
-export const filters: Filter[] = [
+/**
+ * Default list of commit type
+ */
+export const defaultFilters: Filter[] = [
   {
-    type: "breaking",
+    // type ! means include !
+    type: "!",
     title: "Breaking",
   },
   {
@@ -21,12 +25,9 @@ export const filters: Filter[] = [
     title: "Bug Fixes",
   },
   {
-    type: "docs",
-    title: "Docs",
-  },
-  {
-    type: "core",
-    title: "Core",
+    // empty string means all
+    type: "",
+    title: "Others",
   },
 ];
 
@@ -53,7 +54,7 @@ export function pushChanges(
   commits: Commit[],
   style: "github" | "md",
 ): void {
-  doc.sections.push(`### ${title}`);
+  if (title !== '') doc.sections.push(`### ${title}`);
   const list: string[] = [];
   for (const commit of commits) {
     const { hash } = commit;
@@ -100,12 +101,36 @@ export function pushTag(
     doc.sections.push(`## ${tag.version} - ${year}-${month}-${day}`);
   }
 
+  let hasConventionalCommit = false;
+  // capture all commits by their types
   for (const filter of filters) {
-    const filtered = commits.filter((_) => _.cc.type === filter.type);
+    let title = filter.title
+    let filtered;
+    if (filter.type === '!') {
+      // process breaking change
+      filtered = commits.filter((commit) => commit.cc.type?.endsWith('!'));
+      if (filtered.length > 0) hasConventionalCommit = true
+    } else if (filter.type !== "") {
+      // use conventional commmits as defined in filters
+      filtered = commits.filter((commit) =>
+        commit.cc.type?.toLocaleLowerCase() === filter.type.toLocaleLowerCase()
+      );
+      if (filtered.length > 0) hasConventionalCommit = true
+    } else {
+      // capture other commits
+      const types = filters.map((f) => f.type);
+      filtered = commits.filter((commit) =>
+        !types.includes(commit.cc.type?.toLocaleLowerCase() || "__any__")
+      );
+    }
     if (filtered.length > 0) {
-      pushChanges(doc, repo, filter.title, filtered, style);
+      if (!hasConventionalCommit) {
+        title = '' 
+      }
+      pushChanges(doc, repo, title, filtered, style);
     }
   }
+
   if (repo.remote && repo.remote.github && parent) {
     const linkName = `${parent.version}...${tag.version}`;
     doc.sections.push(`Full Changelog: [${linkName}]`);
