@@ -18,7 +18,7 @@ export const significantCommits: Filter[] = [
   {
     type: "fix",
     title: "Bug Fixes",
-  }
+  },
 ];
 
 export interface Document {
@@ -40,7 +40,7 @@ All notable changes to this project will be documented in this file.`);
 /**
  * Push a list of commits in the section with a title
  * @param title tile of the section in the document
- * @param style Style formatting of the document. Github releases have links different from the changelog  
+ * @param style Style formatting of the document. Github releases have links different from the changelog
  */
 export function pushChanges(
   doc: Document,
@@ -96,32 +96,39 @@ export function pushTag(
     doc.sections.push(`## ${tag.version} - ${year}-${month}-${day}`);
   }
 
-  const breaking: Commit[] = [] 
-  const sections: { [key: string]: Commit[] } = {}
-  const others: Commit[] = []
+  const breaking: Commit[] = [];
+  const sections: { [key: string]: Commit[] } = {};
+  const others: Commit[] = [];
 
   let hasConventionalCommit = false;
   for (const commit of commits) {
-    const type = commit.cc.type
+    const type = commit.cc.type;
     if (type && commit.cc.header?.includes(`!:`)) {
-      breaking.push(commit)
-      hasConventionalCommit = true
-    } else if (type && significantCommits.map(t => t.type).includes(type)) {
-      if (!sections[type]) sections[type] = []
-      sections[type].push(commit)
-      hasConventionalCommit = true
+      breaking.push(commit);
+      hasConventionalCommit = true;
+    } else if (type && significantCommits.map((t) => t.type).includes(type)) {
+      if (!sections[type]) sections[type] = [];
+      sections[type].push(commit);
+      hasConventionalCommit = true;
     } else {
-      others.push(commit)
+      others.push(commit);
     }
   }
 
-  if (breaking.length) pushChanges(doc, repo, 'Breaking', breaking, style);
+  if (breaking.length) pushChanges(doc, repo, "Breaking", breaking, style);
   for (const significantCommit of significantCommits) {
-    if(sections[significantCommit.type]?.length) pushChanges(doc, repo, significantCommit.title, sections[significantCommit.type], style);
+    if (sections[significantCommit.type]?.length) {
+      pushChanges(
+        doc,
+        repo,
+        significantCommit.title,
+        sections[significantCommit.type],
+        style,
+      );
+    }
   }
-  const othersTitle = hasConventionalCommit ? 'Others' : ''
+  const othersTitle = hasConventionalCommit ? "Others" : "";
   if (others.length) pushChanges(doc, repo, othersTitle, others, style);
-  
 
   if (repo.remote && repo.remote.github && parent) {
     const linkName = `${parent.version}...${tag.version}`;

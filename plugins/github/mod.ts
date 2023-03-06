@@ -1,10 +1,10 @@
 import { ReleasePlugin } from "../../plugin.ts";
 import {
-  significantCommits,
   Document,
   polyfillVersion,
   pushTag,
   render,
+  significantCommits,
 } from "../../src/changelog.ts";
 
 import * as gh from "./api.ts";

@@ -2,12 +2,12 @@ import { join } from "./deps.ts";
 
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
-  significantCommits,
   Document,
   polyfillVersion,
   pushHeader,
   pushTag,
   render,
+  significantCommits,
 } from "../../src/changelog.ts";
 
 const plugin: ReleasePlugin = {

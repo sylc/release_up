@@ -47,7 +47,9 @@ export async function fetchRawCommits(
       const body = `${title}\n${description}`;
       const cc = ccparse(body, {
         // Allow for ! after the scope
-        headerPattern: new RegExp(/^(\w*)(?:\(([\w\$\.\-\* ]*)\))?(?:\:|!\:) (.*)$/)
+        headerPattern: new RegExp(
+          /^(\w*)(?:\(([\w\$\.\-\* ]*)\))?(?:\:|!\:) (.*)$/,
+        ),
       });
 
       return {
