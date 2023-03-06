@@ -24,7 +24,7 @@ Most changes are optionals and configurable.
 # Installation
 
 ```
-$ deno install -A -f --no-check -n release_up https://deno.land/x/release_up@0.6.0/cli.ts
+$ deno install -A -f -n release_up https://deno.land/x/release_up@0.6.0/cli.ts
 ```
 
 # Usage

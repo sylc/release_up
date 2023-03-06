@@ -3,11 +3,11 @@ import { join } from "./deps.ts";
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
   Document,
-  filters,
   polyfillVersion,
   pushHeader,
   pushTag,
   render,
+  significantCommits,
 } from "../../src/changelog.ts";
 
 const plugin: ReleasePlugin = {
@@ -29,12 +29,8 @@ const plugin: ReleasePlugin = {
       const tag = tags[i];
       const parent = i < tags.length - 1 ? tags[i + 1] : undefined;
       const belonging = commits.filter((_) => _.belongs?.hash === tag.hash);
-      const filteredTypes = filters.map((f) => f.type);
-      const filteredCommits = belonging.filter((_) =>
-        filteredTypes.includes(_.cc.type || "")
-      );
-      if (filteredCommits.length) {
-        pushTag(doc, repo, belonging, filters, tag, "md", parent);
+      if (belonging.length) {
+        pushTag(doc, repo, belonging, significantCommits, tag, "md", parent);
       }
     }
 

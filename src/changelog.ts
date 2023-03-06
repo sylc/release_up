@@ -7,11 +7,10 @@ export interface Filter {
   title: string;
 }
 
-export const filters: Filter[] = [
-  {
-    type: "breaking",
-    title: "Breaking",
-  },
+/**
+ * Default list of commit type
+ */
+export const significantCommits: Filter[] = [
   {
     type: "feat",
     title: "Features",
@@ -19,14 +18,6 @@ export const filters: Filter[] = [
   {
     type: "fix",
     title: "Bug Fixes",
-  },
-  {
-    type: "docs",
-    title: "Docs",
-  },
-  {
-    type: "core",
-    title: "Core",
   },
 ];
 
@@ -46,6 +37,11 @@ export function pushHeader(doc: Document): void {
 All notable changes to this project will be documented in this file.`);
 }
 
+/**
+ * Push a list of commits in the section with a title
+ * @param title tile of the section in the document
+ * @param style Style formatting of the document. Github releases have links different from the changelog
+ */
 export function pushChanges(
   doc: Document,
   repo: Repo,
@@ -53,7 +49,7 @@ export function pushChanges(
   commits: Commit[],
   style: "github" | "md",
 ): void {
-  doc.sections.push(`### ${title}`);
+  if (title !== "") doc.sections.push(`### ${title}`);
   const list: string[] = [];
   for (const commit of commits) {
     const { hash } = commit;
@@ -79,7 +75,8 @@ export function pushTag(
   doc: Document,
   repo: Repo,
   commits: Commit[],
-  filters: Filter[],
+  // TODO: remove this parameter
+  _filters: Filter[],
   tag: Tag,
   style: "github" | "md",
   parent?: Tag,
@@ -100,12 +97,40 @@ export function pushTag(
     doc.sections.push(`## ${tag.version} - ${year}-${month}-${day}`);
   }
 
-  for (const filter of filters) {
-    const filtered = commits.filter((_) => _.cc.type === filter.type);
-    if (filtered.length > 0) {
-      pushChanges(doc, repo, filter.title, filtered, style);
+  const breaking: Commit[] = [];
+  const sections: { [key: string]: Commit[] } = {};
+  const others: Commit[] = [];
+
+  let hasConventionalCommit = false;
+  for (const commit of commits) {
+    const type = commit.cc.type;
+    if (type && commit.cc.header?.includes(`!:`)) {
+      breaking.push(commit);
+      hasConventionalCommit = true;
+    } else if (type && significantCommits.map((t) => t.type).includes(type)) {
+      if (!sections[type]) sections[type] = [];
+      sections[type].push(commit);
+      hasConventionalCommit = true;
+    } else {
+      others.push(commit);
     }
   }
+
+  if (breaking.length) pushChanges(doc, repo, "Breaking", breaking, style);
+  for (const significantCommit of significantCommits) {
+    if (sections[significantCommit.type]?.length) {
+      pushChanges(
+        doc,
+        repo,
+        significantCommit.title,
+        sections[significantCommit.type],
+        style,
+      );
+    }
+  }
+  const othersTitle = hasConventionalCommit ? "Others" : "";
+  if (others.length) pushChanges(doc, repo, othersTitle, others, style);
+
   if (repo.remote && repo.remote.github && parent) {
     const linkName = `${parent.version}...${tag.version}`;
     doc.sections.push(`Full Changelog: [${linkName}]`);
