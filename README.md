@@ -24,15 +24,14 @@ Most changes are optionals and configurable.
 # Installation
 
 ```
-$ deno install -A -f -n release_up https://deno.land/x/release_up@0.6.0/cli.ts
+$ deno install -A -f -n release_up https://deno.land/x/release_up@0.7.0/cli.ts
 ```
 
 # Usage
 
 ```
   Usage:   release_up <release_type> [name]
-  Version: 0.6.0  Description:
-
+  Version: 0.7.0
     Automate semver releases.
     Example: release_up major --github
 
