@@ -75,7 +75,9 @@ export function pushTag(
   doc: Document,
   repo: Repo,
   commits: Commit[],
-  filters: Filter[],
+
+  // TODO: remove this parameter
+  _filters: Filter[],
   tag: Tag,
   style: "github" | "md",
   parent?: Tag,
