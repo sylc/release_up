@@ -75,7 +75,6 @@ export function pushTag(
   doc: Document,
   repo: Repo,
   commits: Commit[],
-
   // TODO: remove this parameter
   _filters: Filter[],
   tag: Tag,
