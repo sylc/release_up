@@ -10,12 +10,7 @@ export interface Filter {
 /**
  * Default list of commit type
  */
-export const defaultFilters: Filter[] = [
-  {
-    // type ! means include !
-    type: "!",
-    title: "Breaking",
-  },
+export const significantCommits: Filter[] = [
   {
     type: "feat",
     title: "Features",
@@ -23,12 +18,7 @@ export const defaultFilters: Filter[] = [
   {
     type: "fix",
     title: "Bug Fixes",
-  },
-  {
-    // empty string means all
-    type: "",
-    title: "Others",
-  },
+  }
 ];
 
 export interface Document {
@@ -47,6 +37,11 @@ export function pushHeader(doc: Document): void {
 All notable changes to this project will be documented in this file.`);
 }
 
+/**
+ * Push a list of commits in the section with a title
+ * @param title tile of the section in the document
+ * @param style Style formatting of the document. Github releases have links different from the changelog  
+ */
 export function pushChanges(
   doc: Document,
   repo: Repo,
@@ -101,35 +96,32 @@ export function pushTag(
     doc.sections.push(`## ${tag.version} - ${year}-${month}-${day}`);
   }
 
+  const breaking: Commit[] = [] 
+  const sections: { [key: string]: Commit[] } = {}
+  const others: Commit[] = []
+
   let hasConventionalCommit = false;
-  // capture all commits by their types
-  for (const filter of filters) {
-    let title = filter.title;
-    let filtered;
-    if (filter.type === "!") {
-      // process breaking change
-      filtered = commits.filter((commit) => commit.cc.type?.endsWith("!"));
-      if (filtered.length > 0) hasConventionalCommit = true;
-    } else if (filter.type !== "") {
-      // use conventional commmits as defined in filters
-      filtered = commits.filter((commit) =>
-        commit.cc.type?.toLocaleLowerCase() === filter.type.toLocaleLowerCase()
-      );
-      if (filtered.length > 0) hasConventionalCommit = true;
+  for (const commit of commits) {
+    const type = commit.cc.type
+    if (type && commit.cc.header?.includes(`!:`)) {
+      breaking.push(commit)
+      hasConventionalCommit = true
+    } else if (type && significantCommits.map(t => t.type).includes(type)) {
+      if (!sections[type]) sections[type] = []
+      sections[type].push(commit)
+      hasConventionalCommit = true
     } else {
-      // capture other commits
-      const types = filters.map((f) => f.type);
-      filtered = commits.filter((commit) =>
-        !types.includes(commit.cc.type?.toLocaleLowerCase() || "__any__")
-      );
-    }
-    if (filtered.length > 0) {
-      if (!hasConventionalCommit) {
-        title = "";
-      }
-      pushChanges(doc, repo, title, filtered, style);
+      others.push(commit)
     }
   }
+
+  if (breaking.length) pushChanges(doc, repo, 'Breaking', breaking, style);
+  for (const significantCommit of significantCommits) {
+    if(sections[significantCommit.type]?.length) pushChanges(doc, repo, significantCommit.title, sections[significantCommit.type], style);
+  }
+  const othersTitle = hasConventionalCommit ? 'Others' : ''
+  if (others.length) pushChanges(doc, repo, othersTitle, others, style);
+  
 
   if (repo.remote && repo.remote.github && parent) {
     const linkName = `${parent.version}...${tag.version}`;

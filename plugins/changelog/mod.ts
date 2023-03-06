@@ -2,7 +2,7 @@ import { join } from "./deps.ts";
 
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
-  defaultFilters,
+  significantCommits,
   Document,
   polyfillVersion,
   pushHeader,
@@ -30,7 +30,7 @@ const plugin: ReleasePlugin = {
       const parent = i < tags.length - 1 ? tags[i + 1] : undefined;
       const belonging = commits.filter((_) => _.belongs?.hash === tag.hash);
       if (belonging.length) {
-        pushTag(doc, repo, belonging, defaultFilters, tag, "md", parent);
+        pushTag(doc, repo, belonging, significantCommits, tag, "md", parent);
       }
     }
 
