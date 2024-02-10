@@ -11,7 +11,7 @@ import changelog from "./plugins/changelog/mod.ts";
 import regex from "./plugins/regex/mod.ts";
 import versionFile from "./plugins/versionFile/mod.ts";
 
-import version from "./version.json" assert { type: "json" };
+import version from "./version.json" with { type: "json" };
 import { ReleasePlugin } from "./plugin.ts";
 import { initLogger } from "./src/log.ts";
 
