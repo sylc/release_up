@@ -15,7 +15,7 @@ import config from "./deno.json" with { type: "json" };
 import { ReleasePlugin } from "./plugin.ts";
 import { initLogger } from "./src/log.ts";
 
-const version = config.version
+const version = config.version;
 
 export type ReleaseType =
   | "patch"
@@ -110,19 +110,21 @@ await new Command()
     if (opts.changelog) pluginsList.changelog = changelog;
     if (opts.regex) {
       pluginsList.regex = regex;
-      const regs = opts.regex?.map(s => { const cf = s.split(':::')
-    if (cf.length === 1) {
-      // assume it is readme
-      return {
-        file: 'README.md',
-        patterns: [cf[0]]
-      }
-    } else {
-      return {
-        file: cf[0],
-        patterns: [cf[1]]
-      }
-    }});
+      const regs = opts.regex?.map((s) => {
+        const cf = s.split(":::");
+        if (cf.length === 1) {
+          // assume it is readme
+          return {
+            file: "README.md",
+            patterns: [cf[0]],
+          };
+        } else {
+          return {
+            file: cf[0],
+            patterns: [cf[1]],
+          };
+        }
+      });
       // deno-lint-ignore no-explicit-any
       (config as any).regex = regs;
     }

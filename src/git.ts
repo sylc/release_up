@@ -4,31 +4,30 @@ import { ReleaseError } from "./error.ts";
 
 const decoder = new TextDecoder();
 
-export async function git(
+export function git(
   repo: string,
   args: string[] | string,
-): Promise<[Deno.ProcessStatus, string, string]> {
+): [boolean, string, string] {
   const dir = `--git-dir=${join(repo, ".git")}`;
   if (typeof args === "string") args = args.split(" ");
-  const process = Deno.run({
-    cwd: repo,
-    cmd: ["git", dir, ...args],
-    stdout: "piped",
-    stderr: "piped",
+
+  const cmd = new Deno.Command("git", {
+    args: [dir, ...args],
   });
-  const output = await process.output();
-  const err = await process.stderrOutput();
-  const status = await process.status();
-  process.close();
-  return [status, decoder.decode(output), decoder.decode(err)];
+  const process = cmd.outputSync();
+  return [
+    process.success,
+    decoder.decode(process.stdout),
+    decoder.decode(process.stderr),
+  ];
 }
 
-export async function ezgit(
+export function ezgit(
   repo: string,
   args: string[] | string,
-): Promise<void> {
-  const [status, _, err] = await git(repo, args);
-  if (!status.success) throw new ReleaseError("GIT_EXE", err);
+): void {
+  const [success, _, err] = git(repo, args);
+  if (!success) throw new ReleaseError("GIT_EXE", err);
 }
 
 export async function fetchConfig(repo: string): Promise<GitConfig> {
