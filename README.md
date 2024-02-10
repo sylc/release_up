@@ -13,10 +13,10 @@
 This projects allows to perform automatically tasks required at release time
 like for example:
 
-- Creating a new tag based on existing ones
 - Updating version numbers in the readme, according to the new tag.
 - Updating links in readme.
 - Creating a changelog.
+- Creating a new tag based on existing ones
 - Pushing a release to github.
 
 Most changes are optionals and configurable.
@@ -75,11 +75,20 @@ enabled. To enable them, either
   "github": {
     "release": true
   },
-  "regex": {
-    "patterns": [
-      "(?<=@)(.*)(?=\/cli)"
-    ]
-  },
+  "regex": [
+    {
+      "file": "README.md",
+      "patterns": [
+        "(?<=@)(.*)(?=\/cli)"
+      ]
+    },
+    {
+      "file": "deno.json",
+      "patterns": [
+        "(?<=version=\")(.*)\n"
+      ]
+    }
+  ],
   "versionFile": {},
   "myRemotePlugin": {
     "path": "./plugins/testRemote/mod.ts"
