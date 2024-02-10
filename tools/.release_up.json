@@ -1,0 +1,20 @@
+{
+  "changelog": {},
+  "github": {
+    "release": true
+  },
+  "regex": [
+    {
+      "file": "README.md",
+      "patterns": [
+        "(?<=@)(.*)(?=\/cli)"
+      ]
+    },
+    {
+      "file": "deno.json",
+      "patterns": [
+        "(?<=\"version\": \")(.*)(?=\",)"
+      ]
+    }
+  ]
+}

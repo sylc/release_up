@@ -11,9 +11,11 @@ import changelog from "./plugins/changelog/mod.ts";
 import regex from "./plugins/regex/mod.ts";
 import versionFile from "./plugins/versionFile/mod.ts";
 
-import version from "./version.json" assert { type: "json" };
+import config from "./deno.json" with { type: "json" };
 import { ReleasePlugin } from "./plugin.ts";
 import { initLogger } from "./src/log.ts";
+
+const version = config.version;
 
 export type ReleaseType =
   | "patch"
@@ -39,7 +41,7 @@ const DEFAULT_CONFIG_PATH = ".release_up.json";
 
 await new Command()
   .name("release_up")
-  .version(version.version)
+  .version(version)
   .description(`
     Automate semver releases. 
     Example: release_up major --github
@@ -54,15 +56,15 @@ await new Command()
       * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}`)
   .type("semver", new EnumType(release_type))
   .arguments("<release_type:semver> [name:string]")
-  .option("--config <confi_path>", "Define the path of the config.", {
+  .option("--config <config_path>", "Define the path of the config.", {
     default: `${DEFAULT_CONFIG_PATH}`,
   })
   .option("--github", "Enable Github plugin.")
   .option("--changelog", "Enable Changelog plugin.")
   .option("--versionFile", "Enable VersionFile plugin.")
   .option(
-    "--regex <pattern:string>",
-    "Enable Regex plugin. The regex need to be provided as string. --regex can be specified multiple times",
+    "--regex <file_and_pattern:string>",
+    "Enable the Regex plugin. The regex argument is of format filepath:::regex eg: --regex 'README.md:::(?<=@)(.*)(?=\/cli)'. --regex can be specified multiple times.",
     { collect: true },
   )
   .option("--dry", "Dry run, Does not commit any changes.")
@@ -108,8 +110,23 @@ await new Command()
     if (opts.changelog) pluginsList.changelog = changelog;
     if (opts.regex) {
       pluginsList.regex = regex;
+      const regs = opts.regex?.map((s) => {
+        const cf = s.split(":::");
+        if (cf.length === 1) {
+          // assume it is readme
+          return {
+            file: "README.md",
+            patterns: [cf[0]],
+          };
+        } else {
+          return {
+            file: cf[0],
+            patterns: [cf[1]],
+          };
+        }
+      });
       // deno-lint-ignore no-explicit-any
-      (config as any).regex = { patterns: opts.regex };
+      (config as any).regex = regs;
     }
     if (opts.versionFile) pluginsList.versionFile = versionFile;
 
@@ -123,7 +140,6 @@ await new Command()
       else if (key === "versionFile" && !pluginsList.versionFile) {
         pluginsList.versionFile = versionFile;
       } else {
-        console.log(key, val);
         const def = val as { path: string };
         if (!def.path) throw Error(`Invalid config entry ${key}, ${val}`);
         const remotePlugin = await import(def.path);
