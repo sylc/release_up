@@ -67,8 +67,8 @@ export async function fetchTags(repo: string, options?: FetchOptions | string) {
     ? `log --simplify-by-decoration ${fmt} ${rev}`
     : `log --no-walk --tags ${fmt}`;
 
-  const [status, output, err] = await git(repo, cmd);
-  if (!status.success) throw new ReleaseError("GIT_EXE", err);
+  const [success, output, err] = await git(repo, cmd);
+  if (!success) throw new ReleaseError("GIT_EXE", err);
 
   const lines = output.split("\n");
   const tags = lines.map(parseLine).flat();

@@ -23,13 +23,13 @@ export async function fetchRawCommits(
   const spec = ["s", "n", "ae", "b"]; // add at
   const format = `${inner} %${spec.join(`${inner}%`)}${outer}`;
 
-  const [status, output, err] = await git(repo, [
+  const [success, output, err] = await git(repo, [
     "rev-list",
     `--pretty=format:${format}`,
     "--header",
     rev ?? "HEAD",
   ]);
-  if (!status.success) throw new ReleaseError("GIT_EXE", err);
+  if (!success) throw new ReleaseError("GIT_EXE", err);
 
   let commits: RawCommit[] = [];
   const parts = output
