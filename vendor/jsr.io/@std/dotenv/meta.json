@@ -1,0 +1,60 @@
+{
+  "scope": "std",
+  "name": "dotenv",
+  "versions": {
+    "0.213.1": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    },
+    "0.210.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    },
+    "0.212.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    },
+    "0.215.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    },
+    "0.214.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    },
+    "0.213.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./load": "./load.ts",
+        "./parse": "./parse.ts",
+        "./stringify": "./stringify.ts"
+      }
+    }
+  }
+}

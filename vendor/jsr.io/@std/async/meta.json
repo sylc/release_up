@@ -1,0 +1,90 @@
+{
+  "scope": "std",
+  "name": "async",
+  "versions": {
+    "0.215.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    },
+    "0.214.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    },
+    "0.213.1": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    },
+    "0.212.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    },
+    "0.210.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    },
+    "0.213.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./tee": "./tee.ts",
+        "./pool": "./pool.ts",
+        "./delay": "./delay.ts",
+        "./retry": "./retry.ts",
+        "./deadline": "./deadline.ts",
+        "./debounce": "./debounce.ts",
+        "./abortable": "./abortable.ts",
+        "./mux_async_iterator": "./mux_async_iterator.ts"
+      }
+    }
+  }
+}

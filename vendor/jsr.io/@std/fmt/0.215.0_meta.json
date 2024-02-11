@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "/duration_test.ts": {
+      "size": 1563,
+      "checksum": "sha256-b30fac9d0bddf6ee764e0e7e38ecf3be7dbfcd982e47b805fac2f5a875c11aad"
+    },
+    "/bytes.ts": {
+      "size": 4538,
+      "checksum": "sha256-cca092bd3662056c150b4db90e9ef827b574eafa7bd929a6ca12c702f246484e"
+    },
+    "/duration.ts": {
+      "size": 4217,
+      "checksum": "sha256-aee068ae4f04f703d4b5e9efa5a33834460bfdb7a3e3e8b2afcb2b0529175e08"
+    },
+    "/colors_test.ts": {
+      "size": 6420,
+      "checksum": "sha256-536beb762166f96fa31925130e571fca7f1d6b1781edc79791b30348f162e650"
+    },
+    "/deno.json": {
+      "size": 194,
+      "checksum": "sha256-7d4277e76286d62b6a412dfe93c530833e67ff5bb8b007b562e926414f6cf77f"
+    },
+    "/bytes_test.ts": {
+      "size": 7144,
+      "checksum": "sha256-05d83c4a8fb1705d1ca92531ca386d6cdc8352e8412ec7c4a677a9d06dbe2c78"
+    },
+    "/colors.ts": {
+      "size": 12715,
+      "checksum": "sha256-59b5de7c07cdc0322ed61b2d98da1ca4fbc9f576d45c2beee577a27556e52d63"
+    },
+    "/printf.ts": {
+      "size": 27890,
+      "checksum": "sha256-3f444357880c8fd1032342520e6e4197304bdd914d9c548710ec9446b615f30c"
+    },
+    "/printf_test.ts": {
+      "size": 26238,
+      "checksum": "sha256-a078fbb470e6a2ca7acd4b510584de260f3eca4fa1b6c6c60efcbad6fe692d2b"
+    }
+  },
+  "moduleGraph1": {
+    "/duration.ts": {},
+    "/bytes.ts": {},
+    "/printf.ts": {},
+    "/colors.ts": {}
+  },
+  "exports": {
+    "./bytes": "./bytes.ts",
+    "./colors": "./colors.ts",
+    "./duration": "./duration.ts",
+    "./printf": "./printf.ts"
+  }
+}

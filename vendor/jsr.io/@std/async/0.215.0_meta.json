@@ -1,0 +1,475 @@
+{
+  "manifest": {
+    "/mux_async_iterator.ts": {
+      "size": 2533,
+      "checksum": "sha256-61fceacd290678cb05dc7af2a883bf1eec9d91e4162e51438989c2ce8ff7f437"
+    },
+    "/delay.ts": {
+      "size": 1689,
+      "checksum": "sha256-1492f2f9e2b03862e5f4b3aab78160c75b1e0023404d200d7151ae837d218723"
+    },
+    "/retry_test.ts": {
+      "size": 3342,
+      "checksum": "sha256-b7eff0121d4e3ae1b28765029f0fb72bfc7d53dc29513bde9867eb35b0dfa9ed"
+    },
+    "/mod.ts": {
+      "size": 434,
+      "checksum": "sha256-02ba6a7d065481b6318d0783ad7243426e4f1bc4cdee0d1b6460bf73e9eab3e3"
+    },
+    "/debounce_test.ts": {
+      "size": 2298,
+      "checksum": "sha256-b25083ccb28135e4bbb5b8f1428e6099f0b012eea0ab41aa3ec8b8e1c4f628a1"
+    },
+    "/retry.ts": {
+      "size": 4102,
+      "checksum": "sha256-d8f1ac89782ee1d76866070ede2614618443be66c11a562310e05b357deaffdd"
+    },
+    "/debounce.ts": {
+      "size": 2146,
+      "checksum": "sha256-6633a08480a74e1fe7ee0302435106e525d9c7e95723a4621976019bb56e3080"
+    },
+    "/abortable_test.ts": {
+      "size": 3019,
+      "checksum": "sha256-925cac639c18f25129af20b538c203f730aa73b1d41885a69eb3222943d2da29"
+    },
+    "/pool.ts": {
+      "size": 3705,
+      "checksum": "sha256-acae7f4782d518d855f40003ae7bd525a2a0c998a1c16a360d92fadf7ef97812"
+    },
+    "/deadline.ts": {
+      "size": 1748,
+      "checksum": "sha256-d35dd3a3416e9af5f253bd66153e315de5cfe4ec83b17cdd7626a927a40c2b1e"
+    },
+    "/pool_test.ts": {
+      "size": 2619,
+      "checksum": "sha256-cde75fb4d3c4f2686525955f276f27c0ef7a468693ae6a800732e09581bae198"
+    },
+    "/_util.ts": {
+      "size": 360,
+      "checksum": "sha256-64f8d0da48f908c651736317a36e97890ea9ea22a5e281c8acf9ee6cafbb6de9"
+    },
+    "/deno.json": {
+      "size": 363,
+      "checksum": "sha256-8c788cea9cfa1ee2b00ed040bd6d4b73941cc79a2c54e1aed4cdf63308319b34"
+    },
+    "/mux_async_iterator_test.ts": {
+      "size": 1505,
+      "checksum": "sha256-d422c14a6b306a0e4a0271e00c60ef95fd7330f4b2e6ed8fc0206342213b5479"
+    },
+    "/_util_test.ts": {
+      "size": 1888,
+      "checksum": "sha256-568d1d8d92acc065dd98dc61767278d129b284daa0c131bf42225d6d9aad13d5"
+    },
+    "/tee_test.ts": {
+      "size": 1629,
+      "checksum": "sha256-b3bb4e376283e924cc90fd176396c7bf27a84aaf59c951328c75f88d34257b97"
+    },
+    "/delay_test.ts": {
+      "size": 3499,
+      "checksum": "sha256-ab5d581b8b5605034427e0fd5f83bbe11e4813adf3eadd1269fb71279248694c"
+    },
+    "/tee.ts": {
+      "size": 2208,
+      "checksum": "sha256-4c503cebf5516adf2e6a4a567e7c78a7d2d37ac68cb343741e6667cd6a33daf2"
+    },
+    "/abortable.ts": {
+      "size": 3860,
+      "checksum": "sha256-e7bc75363a5156fcf3354a82a580011d2faf8d7058f397288c7b4401c93a3bc6"
+    },
+    "/deadline_test.ts": {
+      "size": 2553,
+      "checksum": "sha256-27c0431a3e34a6b23388c5af0c7ee5b9267c1b4cf4b6b4615116fbd137d468a8"
+    }
+  },
+  "moduleGraph1": {
+    "/deadline.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              35
+            ]
+          ],
+          "specifier": "./delay.ts",
+          "specifierRange": [
+            [
+              3,
+              22
+            ],
+            [
+              3,
+              34
+            ]
+          ]
+        }
+      ]
+    },
+    "/mod.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "export",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": "*\n * Provide help with asynchronous tasks like delays, debouncing, deferring, or\n * pooling.\n *\n * @module\n ",
+              "range": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  7,
+                  3
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              31
+            ]
+          ],
+          "specifier": "./abortable.ts",
+          "specifierRange": [
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              30
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              30
+            ]
+          ],
+          "specifier": "./deadline.ts",
+          "specifierRange": [
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              29
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              30
+            ]
+          ],
+          "specifier": "./debounce.ts",
+          "specifierRange": [
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              29
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              27
+            ]
+          ],
+          "specifier": "./delay.ts",
+          "specifierRange": [
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              26
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              13,
+              0
+            ],
+            [
+              13,
+              40
+            ]
+          ],
+          "specifier": "./mux_async_iterator.ts",
+          "specifierRange": [
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              39
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              14,
+              0
+            ],
+            [
+              14,
+              26
+            ]
+          ],
+          "specifier": "./pool.ts",
+          "specifierRange": [
+            [
+              14,
+              14
+            ],
+            [
+              14,
+              25
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              25
+            ]
+          ],
+          "specifier": "./tee.ts",
+          "specifierRange": [
+            [
+              15,
+              14
+            ],
+            [
+              15,
+              24
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              16,
+              0
+            ],
+            [
+              16,
+              27
+            ]
+          ],
+          "specifier": "./retry.ts",
+          "specifierRange": [
+            [
+              16,
+              14
+            ],
+            [
+              16,
+              26
+            ]
+          ]
+        }
+      ]
+    },
+    "/retry.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              58
+            ]
+          ],
+          "specifier": "./_util.ts",
+          "specifierRange": [
+            [
+              4,
+              45
+            ],
+            [
+              4,
+              57
+            ]
+          ]
+        }
+      ]
+    },
+    "/mux_async_iterator.ts": {},
+    "/tee.ts": {},
+    "/pool.ts": {},
+    "/_util.ts": {},
+    "/abortable.ts": {},
+    "/debounce.ts": {},
+    "/delay.ts": {}
+  },
+  "exports": {
+    ".": "./mod.ts",
+    "./abortable": "./abortable.ts",
+    "./deadline": "./deadline.ts",
+    "./debounce": "./debounce.ts",
+    "./delay": "./delay.ts",
+    "./mux_async_iterator": "./mux_async_iterator.ts",
+    "./pool": "./pool.ts",
+    "./retry": "./retry.ts",
+    "./tee": "./tee.ts"
+  }
+}

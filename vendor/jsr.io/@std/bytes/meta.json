@@ -1,0 +1,96 @@
+{
+  "scope": "std",
+  "name": "bytes",
+  "versions": {
+    "0.212.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    },
+    "0.210.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    },
+    "0.214.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    },
+    "0.215.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    },
+    "0.213.1": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    },
+    "0.213.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./copy": "./copy.ts",
+        "./concat": "./concat.ts",
+        "./equals": "./equals.ts",
+        "./repeat": "./repeat.ts",
+        "./ends_with": "./ends_with.ts",
+        "./starts_with": "./starts_with.ts",
+        "./includes_needle": "./includes_needle.ts",
+        "./index_of_needle": "./index_of_needle.ts",
+        "./last_index_of_needle": "./last_index_of_needle.ts"
+      }
+    }
+  }
+}

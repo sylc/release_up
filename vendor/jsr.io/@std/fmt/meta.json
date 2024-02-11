@@ -1,0 +1,60 @@
+{
+  "scope": "std",
+  "name": "fmt",
+  "versions": {
+    "0.215.0": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    },
+    "0.214.0": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    },
+    "0.212.0": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    },
+    "0.213.0": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    },
+    "0.210.0": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    },
+    "0.213.1": {
+      "yanked": false,
+      "exports": {
+        "./bytes": "./bytes.ts",
+        "./colors": "./colors.ts",
+        "./printf": "./printf.ts",
+        "./duration": "./duration.ts"
+      }
+    }
+  }
+}

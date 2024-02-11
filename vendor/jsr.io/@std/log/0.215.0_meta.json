@@ -1,0 +1,1741 @@
+{
+  "manifest": {
+    "/deno.json": {
+      "size": 601,
+      "checksum": "sha256-a168d1670ba9c0a1a34f3ccdbf70ebbe4e7620fc491e23a21de52b52230a3d47"
+    },
+    "/levels.ts": {
+      "size": 1504,
+      "checksum": "sha256-632ba12baa2600750d004cc5cb4eabe10e410f3f2bdfcb9f7142b6d767f2fee6"
+    },
+    "/warn.ts": {
+      "size": 720,
+      "checksum": "sha256-9fa997d9a5b0b78f84c797f436f16458e1fc5468b424cd796907c476116bd658"
+    },
+    "/mod.ts": {
+      "size": 11398,
+      "checksum": "sha256-3549283c6b4d3d722d14ae84ee768d52e207b867de63c652477553d982f6a12d"
+    },
+    "/info.ts": {
+      "size": 717,
+      "checksum": "sha256-f158bd21bd23876834c75eb9fc347583d850ff46b6461e08e926fe3fbb6c6e8e"
+    },
+    "/logger.ts": {
+      "size": 5891,
+      "checksum": "sha256-a7a21f53c59f0d16227373d04ea302277a8d5be278105d71afe85b3d7b12067f"
+    },
+    "/_state.ts": {
+      "size": 345,
+      "checksum": "sha256-02b0fe12e72c4da014b6030222066d48a77ec42d908133c6dfddabf33e6fc5e8"
+    },
+    "/base_handler_test.ts": {
+      "size": 2559,
+      "checksum": "sha256-f52214ace32a18b7fcb780ace7ce878850bd5915220f9fe3fb1e6a9490f6401e"
+    },
+    "/base_handler.ts": {
+      "size": 1058,
+      "checksum": "sha256-c9479234e87afaa1fbb7a52a18c3eba878e50a5a238bdd1ed8fc88ae951cb4d9"
+    },
+    "/error.ts": {
+      "size": 723,
+      "checksum": "sha256-f455de928edb9c4120483d06e1e51c208dea703461d7bac3168f1ddea169907e"
+    },
+    "/mod_test.ts": {
+      "size": 6336,
+      "checksum": "sha256-3f35f57ae09a0afc8b55f9b7b6718c2d395f8a3cb76a21b6fbb7282583590057"
+    },
+    "/file_handler.ts": {
+      "size": 3177,
+      "checksum": "sha256-7b58c7017117ae290700b0e23f21573c1dc8ba8b5d4978d8aa0b8e05742d75e2"
+    },
+    "/console_handler.ts": {
+      "size": 1433,
+      "checksum": "sha256-e4858fc7fd43886e15c4f77a9946147e9542a24f09d6ea1ce8c1df146987b259"
+    },
+    "/get_logger.ts": {
+      "size": 733,
+      "checksum": "sha256-054de4d242e9e03135081f5eb59c967288d70ec95b373bf5a9d003e9996a3081"
+    },
+    "/critical.ts": {
+      "size": 741,
+      "checksum": "sha256-8b046c84df44f088666bbccd67f81d82d753ccfd856b4ab79d1ee5bed58488cd"
+    },
+    "/rotating_file_handler_test.ts": {
+      "size": 7621,
+      "checksum": "sha256-d3649f224c6b04b22c5fae692009dc2339a2d3921ec7721828a771c355e1c1cd"
+    },
+    "/test.ts": {
+      "size": 2437,
+      "checksum": "sha256-a9cca88776d881f9bf884f6e1263b1b5983d3bd0da8a9a3c034f8e248e1660a7"
+    },
+    "/setup.ts": {
+      "size": 1505,
+      "checksum": "sha256-d52ad7264d0f007365ef58f0d79f6915bbd670faf9a6a29f567abd7f96b7d10e"
+    },
+    "/formatters.ts": {
+      "size": 609,
+      "checksum": "sha256-6058f77368548bc7f12edf1277bc780f3a055dfd4854fd9356acadd5193d21db"
+    },
+    "/file_handler_test.ts": {
+      "size": 4008,
+      "checksum": "sha256-d295ffff474e61d9506404c6a75ef9f06545a30bc35042bd90608a631bdac3b0"
+    },
+    "/_config.ts": {
+      "size": 427,
+      "checksum": "sha256-0b872c28977eacb641515cfa0e86b1864083dfd0d95df1346b5ce2d2a83cd4f3"
+    },
+    "/logger_test.ts": {
+      "size": 8486,
+      "checksum": "sha256-f987fc298662554f48acc8d400961053c492fd636f8b01aaa1f56da487227896"
+    },
+    "/debug.ts": {
+      "size": 723,
+      "checksum": "sha256-00e886bb529076aae090f2824ae6f16659875c211587ac77db60dfd725dd03e5"
+    },
+    "/formatters_test.ts": {
+      "size": 1131,
+      "checksum": "sha256-117ab59b92d32db2d1820f4da10c5e2e85d058c358dece40cbf01b1fcec27936"
+    },
+    "/rotating_file_handler.ts": {
+      "size": 4681,
+      "checksum": "sha256-2c7a3dccef5415009302ab7ea796c4991b12889890d0bc5997295ee14369f76c"
+    }
+  },
+  "moduleGraph1": {
+    "/base_handler.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              56
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              1,
+              42
+            ],
+            [
+              1,
+              55
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              45
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              44
+            ]
+          ]
+        }
+      ]
+    },
+    "/get_logger.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              2,
+              23
+            ],
+            [
+              2,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              37
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              36
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              36
+            ]
+          ],
+          "specifier": "./_state.ts",
+          "specifierRange": [
+            [
+              4,
+              22
+            ],
+            [
+              4,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    "/logger.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              70
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              1,
+              56
+            ],
+            [
+              1,
+              69
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              55
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              2,
+              41
+            ],
+            [
+              2,
+              54
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              53
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              3,
+              33
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/setup.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              48
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              2,
+              28
+            ],
+            [
+              2,
+              47
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              61
+            ]
+          ],
+          "specifier": "./_config.ts",
+          "specifierRange": [
+            [
+              3,
+              46
+            ],
+            [
+              3,
+              60
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              4,
+              39
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              36
+            ]
+          ],
+          "specifier": "./_state.ts",
+          "specifierRange": [
+            [
+              5,
+              22
+            ],
+            [
+              5,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    "/console_handler.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              51
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              1,
+              37
+            ],
+            [
+              1,
+              50
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              45
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              44
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              72
+            ]
+          ],
+          "specifier": "jsr:/@std/fmt@^0.215.0/colors",
+          "specifierRange": [
+            [
+              3,
+              40
+            ],
+            [
+              3,
+              71
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              73
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              4,
+              53
+            ],
+            [
+              4,
+              72
+            ]
+          ]
+        }
+      ]
+    },
+    "/formatters.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              40
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              1,
+              26
+            ],
+            [
+              1,
+              39
+            ]
+          ]
+        }
+      ]
+    },
+    "/levels.ts": {},
+    "/rotating_file_handler.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              40
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              1,
+              26
+            ],
+            [
+              1,
+              39
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/fs@^0.215.0/exists",
+          "specifierRange": [
+            [
+              2,
+              27
+            ],
+            [
+              2,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              73
+            ]
+          ],
+          "specifier": "./file_handler.ts",
+          "specifierRange": [
+            [
+              3,
+              53
+            ],
+            [
+              3,
+              72
+            ]
+          ]
+        }
+      ]
+    },
+    "/debug.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              44
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              2,
+              26
+            ],
+            [
+              2,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              51
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              37
+            ],
+            [
+              3,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    "/info.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              44
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              2,
+              26
+            ],
+            [
+              2,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              51
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              37
+            ],
+            [
+              3,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    "/_state.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              48
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              2,
+              28
+            ],
+            [
+              2,
+              47
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              46
+            ]
+          ],
+          "specifier": "./_config.ts",
+          "specifierRange": [
+            [
+              3,
+              31
+            ],
+            [
+              3,
+              45
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              37
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              4,
+              23
+            ],
+            [
+              4,
+              36
+            ]
+          ]
+        }
+      ]
+    },
+    "/critical.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              44
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              2,
+              26
+            ],
+            [
+              2,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              51
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              37
+            ],
+            [
+              3,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    "/file_handler.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              51
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              1,
+              37
+            ],
+            [
+              1,
+              50
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              45
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              44
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              73
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              3,
+              53
+            ],
+            [
+              3,
+              72
+            ]
+          ]
+        }
+      ]
+    },
+    "/_config.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              54
+            ]
+          ],
+          "specifier": "./console_handler.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              53
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              45
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              31
+            ],
+            [
+              3,
+              44
+            ]
+          ]
+        }
+      ]
+    },
+    "/mod.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "export",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": "*\n * Logging library with the support for terminal and file outputs. Also provides\n * interfaces for building custom loggers.\n *\n * ## Loggers\n *\n * Loggers are objects that you interact with. When you use a logger method it\n * constructs a `LogRecord` and passes it down to its handlers for output. To\n * create custom loggers, specify them in `loggers` when calling `log.setup`.\n *\n * ## Custom message format\n *\n * If you want to override default format of message you can define `formatter`\n * option for handler. It can be either simple string-based format that uses\n * `LogRecord` fields or more complicated function-based one that takes `LogRecord`\n * as argument and outputs string.\n *\n * The default log format is `{levelName} {msg}`.\n *\n * ### Logging Structured JSON Lines\n *\n * To output logs in a structured JSON format you can configure most handlers\n * with a formatter that produces a JSON string. Either use the premade\n * `log.formatters.jsonFormatter` or write your own function that takes a\n * {@linkcode LogRecord} and returns a JSON.stringify'd object.\n * If you want the log to go to stdout then use {@linkcode ConsoleHandler} with\n * the configuration `useColors: false` to turn off the ANSI terminal colours.\n *\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.setup({\n *   handlers: {\n *     default: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: log.formatters.jsonFormatter,\n *       useColors: false,\n *     }),\n *   },\n * });\n * ```\n *\n * The first argument passed to a log function is always treated as the\n * message and will be stringified differently. To have arguments JSON.stringify'd\n * you must pass them after the first.\n *\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.info(\"This is the message\", { thisWillBe: \"JSON.stringify'd\"});\n * // {\"level\":\"INFO\",\"datetime\":1702501580505,\"message\":\"This is the message\",\"args\":{\"thisWillBe\":\"JSON.stringify'd\"}}\n *\n * log.info({ thisWontBe: \"JSON.stringify'd\"}, \"This is an argument\");\n * // {\"level\":\"INFO\",\"datetime\":1702501580505,\"message\":\"{\\\"thisWontBe\\\":\\\"JSON.stringify'd\\\"}\",\"args\":\"This is an argument\"}\n * ```\n *\n * ## Inline Logging\n *\n * Log functions return the data passed in the `msg` parameter. Data is returned\n * regardless if the logger actually logs it.\n *\n * ## Lazy Log Evaluation\n *\n * Some log statements are expensive to compute. In these cases, you can use\n * lazy log evaluation to prevent the computation taking place if the logger\n * won't log the message.\n *\n * > NOTE: When using lazy log evaluation, `undefined` will be returned if the\n * > resolver function is not called because the logger won't log it. It is an\n * > antipattern use lazy evaluation with inline logging because the return value\n * > depends on the current log level.\n *\n * ## For module authors\n *\n * The authors of public modules can let the users display the internal logs of the\n * module by using a custom logger:\n *\n * ```ts\n * import { getLogger } from \"@std/log\";\n *\n * function logger() {\n *   return getLogger(\"my-awesome-module\");\n * }\n *\n * export function sum(a: number, b: number) {\n *   logger().debug(`running ${a} + ${b}`);\n *   return a + b;\n * }\n *\n * export function mult(a: number, b: number) {\n *   logger().debug(`running ${a} * ${b}`);\n *   return a * b;\n * }\n * ```\n *\n * The user of the module can then display the internal logs with:\n *\n * ```ts, ignore\n * import * as log from \"@std/log\";\n * import { sum } from \"<the-awesome-module>/mod.ts\";\n *\n * log.setup({\n *   handlers: {\n *     console: new log.ConsoleHandler(\"DEBUG\"),\n *   },\n *\n *   loggers: {\n *     \"my-awesome-module\": {\n *       level: \"DEBUG\",\n *       handlers: [\"console\"],\n *     },\n *   },\n * });\n *\n * sum(1, 2); // prints \"running 1 + 2\" to the console\n * ```\n *\n * Please note that, due to the order of initialization of the loggers, the\n * following won't work:\n *\n * ```ts\n * import { getLogger } from \"@std/log\";\n *\n * const logger = getLogger(\"my-awesome-module\");\n *\n * export function sum(a: number, b: number) {\n *   logger.debug(`running ${a} + ${b}`); // no message will be logged, because getLogger() was called before log.setup()\n *   return a + b;\n * }\n * ```\n *\n * @example\n * ```ts\n * import * as log from \"@std/log\";\n *\n * // Simple default logger out of the box. You can customize it\n * // by overriding logger and handler named \"default\", or providing\n * // additional logger configurations. You can log any data type.\n * log.debug(\"Hello world\");\n * log.info(123456);\n * log.warn(true);\n * log.error({ foo: \"bar\", fizz: \"bazz\" });\n * log.critical(\"500 Internal server error\");\n *\n * // custom configuration with 2 loggers (the default and `tasks` loggers).\n * log.setup({\n *   handlers: {\n *     console: new log.ConsoleHandler(\"DEBUG\"),\n *\n *     file: new log.FileHandler(\"WARN\", {\n *       filename: \"./log.txt\",\n *       // you can change format of output message using any keys in `LogRecord`.\n *       formatter: (record) => `${record.levelName} ${record.msg}`,\n *     }),\n *   },\n *\n *   loggers: {\n *     // configure default logger available via short-hand methods above.\n *     default: {\n *       level: \"DEBUG\",\n *       handlers: [\"console\", \"file\"],\n *     },\n *\n *     tasks: {\n *       level: \"ERROR\",\n *       handlers: [\"console\"],\n *     },\n *   },\n * });\n *\n * let logger;\n *\n * // get default logger.\n * logger = log.getLogger();\n * logger.debug(\"fizz\"); // logs to `console`, because `file` handler requires \"WARN\" level.\n * logger.warn(41256); // logs to both `console` and `file` handlers.\n *\n * // get custom logger\n * logger = log.getLogger(\"tasks\");\n * logger.debug(\"fizz\"); // won't get output because this logger has \"ERROR\" level.\n * logger.error({ productType: \"book\", value: \"126.11\" }); // log to `console`.\n *\n * // if you try to use a logger that hasn't been configured\n * // you're good to go, it gets created automatically with level set to 0\n * // so no message is logged.\n * const unknownLogger = log.getLogger(\"mystery\");\n * unknownLogger.info(\"foobar\"); // no-op\n * ```\n *\n * @example\n * Custom message format example\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.setup({\n *   handlers: {\n *     stringFmt: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: (record) => `[${record.levelName}] ${record.msg}`,\n *     }),\n *\n *     functionFmt: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: (logRecord) => {\n *         let msg = `${logRecord.level} ${logRecord.msg}`;\n *\n *         logRecord.args.forEach((arg, index) => {\n *           msg += `, arg${index}: ${arg}`;\n *         });\n *\n *         return msg;\n *       },\n *     }),\n *\n *     anotherFmt: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: (record) => `[${record.loggerName}] - ${record.levelName} ${record.msg}`,\n *     }),\n *   },\n *\n *   loggers: {\n *     default: {\n *       level: \"DEBUG\",\n *       handlers: [\"stringFmt\", \"functionFmt\"],\n *     },\n *     dataLogger: {\n *       level: \"INFO\",\n *       handlers: [\"anotherFmt\"],\n *     },\n *   },\n * });\n *\n * // calling:\n * log.debug(\"Hello, world!\", 1, \"two\", [3, 4, 5]);\n * // results in: [DEBUG] Hello, world!\n * // output from \"stringFmt\" handler.\n * // 10 Hello, world!, arg0: 1, arg1: two, arg3: [3, 4, 5] // output from \"functionFmt\" formatter.\n *\n * // calling:\n * log.getLogger(\"dataLogger\").error(\"oh no!\");\n * // results in:\n * // [dataLogger] - ERROR oh no! // output from anotherFmt handler.\n * ```\n\n *\n * @example\n * JSON to stdout with no color example\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.setup({\n *   handlers: {\n *     jsonStdout: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: log.formatters.jsonFormatter,\n *       useColors: false,\n *     }),\n *   },\n *\n *   loggers: {\n *     default: {\n *       level: \"DEBUG\",\n *       handlers: [\"jsonStdout\"],\n *     },\n *   },\n * });\n *\n * // calling:\n * log.info(\"Hey\");\n * // results in:\n * // {\"level\":\"INFO\",\"datetime\":1702481922294,\"message\":\"Hey\"}\n *\n * // calling:\n * log.info(\"Hey\", { product: \"nail\" });\n * // results in:\n * // {\"level\":\"INFO\",\"datetime\":1702484111115,\"message\":\"Hey\",\"args\":{\"product\":\"nail\"}}\n *\n * // calling:\n * log.info(\"Hey\", 1, \"two\", [3, 4, 5]);\n * // results in:\n * // {\"level\":\"INFO\",\"datetime\":1702481922294,\"message\":\"Hey\",\"args\":[1,\"two\",[3,4,5]]}\n * ```\n *\n * @example\n * Custom JSON example\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.setup({\n *   handlers: {\n *     customJsonFmt: new log.ConsoleHandler(\"DEBUG\", {\n *       formatter: (record) => JSON.stringify({\n *         lvl: record.level,\n *         msg: record.msg,\n *         time: record.datetime.toISOString(),\n *         name: record.loggerName,\n *       }),\n *       useColors: false,\n *     }),\n *   },\n *\n *   loggers: {\n *     default: {\n *       level: \"DEBUG\",\n *       handlers: [\"customJsonFmt\"],\n *     },\n *   },\n * });\n *\n * // calling:\n * log.info(\"complete\");\n * // results in:\n * // {\"lvl\":20,\"msg\":\"complete\",\"time\":\"2023-12-13T16:38:27.328Z\",\"name\":\"default\"}\n * ```\n *\n * @example\n * Inline Logging\n * ```ts\n * import * as logger from \"@std/log\";\n *\n * const stringData: string = logger.debug(\"hello world\");\n * const booleanData: boolean = logger.debug(true, 1, \"abc\");\n * const fn = (): number => {\n *   return 123;\n * };\n * const resolvedFunctionData: number = logger.debug(fn());\n * console.log(stringData); // 'hello world'\n * console.log(booleanData); // true\n * console.log(resolvedFunctionData); // 123\n * ```\n *\n * @example\n * Lazy Log Evaluation\n * ```ts\n * import * as log from \"@std/log\";\n *\n * log.setup({\n *   handlers: {\n *     console: new log.ConsoleHandler(\"DEBUG\"),\n *   },\n *\n *   loggers: {\n *     tasks: {\n *       level: \"ERROR\",\n *       handlers: [\"console\"],\n *     },\n *   },\n * });\n *\n * function someExpensiveFn(num: number, bool: boolean) {\n *   // do some expensive computation\n * }\n *\n * // not logged, as debug < error.\n * const data = log.debug(() => someExpensiveFn(5, true));\n * console.log(data); // undefined\n * ```\n *\n * Handlers are responsible for actual output of log messages. When a handler is\n * called by a logger, it firstly checks that {@linkcode LogRecord}'s level is\n * not lower than level of the handler. If level check passes, handlers formats\n * log record into string and outputs it to target.\n *\n * ## Custom handlers\n *\n * Custom handlers can be implemented by subclassing {@linkcode BaseHandler} or\n * {@linkcode WriterHandler}.\n *\n * {@linkcode BaseHandler} is bare-bones handler that has no output logic at all,\n *\n * {@linkcode WriterHandler} is an abstract class that supports any target with\n * `Writer` interface.\n *\n * During setup async hooks `setup` and `destroy` are called, you can use them\n * to open and close file/HTTP connection or any other action you might need.\n *\n * For examples check source code of {@linkcode FileHandler}`\n * and {@linkcode TestHandler}.\n *\n * @module\n ",
+              "range": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  377,
+                  3
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              379,
+              0
+            ],
+            [
+              379,
+              34
+            ]
+          ],
+          "specifier": "./base_handler.ts",
+          "specifierRange": [
+            [
+              379,
+              14
+            ],
+            [
+              379,
+              33
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              380,
+              0
+            ],
+            [
+              380,
+              37
+            ]
+          ],
+          "specifier": "./console_handler.ts",
+          "specifierRange": [
+            [
+              380,
+              14
+            ],
+            [
+              380,
+              36
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              381,
+              0
+            ],
+            [
+              381,
+              34
+            ]
+          ],
+          "specifier": "./file_handler.ts",
+          "specifierRange": [
+            [
+              381,
+              14
+            ],
+            [
+              381,
+              33
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              382,
+              0
+            ],
+            [
+              382,
+              43
+            ]
+          ],
+          "specifier": "./rotating_file_handler.ts",
+          "specifierRange": [
+            [
+              382,
+              14
+            ],
+            [
+              382,
+              42
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              383,
+              0
+            ],
+            [
+              383,
+              28
+            ]
+          ],
+          "specifier": "./levels.ts",
+          "specifierRange": [
+            [
+              383,
+              14
+            ],
+            [
+              383,
+              27
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              384,
+              0
+            ],
+            [
+              384,
+              28
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              384,
+              14
+            ],
+            [
+              384,
+              27
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              385,
+              0
+            ],
+            [
+              385,
+              32
+            ]
+          ],
+          "specifier": "./formatters.ts",
+          "specifierRange": [
+            [
+              385,
+              14
+            ],
+            [
+              385,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              386,
+              0
+            ],
+            [
+              386,
+              30
+            ]
+          ],
+          "specifier": "./critical.ts",
+          "specifierRange": [
+            [
+              386,
+              14
+            ],
+            [
+              386,
+              29
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              387,
+              0
+            ],
+            [
+              387,
+              27
+            ]
+          ],
+          "specifier": "./debug.ts",
+          "specifierRange": [
+            [
+              387,
+              14
+            ],
+            [
+              387,
+              26
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              388,
+              0
+            ],
+            [
+              388,
+              27
+            ]
+          ],
+          "specifier": "./error.ts",
+          "specifierRange": [
+            [
+              388,
+              14
+            ],
+            [
+              388,
+              26
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              389,
+              0
+            ],
+            [
+              389,
+              32
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              389,
+              14
+            ],
+            [
+              389,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              390,
+              0
+            ],
+            [
+              390,
+              26
+            ]
+          ],
+          "specifier": "./info.ts",
+          "specifierRange": [
+            [
+              390,
+              14
+            ],
+            [
+              390,
+              25
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              391,
+              0
+            ],
+            [
+              391,
+              27
+            ]
+          ],
+          "specifier": "./setup.ts",
+          "specifierRange": [
+            [
+              391,
+              14
+            ],
+            [
+              391,
+              26
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              392,
+              0
+            ],
+            [
+              392,
+              26
+            ]
+          ],
+          "specifier": "./warn.ts",
+          "specifierRange": [
+            [
+              392,
+              14
+            ],
+            [
+              392,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    "/warn.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              44
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              2,
+              26
+            ],
+            [
+              2,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              51
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              37
+            ],
+            [
+              3,
+              50
+            ]
+          ]
+        }
+      ]
+    },
+    "/error.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              44
+            ]
+          ],
+          "specifier": "./get_logger.ts",
+          "specifierRange": [
+            [
+              2,
+              26
+            ],
+            [
+              2,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              51
+            ]
+          ],
+          "specifier": "./logger.ts",
+          "specifierRange": [
+            [
+              3,
+              37
+            ],
+            [
+              3,
+              50
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "exports": {
+    ".": "./mod.ts",
+    "./base_handler": "./base_handler.ts",
+    "./console_handler": "./console_handler.ts",
+    "./critical": "./critical.ts",
+    "./debug": "./debug.ts",
+    "./error": "./error.ts",
+    "./file_handler": "./file_handler.ts",
+    "./formatters": "./formatters.ts",
+    "./get_logger": "./get_logger.ts",
+    "./info": "./info.ts",
+    "./levels": "./levels.ts",
+    "./logger": "./logger.ts",
+    "./rotating_file_handler": "./rotating_file_handler.ts",
+    "./setup": "./setup.ts",
+    "./warn": "./warn.ts"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "scope": "std",
+  "name": "fs",
+  "versions": {
+    "0.213.1": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    },
+    "0.215.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    },
+    "0.213.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    },
+    "0.214.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    },
+    "0.212.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    },
+    "0.210.0": {
+      "yanked": false,
+      "exports": {
+        ".": "./mod.ts",
+        "./eol": "./eol.ts",
+        "./copy": "./copy.ts",
+        "./move": "./move.ts",
+        "./walk": "./walk.ts",
+        "./exists": "./exists.ts",
+        "./empty_dir": "./empty_dir.ts",
+        "./ensure_dir": "./ensure_dir.ts",
+        "./ensure_file": "./ensure_file.ts",
+        "./ensure_link": "./ensure_link.ts",
+        "./expand_glob": "./expand_glob.ts",
+        "./ensure_symlink": "./ensure_symlink.ts"
+      }
+    }
+  }
+}

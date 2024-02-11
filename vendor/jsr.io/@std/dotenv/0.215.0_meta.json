@@ -1,0 +1,265 @@
+{
+  "manifest": {
+    "/testdata/.env.required.empty.test": {
+      "size": 30,
+      "checksum": "sha256-2cfb0ac74f5470cb7bebaff36c97b3f484062815dc88443bd0d5ededd512c1e2"
+    },
+    "/deno.json": {
+      "size": 185,
+      "checksum": "sha256-591bb0f5f8a52571b0660a52f964c73b883ad735bcdf2eb01081a28e404f85a7"
+    },
+    "/testdata/app_load.ts": {
+      "size": 63,
+      "checksum": "sha256-4349a2a08a52cb5ac43a02090a4bed6491943b7c7f14eef0e97f11c6ef6a2d5f"
+    },
+    "/testdata/.env.comments": {
+      "size": 204,
+      "checksum": "sha256-f6310ba979f52f6ff59ecb1c8f2e0eb56368918a68117c3f76d71a3aeb8283ae"
+    },
+    "/testdata/.env.example3.test": {
+      "size": 10,
+      "checksum": "sha256-1be8d410e0ea759213b92f788652b5fabed02f13de76c35dd15d6122218c8b4d"
+    },
+    "/testdata/app_load_child.ts": {
+      "size": 157,
+      "checksum": "sha256-71021c75d0dc43ece202bd81ca30cab359601e1d4d691d3b96a6a3a1b25634b6"
+    },
+    "/mod_test.ts": {
+      "size": 13053,
+      "checksum": "sha256-9896a5b2fa6645ee3efe5e67cc82f456905c156ca3baecaac2d88fc8d340f8cb"
+    },
+    "/load_test.ts": {
+      "size": 1347,
+      "checksum": "sha256-1d6b6280ebbbb61896039b2eeafdd1bd66c1ad74d9758542e58beabd19c4f071"
+    },
+    "/testdata/.env.defaults": {
+      "size": 22,
+      "checksum": "sha256-00fb2ddf9176d1d3d00e6d0635573598ebd92d2fe1ba57687460e2e7c48f3940"
+    },
+    "/testdata/.env.example2.test": {
+      "size": 19,
+      "checksum": "sha256-ad69432a70b54e3c5fa23abdc9502ff014f4f68ae8fb5bff496ed010f9c1394f"
+    },
+    "/testdata/.env.test": {
+      "size": 884,
+      "checksum": "sha256-5981bb1da1e60e3aca0b317363443c68e18a767f98165bcabdb8031312e0ba31"
+    },
+    "/testdata/.env": {
+      "size": 20,
+      "checksum": "sha256-4049a8e512ecd81bd32893f9289125f67dde43544233a14997b8194dc05db2a6"
+    },
+    "/mod.ts": {
+      "size": 12107,
+      "checksum": "sha256-3aec8ee077c4848a2d42a9e7a256023b8a46006f4f8b55f9e65b4520e49f8f71"
+    },
+    "/testdata/.env.example.test": {
+      "size": 10,
+      "checksum": "sha256-0cf7bf39231253c5cff65cc3d49b76281bea85563452adfe3b41710c1a530ff0"
+    },
+    "/testdata/.env.example": {
+      "size": 10,
+      "checksum": "sha256-0cf7bf39231253c5cff65cc3d49b76281bea85563452adfe3b41710c1a530ff0"
+    },
+    "/testdata/.env.expand.test": {
+      "size": 1232,
+      "checksum": "sha256-85c7948e73e6f5bd8781103474e4d0e4a626e6d40cf0f68c60f51a33db957e4f"
+    },
+    "/parse_test.ts": {
+      "size": 6560,
+      "checksum": "sha256-db052c44a2967091c7b868f9f46cc665143a14fc0499ef21101d2eab92b24f2a"
+    },
+    "/stringify.ts": {
+      "size": 1269,
+      "checksum": "sha256-9878ae31fe3ba9b11b5cbefda184a6670576113cbe82c42a311b3dd58f0b2244"
+    },
+    "/testdata/app_load_parent.ts": {
+      "size": 120,
+      "checksum": "sha256-5e88b24deffc14355861ed60f46084750e77f26381f0c815b8802a1a5be179fb"
+    },
+    "/load.ts": {
+      "size": 393,
+      "checksum": "sha256-587b342f0f6a3df071331fe6ba1c823729ab68f7d53805809475e486dd4161d7"
+    },
+    "/stringify_test.ts": {
+      "size": 1671,
+      "checksum": "sha256-00161d4cc40593700fa47dc78aff9e8c8662abcc53956313d5d6b830287cb632"
+    },
+    "/testdata/app_defaults.ts": {
+      "size": 108,
+      "checksum": "sha256-6bc16f334dc0595df2865ff44aabea542faa95d05872dee70083035092b83f95"
+    },
+    "/testdata/.env.single.expand": {
+      "size": 21,
+      "checksum": "sha256-48684e919a34b15ad50535f2423f825f07f4aa67041f0c5138e251265e5f553e"
+    },
+    "/parse.ts": {
+      "size": 2663,
+      "checksum": "sha256-c14770db2105b2289012f7ef1fc82b71796d36009133d8edca53871b10e10643"
+    },
+    "/testdata/.env.multiple": {
+      "size": 47,
+      "checksum": "sha256-983d0edd3b871761d81dec0c700f6101378b204a7b126b4e0096df696ce17ac4"
+    }
+  },
+  "moduleGraph1": {
+    "/mod.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": "*\n * Parses and loads environment variables from a `.env` file into the current\n * process, or stringify data into a `.env` file format.\n *\n * @module\n ",
+              "range": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  7,
+                  3
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              35
+            ]
+          ],
+          "specifier": "./parse.ts",
+          "specifierRange": [
+            [
+              9,
+              22
+            ],
+            [
+              9,
+              34
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              31
+            ]
+          ],
+          "specifier": "./stringify.ts",
+          "specifierRange": [
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              30
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              27
+            ]
+          ],
+          "specifier": "./parse.ts",
+          "specifierRange": [
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              26
+            ]
+          ]
+        }
+      ]
+    },
+    "/load.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              36
+            ]
+          ],
+          "specifier": "./mod.ts",
+          "specifierRange": [
+            [
+              2,
+              25
+            ],
+            [
+              2,
+              35
+            ]
+          ]
+        }
+      ]
+    },
+    "/stringify.ts": {},
+    "/parse.ts": {}
+  },
+  "exports": {
+    ".": "./mod.ts",
+    "./load": "./load.ts",
+    "./parse": "./parse.ts",
+    "./stringify": "./stringify.ts"
+  }
+}

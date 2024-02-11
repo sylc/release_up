@@ -1,0 +1,2495 @@
+{
+  "manifest": {
+    "/_common.ts": {
+      "size": 429,
+      "checksum": "sha256-36705cdb4dfcd338d6131bca1b16e48a4d5bf0d1dada6ce397268e88c17a5835"
+    },
+    "/read_all_test.ts": {
+      "size": 717,
+      "checksum": "sha256-ea8a2252320abb15e205d5e20f83b1356ced4646e8b256003f9bfda8e692ff72"
+    },
+    "/read_long_test.ts": {
+      "size": 740,
+      "checksum": "sha256-c9a66f943192b06dee10d3a15c9df88cef1321f84dc38473bd19116b2104eefa"
+    },
+    "/testdata/iso-8859-15.txt": {
+      "size": 203,
+      "checksum": "sha256-da772430df63997d9acdb3e727a10ed55210c1c80bc89420312fcf78a3d6c055"
+    },
+    "/string_reader.ts": {
+      "size": 970,
+      "checksum": "sha256-ab6bcce763344f03b445f9ba8e5693ddfb436ce2a55c9066bb77f9c20a4202c1"
+    },
+    "/buf_reader_test.ts": {
+      "size": 12145,
+      "checksum": "sha256-6cd6519976382f1b1da6000639db95a23da0810737aee7e47ad6627083c80d53"
+    },
+    "/mod.ts": {
+      "size": 1070,
+      "checksum": "sha256-571384032c5f60530542a28f2e8b0e73e47e87eca77056ba7e2363f4d4a4573a"
+    },
+    "/read_all.ts": {
+      "size": 1891,
+      "checksum": "sha256-de492461700c30b84fa5ecc3c95d2ef2efaf1420faf749d07408b540edbd1870"
+    },
+    "/deno.json": {
+      "size": 984,
+      "checksum": "sha256-e2ab4f72e355fe5b09901655393c77e8f51f78fc288b86917b6a4be78d3b1573"
+    },
+    "/read_int_test.ts": {
+      "size": 471,
+      "checksum": "sha256-0920ce632caabc5fb7ea4270f876fbabd22e0661ee745b39d87c18caa4bca2b8"
+    },
+    "/buffer_test.ts": {
+      "size": 10684,
+      "checksum": "sha256-f05a985a5b62a48f0028e459ac339bd7880acc3a83313ed5a2816dbdd71463b8"
+    },
+    "/multi_reader.ts": {
+      "size": 804,
+      "checksum": "sha256-554cd275113a50e7db894a09489d5958162c28596369170f32d43c9a86008c3a"
+    },
+    "/_test_common.ts": {
+      "size": 859,
+      "checksum": "sha256-cae3550e227073791ce0debe046cbca6b71767fb20db6c3f9eae47dc03cc8b45"
+    },
+    "/read_lines_test.ts": {
+      "size": 2628,
+      "checksum": "sha256-d0031f84605e5caef3cea71dd38871892aa6df39c2bf6039739e90f8c8a26ada"
+    },
+    "/read_string_delim.ts": {
+      "size": 1185,
+      "checksum": "sha256-2da6add0a59da74ff7065e243b2efe6bae3b4efddc42cad8bf31d23c81955d1f"
+    },
+    "/write_all_test.ts": {
+      "size": 750,
+      "checksum": "sha256-2a68a53a816f2c6c8dd9d3a4d8a3ee9f298cdd9544abd4741b2ae4a19b937012"
+    },
+    "/copy_n.ts": {
+      "size": 1205,
+      "checksum": "sha256-17c14c79fef758c6ed149a65b19f59d060b8413acae6a9afecedc13764b0ad2c"
+    },
+    "/read_delim.ts": {
+      "size": 2341,
+      "checksum": "sha256-a579a14aa1871c431f2dc7b31eaa0374251cf957296394c2d4e7aa24241ce7d1"
+    },
+    "/multi_reader_test.ts": {
+      "size": 674,
+      "checksum": "sha256-b3026b3aebf705e1a256dedce60c08b6e104af3e2ab92fa3fc59732f5f5868ec"
+    },
+    "/to_writable_stream_test.ts": {
+      "size": 3198,
+      "checksum": "sha256-da9b075b9d6036b8d10b7aa28f19ab0724ee9878537b9c615b2f5cb667abd1b7"
+    },
+    "/slice_long_to_bytes.ts": {
+      "size": 637,
+      "checksum": "sha256-9708b9c1bab66385015f699cbc43effb6c281797b44f91a062c865bce38245d8"
+    },
+    "/limited_reader.ts": {
+      "size": 1020,
+      "checksum": "sha256-a8d8ac4f0c4edaf9f2c347f215a46eb711d85cd436d5ee3727c6d17014650857"
+    },
+    "/copy.ts": {
+      "size": 1445,
+      "checksum": "sha256-578c68959575333b6aaac52686e92ee97a9bcc655ad2d40830c76fa233d9bb8b"
+    },
+    "/write_all.ts": {
+      "size": 1557,
+      "checksum": "sha256-18303de726d1276da2a2eda9bcacce4408d356e0eb83ba3c2f545dc3d1e8a518"
+    },
+    "/buf_writer.ts": {
+      "size": 7126,
+      "checksum": "sha256-31e51f87dd410ff7ebb86693eb8bf6e131e875c4cb1709045cd1fc33d005879e"
+    },
+    "/limited_reader_test.ts": {
+      "size": 1237,
+      "checksum": "sha256-0b13ed4b8d7c60045d1c1fa6e420ce1c00dff3375b72486e5cf0c8961f9b0e15"
+    },
+    "/read_short.ts": {
+      "size": 617,
+      "checksum": "sha256-05f9761376befd7ff34ee0d32b9fab67c9085fe495995a651793150eb690dd6b"
+    },
+    "/buffer.ts": {
+      "size": 8499,
+      "checksum": "sha256-edca84673d14efb2a3c1ef8e594a7c27372f4303beff36567159fb90fdce6aa1"
+    },
+    "/string_reader_test.ts": {
+      "size": 1154,
+      "checksum": "sha256-4fde2d4ceacb8c1cba66879669ddfd2a5af5decef85552743c618a9ee30e453e"
+    },
+    "/_constants.ts": {
+      "size": 202,
+      "checksum": "sha256-3c7ad4695832e6e4a32e35f218c70376b62bc78621ef069a4a0a3d55739f8856"
+    },
+    "/read_string_delim_test.ts": {
+      "size": 1621,
+      "checksum": "sha256-d9e41a6a45e92069992c4fc0ce6bfcf4446f9ed81761d29f7080c7d8d25da704"
+    },
+    "/to_readable_stream_test.ts": {
+      "size": 2940,
+      "checksum": "sha256-224d478d8c93543ce1886b5bde6925f220e14ff9adad267dcfb19b43c9563a17"
+    },
+    "/slice_long_to_bytes_test.ts": {
+      "size": 875,
+      "checksum": "sha256-1bca3a0dac2fa234f775dc907e722c08ca20c9c72cf14940d3bf0624bdbff516"
+    },
+    "/read_range_test.ts": {
+      "size": 4056,
+      "checksum": "sha256-1d19d5bf68cf651880a845763cb85425c7cf98efa4ae6722a0dffa7a2c6ee814"
+    },
+    "/string_writer_test.ts": {
+      "size": 1242,
+      "checksum": "sha256-5ede2bb0a9856a0127cbab11b297eb0c5cec2dc691c131795c02329550b86255"
+    },
+    "/copy_test.ts": {
+      "size": 696,
+      "checksum": "sha256-180a7c03972d066810cf3ed0fb81c3e27d1845bee7ddd691cbae3a075394ba61"
+    },
+    "/read_int.ts": {
+      "size": 663,
+      "checksum": "sha256-0f052bc70706307be6bc06597e052135f274b1f187c9c58bd85cbf5b7a81724f"
+    },
+    "/to_readable_stream.ts": {
+      "size": 2205,
+      "checksum": "sha256-693cd7ffd0b03f9dc80da9ecc5e0c2ced87a638f48b55504b20e276ab95db8ac"
+    },
+    "/read_lines.ts": {
+      "size": 1411,
+      "checksum": "sha256-a5831afdd119ab2b65629fcfdb931dffb9c10714ff9214cc3510dd547dbffadb"
+    },
+    "/buf_writer_test.ts": {
+      "size": 4749,
+      "checksum": "sha256-c51cf491b8105558ded0e49b51c3fafb8ebf23ce5934460fc2a79d9be43f69bb"
+    },
+    "/buf_reader.ts": {
+      "size": 13460,
+      "checksum": "sha256-f49aa80214612131562a452258b6d9fc13457c2d2cff33e84516c5b69eeb3457"
+    },
+    "/string_writer.ts": {
+      "size": 1805,
+      "checksum": "sha256-00232688f8ceef1bb3c5cec1fb032499860ebc2253b3a00eac972c4cce1b4e6f"
+    },
+    "/types.ts": {
+      "size": 4137,
+      "checksum": "sha256-78b187e0c9d5932de9a9f1e6bba12b43a8463d7486c13e471c516ad82012f330"
+    },
+    "/read_range.ts": {
+      "size": 3617,
+      "checksum": "sha256-5abc5dc8f7756c0d4d5db5eab5f96bf5cbc1e6d3bb6ce782f54cf36a88576220"
+    },
+    "/copy_n_test.ts": {
+      "size": 1182,
+      "checksum": "sha256-d03a4e967bf4642ede6c28c70fae06a28b8232ba18d74e253dca732d1cafcc69"
+    },
+    "/to_writable_stream.ts": {
+      "size": 1515,
+      "checksum": "sha256-f3564c59f54dbe3b9a6e53df93a640a5bf835b9f16d14bdb6ab489efd304de7b"
+    },
+    "/read_long.ts": {
+      "size": 969,
+      "checksum": "sha256-eddeea1cb3cffcff2687d94c72b958190fda6a54cf740af97e5c2583bbb46933"
+    },
+    "/testdata/copy-src.txt": {
+      "size": 131072,
+      "checksum": "sha256-e311a2ca9cf1d7d1fb891cf7b07c5fd0b74df0a6c8d82d5148d2a6a4fb6e0a9b"
+    },
+    "/read_short_test.ts": {
+      "size": 467,
+      "checksum": "sha256-2d9860f6a4faa2be8b5d21b157ab3a94565669858c8a0e7e879b7df58b7d920b"
+    }
+  },
+  "moduleGraph1": {
+    "/multi_reader.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "importType",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              28
+            ],
+            [
+              3,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    "/limited_reader.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "importType",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            },
+            {
+              "text": "*\n * A `LimitedReader` reads from `reader` but limits the amount of data returned to just `limit` bytes.\n * Each call to `read` updates `limit` to reflect the new amount remaining.\n * `read` returns `null` when `limit` <= `0` or\n * when the underlying `reader` returns `null`.\n ",
+              "range": [
+                [
+                  3,
+                  0
+                ],
+                [
+                  8,
+                  3
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              9,
+              28
+            ],
+            [
+              9,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    "/buffer.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/copy",
+          "specifierRange": [
+            [
+              4,
+              21
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              73
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              5,
+              60
+            ],
+            [
+              5,
+              72
+            ]
+          ]
+        }
+      ]
+    },
+    "/_constants.ts": {},
+    "/types.ts": {},
+    "/string_reader.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              37
+            ]
+          ],
+          "specifier": "./buffer.ts",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              36
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_long.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              49
+            ]
+          ],
+          "specifier": "./buf_reader.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              48
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              40
+            ]
+          ],
+          "specifier": "./read_int.ts",
+          "specifierRange": [
+            [
+              3,
+              24
+            ],
+            [
+              3,
+              39
+            ]
+          ]
+        }
+      ]
+    },
+    "/_common.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "importType",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              28
+            ],
+            [
+              3,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    "/buf_reader.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/copy",
+          "specifierRange": [
+            [
+              4,
+              21
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              5,
+              28
+            ],
+            [
+              5,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    "/to_readable_stream.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              53
+            ]
+          ],
+          "specifier": "./_constants.ts",
+          "specifierRange": [
+            [
+              3,
+              35
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              40
+            ]
+          ],
+          "specifier": "./_common.ts",
+          "specifierRange": [
+            [
+              4,
+              25
+            ],
+            [
+              4,
+              39
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              49
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              5,
+              36
+            ],
+            [
+              5,
+              48
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_int.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              49
+            ]
+          ],
+          "specifier": "./buf_reader.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              48
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              44
+            ]
+          ],
+          "specifier": "./read_short.ts",
+          "specifierRange": [
+            [
+              3,
+              26
+            ],
+            [
+              3,
+              43
+            ]
+          ]
+        }
+      ]
+    },
+    "/write_all.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "importType",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              53
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              40
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/to_writable_stream.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              42
+            ]
+          ],
+          "specifier": "./write_all.ts",
+          "specifierRange": [
+            [
+              3,
+              25
+            ],
+            [
+              3,
+              41
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              28
+            ],
+            [
+              4,
+              40
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              40
+            ]
+          ],
+          "specifier": "./_common.ts",
+          "specifierRange": [
+            [
+              5,
+              25
+            ],
+            [
+              5,
+              39
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_all.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              57
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/concat",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              56
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "./_constants.ts",
+          "specifierRange": [
+            [
+              4,
+              35
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              53
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              5,
+              40
+            ],
+            [
+              5,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/string_writer.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "importType",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              53
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              40
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/slice_long_to_bytes.ts": {},
+    "/read_short.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              49
+            ]
+          ],
+          "specifier": "./buf_reader.ts",
+          "specifierRange": [
+            [
+              2,
+              31
+            ],
+            [
+              2,
+              48
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_lines.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              28
+            ],
+            [
+              3,
+              40
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              44
+            ]
+          ],
+          "specifier": "./buf_reader.ts",
+          "specifierRange": [
+            [
+              4,
+              26
+            ],
+            [
+              4,
+              43
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              57
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/concat",
+          "specifierRange": [
+            [
+              5,
+              23
+            ],
+            [
+              5,
+              56
+            ]
+          ]
+        }
+      ]
+    },
+    "/buf_writer.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              53
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/copy",
+          "specifierRange": [
+            [
+              3,
+              21
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              40
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_string_delim.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              3,
+              28
+            ],
+            [
+              3,
+              40
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              44
+            ]
+          ],
+          "specifier": "./read_delim.ts",
+          "specifierRange": [
+            [
+              4,
+              26
+            ],
+            [
+              4,
+              43
+            ]
+          ]
+        }
+      ]
+    },
+    "/copy_n.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              49
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              36
+            ],
+            [
+              4,
+              48
+            ]
+          ]
+        }
+      ]
+    },
+    "/mod.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "export",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": "*\n * Utilities for working with Deno's readers, writers, and web streams.\n *\n * `Reader` and `Writer` interfaces are deprecated in Deno, and so many of these\n * utilities are also deprecated. Consider using web streams instead.\n *\n * @module\n ",
+              "range": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  9,
+                  3
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              32
+            ]
+          ],
+          "specifier": "./buf_reader.ts",
+          "specifierRange": [
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              32
+            ]
+          ],
+          "specifier": "./buf_writer.ts",
+          "specifierRange": [
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              13,
+              0
+            ],
+            [
+              13,
+              28
+            ]
+          ],
+          "specifier": "./buffer.ts",
+          "specifierRange": [
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              27
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              14,
+              0
+            ],
+            [
+              14,
+              26
+            ]
+          ],
+          "specifier": "./copy.ts",
+          "specifierRange": [
+            [
+              14,
+              14
+            ],
+            [
+              14,
+              25
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              28
+            ]
+          ],
+          "specifier": "./copy_n.ts",
+          "specifierRange": [
+            [
+              15,
+              14
+            ],
+            [
+              15,
+              27
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              16,
+              0
+            ],
+            [
+              16,
+              36
+            ]
+          ],
+          "specifier": "./limited_reader.ts",
+          "specifierRange": [
+            [
+              16,
+              14
+            ],
+            [
+              16,
+              35
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              17,
+              0
+            ],
+            [
+              17,
+              34
+            ]
+          ],
+          "specifier": "./multi_reader.ts",
+          "specifierRange": [
+            [
+              17,
+              14
+            ],
+            [
+              17,
+              33
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              18,
+              0
+            ],
+            [
+              18,
+              30
+            ]
+          ],
+          "specifier": "./read_all.ts",
+          "specifierRange": [
+            [
+              18,
+              14
+            ],
+            [
+              18,
+              29
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              19,
+              0
+            ],
+            [
+              19,
+              32
+            ]
+          ],
+          "specifier": "./read_delim.ts",
+          "specifierRange": [
+            [
+              19,
+              14
+            ],
+            [
+              19,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              20,
+              0
+            ],
+            [
+              20,
+              30
+            ]
+          ],
+          "specifier": "./read_int.ts",
+          "specifierRange": [
+            [
+              20,
+              14
+            ],
+            [
+              20,
+              29
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              21,
+              0
+            ],
+            [
+              21,
+              32
+            ]
+          ],
+          "specifier": "./read_lines.ts",
+          "specifierRange": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              22,
+              0
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "specifier": "./read_long.ts",
+          "specifierRange": [
+            [
+              22,
+              14
+            ],
+            [
+              22,
+              30
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              23,
+              0
+            ],
+            [
+              23,
+              32
+            ]
+          ],
+          "specifier": "./read_range.ts",
+          "specifierRange": [
+            [
+              23,
+              14
+            ],
+            [
+              23,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              24,
+              0
+            ],
+            [
+              24,
+              32
+            ]
+          ],
+          "specifier": "./read_short.ts",
+          "specifierRange": [
+            [
+              24,
+              14
+            ],
+            [
+              24,
+              31
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              25,
+              0
+            ],
+            [
+              25,
+              39
+            ]
+          ],
+          "specifier": "./read_string_delim.ts",
+          "specifierRange": [
+            [
+              25,
+              14
+            ],
+            [
+              25,
+              38
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              26,
+              0
+            ],
+            [
+              26,
+              41
+            ]
+          ],
+          "specifier": "./slice_long_to_bytes.ts",
+          "specifierRange": [
+            [
+              26,
+              14
+            ],
+            [
+              26,
+              40
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              27,
+              0
+            ],
+            [
+              27,
+              35
+            ]
+          ],
+          "specifier": "./string_reader.ts",
+          "specifierRange": [
+            [
+              27,
+              14
+            ],
+            [
+              27,
+              34
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              28,
+              0
+            ],
+            [
+              28,
+              35
+            ]
+          ],
+          "specifier": "./string_writer.ts",
+          "specifierRange": [
+            [
+              28,
+              14
+            ],
+            [
+              28,
+              34
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              29,
+              0
+            ],
+            [
+              29,
+              40
+            ]
+          ],
+          "specifier": "./to_readable_stream.ts",
+          "specifierRange": [
+            [
+              29,
+              14
+            ],
+            [
+              29,
+              39
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              30,
+              0
+            ],
+            [
+              30,
+              40
+            ]
+          ],
+          "specifier": "./to_writable_stream.ts",
+          "specifierRange": [
+            [
+              30,
+              14
+            ],
+            [
+              30,
+              39
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              31,
+              0
+            ],
+            [
+              31,
+              27
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              31,
+              14
+            ],
+            [
+              31,
+              26
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "export",
+          "range": [
+            [
+              32,
+              0
+            ],
+            [
+              32,
+              31
+            ]
+          ],
+          "specifier": "./write_all.ts",
+          "specifierRange": [
+            [
+              32,
+              14
+            ],
+            [
+              32,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_delim.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              57
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/concat",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              56
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              41
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              28
+            ],
+            [
+              4,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    "/read_range.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              66
+            ]
+          ],
+          "specifier": "jsr:/@std/bytes@^0.215.0/copy",
+          "specifierRange": [
+            [
+              2,
+              34
+            ],
+            [
+              2,
+              65
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "import",
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              58
+            ]
+          ],
+          "specifier": "jsr:/@std/assert@^0.215.0/assert",
+          "specifierRange": [
+            [
+              3,
+              23
+            ],
+            [
+              3,
+              57
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              53
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              40
+            ],
+            [
+              4,
+              52
+            ]
+          ]
+        }
+      ]
+    },
+    "/copy.ts": {
+      "dependencies": [
+        {
+          "type": "static",
+          "kind": "import",
+          "leadingComments": [
+            {
+              "text": " Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.",
+              "range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  74
+                ]
+              ]
+            },
+            {
+              "text": " This module is browser compatible.",
+              "range": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  37
+                ]
+              ]
+            }
+          ],
+          "range": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              54
+            ]
+          ],
+          "specifier": "./_constants.ts",
+          "specifierRange": [
+            [
+              3,
+              36
+            ],
+            [
+              3,
+              53
+            ]
+          ]
+        },
+        {
+          "type": "static",
+          "kind": "importType",
+          "range": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              49
+            ]
+          ],
+          "specifier": "./types.ts",
+          "specifierRange": [
+            [
+              4,
+              36
+            ],
+            [
+              4,
+              48
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "exports": {
+    ".": "./mod.ts",
+    "./buf_reader": "./buf_reader.ts",
+    "./buf_writer": "./buf_writer.ts",
+    "./buffer": "./buffer.ts",
+    "./copy": "./copy.ts",
+    "./copy_n": "./copy_n.ts",
+    "./limited_reader": "./limited_reader.ts",
+    "./multi_reader": "./multi_reader.ts",
+    "./read_all": "./read_all.ts",
+    "./read_delim": "./read_delim.ts",
+    "./read_int": "./read_int.ts",
+    "./read_lines": "./read_lines.ts",
+    "./read_long": "./read_long.ts",
+    "./read_range": "./read_range.ts",
+    "./read_short": "./read_short.ts",
+    "./read_string_delim": "./read_string_delim.ts",
+    "./slice_long_to_bytes": "./slice_long_to_bytes.ts",
+    "./string_reader": "./string_reader.ts",
+    "./string_writer": "./string_writer.ts",
+    "./to_readable_stream": "./to_readable_stream.ts",
+    "./to_writable_stream": "./to_writable_stream.ts",
+    "./types": "./types.ts",
+    "./write_all": "./write_all.ts"
+  }
+}
