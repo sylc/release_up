@@ -31,9 +31,9 @@ interface Changes {
   renamed: Rename[];
 }
 
-export async function fetchStatus(repo: string): Promise<Status> {
-  const [status, output, err] = await git(repo, "status --porcelain");
-  if (!status.success) throw new ReleaseError("GIT_EXE", err);
+export function fetchStatus(repo: string): Status {
+  const [success, output, err] = git(repo, "status --porcelain");
+  if (!success) throw new ReleaseError("GIT_EXE", err);
 
   const S: Status = {
     raw: [],

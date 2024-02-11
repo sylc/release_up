@@ -7,15 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup latest deno version
-        uses: denolib/setup-deno@v2
-        with:
-          deno-version: v1.x
+        uses: denoland/setup-deno@v1
 
       - name: Verify formatting
         run: deno fmt --check
 
       - name: Verify lint
         run: deno lint
+      
+      - name: Verify ts
+        run: deno check ./cli.ts
