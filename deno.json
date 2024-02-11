@@ -1,6 +1,6 @@
 {
   "name": "@sylc/release_up",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "exports": "./cli.ts",
   "tasks": {
     "dev": "deno run -A ./cli.ts --dry --allowUncommitted --regex '(?<=@)(.*)(?=\/cli)' --regex '(?<=Version: )(.*)\n' --changelog --github",
