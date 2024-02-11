@@ -3,7 +3,7 @@
   "version": "0.8.0",
   "exports": "./cli.ts",
   "tasks": {
-    "dev": "deno run -A ./cli.ts --dry --allowUncommitted --regex '(?<=@)(.*)(?=\/cli)' --regex '(?<=Version: )(.*)\n' --changelog --github",
+    "dev": "deno run -A ./cli.ts --dry --allowUncommitted --regex '(?<=@)(.*)(?=\/cli)' --regex '(?<=Version: )(.*)\n' --changelog",
     "release": "deno fmt --check && deno lint && deno run -A ./cli.ts --config ./tools/.release_up.json",
     "test": "deno test -A",
     "check": "deno fmt && deno lint"

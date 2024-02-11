@@ -220,16 +220,16 @@ await new Command()
 
     if (!opts.dry) {
       try {
-        await ezgit(repo.path, "add -A");
-        await ezgit(repo.path, [
+        ezgit(repo.path, "add -A");
+        ezgit(repo.path, [
           "commit",
           "--allow-empty",
           "--message",
           `chore: release ${to}`,
         ]);
-        await ezgit(repo.path, `tag ${to}`);
-        await ezgit(repo.path, "push");
-        await ezgit(repo.path, "push --tags");
+        ezgit(repo.path, `tag ${to}`);
+        ezgit(repo.path, "push");
+        ezgit(repo.path, "push --tags");
       } catch (err) {
         bump.fail(`Unable to release ${colors.bold(to)}\n`);
         log.critical(err.message);

@@ -1,2 +1,2 @@
-export { join } from "https://deno.land/std@0.177.0/path/mod.ts";
-export { EOL } from "https://deno.land/std@0.177.0/fs/mod.ts";
+export { join } from "jsr:@std/path@0.215.0";
+export { EOL } from "jsr:@std/fs@0.215.0";

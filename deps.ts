@@ -1,11 +1,11 @@
 // std
-import "https://deno.land/std@0.177.0/dotenv/load.ts";
-export * as log from "https://deno.land/std@0.177.0/log/mod.ts";
-export * as colors from "https://deno.land/std@0.177.0/fmt/colors.ts";
-export { readLines } from "https://deno.land/std@0.177.0/io/mod.ts";
-export { join } from "https://deno.land/std@0.177.0/path/mod.ts";
-export { ensureFile, exists } from "https://deno.land/std@0.177.0/fs/mod.ts";
-export { delay } from "https://deno.land/std@0.177.0/async/delay.ts";
+import "jsr:@std/dotenv/load";
+export * as log from "jsr:@std/log@0.215.0";
+export * as colors from "jsr:@std/fmt@0.215.0/colors";
+export { readLines } from "jsr:@std/io@0.215.0";
+export { join } from "jsr:@std/path@0.215.0";
+export { ensureFile, exists } from "jsr:@std/fs@0.215.0";
+export { delay } from "jsr:@std/async@0.215.0";
 
 // others
 export { Spinner, wait } from "https://deno.land/x/wait@0.1.12/mod.ts";
