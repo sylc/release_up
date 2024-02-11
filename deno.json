@@ -9,8 +9,6 @@
     "check": "deno fmt && deno lint"
   },
   "fmt": {
-    "files": {
-      "exclude": ["CHANGELOG.md"]
-    }
+    "exclude": ["CHANGELOG.md"]
   }
 }
