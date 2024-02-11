@@ -33,7 +33,7 @@ export async function fetchRepo(path: string): Promise<Repo> {
     throw new ReleaseError("NO_REPO");
   }
 
-  const branch = await fetchBranch(path);
+  const branch = fetchBranch(path);
   if (branch === "HEAD") throw new ReleaseError("UNINITIALIZED_REPO");
 
   const config = await fetchConfig(path);
@@ -65,7 +65,7 @@ export async function fetchRepo(path: string): Promise<Repo> {
   const tags = await fetchTags(path);
   const commits = await fetchCommits(path, tags);
 
-  const status = await fetchStatus(path);
+  const status = fetchStatus(path);
 
   return {
     path,
