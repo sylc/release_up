@@ -85,7 +85,7 @@ enabled. To enable them, either
     {
       "file": "deno.json",
       "patterns": [
-        "(?<=version=\")(.*)\n"
+        "(?<=\"version\": \")(.*)(?=\",)"
       ]
     }
   ],
