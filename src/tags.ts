@@ -18,7 +18,7 @@ function filterByRange(tags: Tag[], range?: string) {
     return tags;
   }
 
-  return tags.filter((tag) => semver.satisfies(tag.version, range));
+  return tags.filter((tag) => semver.satisfies(semver.parse(tag.version), semver.parseRange(range)));
 }
 
 function extractCommit(refs: string): Omit<Tag, "date" | "hash">[] {
@@ -34,7 +34,7 @@ function extractCommit(refs: string): Omit<Tag, "date" | "hash">[] {
   return tagNames
     .map((name) => ({
       tag: name,
-      version: semver.valid(name),
+      version: semver.format(semver.parse(name)),
     }))
     .filter((tag) => tag.version != null) as Omit<Tag, "date" | "hash">[];
 }
@@ -74,6 +74,6 @@ export async function fetchTags(repo: string, options?: FetchOptions | string) {
   const tags = lines.map(parseLine).flat();
 
   return filterByRange(tags, range).sort((a, b) => {
-    return semver.rcompare(a.version, b.version);
+    return semver.compare(semver.parse(a.version), semver.parse(b.version));
   });
 }

@@ -36,7 +36,8 @@ export async function fetchConfig(repo: string): Promise<GitConfig> {
   source = source.replace(/\[(\S+) "(.*)"\]/g, (m, $1, $2) => {
     return $1 && $2 ? `[${$1} "${$2.split(".").join("\\.")}"]` : m;
   });
-  const config = ini.decode(source);
+  // deno-lint-ignore no-explicit-any
+  const config = ini.parse(source) as any;
   for (const key of Object.keys(config)) {
     const m = /(\S+) "(.*)"/.exec(key);
     if (!m) continue;

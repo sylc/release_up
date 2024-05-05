@@ -1,6 +1,6 @@
-import { ReleasePlugin } from "../../plugin.ts";
+import type { ReleasePlugin } from "../../plugin.ts";
 import {
-  Document,
+  type Document,
   polyfillVersion,
   pushTag,
   render,

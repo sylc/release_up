@@ -1,4 +1,4 @@
-import { log } from "./deps.ts";
+import type { log } from "./deps.ts";
 import type { ReleaseConfig } from "./config.ts";
 import type { ReleaseType } from "./cli.ts";
 import type { Repo } from "./src/repo.ts";

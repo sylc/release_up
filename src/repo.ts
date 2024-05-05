@@ -2,10 +2,10 @@ import { exists, join } from "../deps.ts";
 import { ReleaseError } from "./error.ts";
 
 import { fetchBranch } from "./branch.ts";
-import { Commit, fetchCommits } from "./commits.ts";
-import { fetchTags, Tag } from "./tags.ts";
-import { fetchStatus, Status } from "./status.ts";
-import { fetchConfig, GitConfig } from "./git.ts";
+import { type Commit, fetchCommits } from "./commits.ts";
+import { fetchTags, type Tag } from "./tags.ts";
+import { fetchStatus, type Status } from "./status.ts";
+import { fetchConfig, type GitConfig } from "./git.ts";
 
 export interface Github {
   user: string;
@@ -42,6 +42,9 @@ export async function fetchRepo(path: string): Promise<Repo> {
   if (config.branch && config.branch[branch]) {
     const branchRef = config.branch[branch];
     const remoteRef = config.remote[branchRef.remote];
+    if (!remoteRef) {
+      throw "The remote branch of this branch does not exist. Create it first.";
+    }
     remote = {
       raw: remoteRef.url,
       github: null,

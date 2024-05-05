@@ -1,4 +1,4 @@
-import { CCCommit, ccparse } from "../deps.ts";
+import { type CCCommit, ccparse } from "../deps.ts";
 
 import { git } from "./git.ts";
 import type { Tag } from "./tags.ts";
