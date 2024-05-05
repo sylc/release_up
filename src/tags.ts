@@ -18,7 +18,9 @@ function filterByRange(tags: Tag[], range?: string) {
     return tags;
   }
 
-  return tags.filter((tag) => semver.satisfies(semver.parse(tag.version), semver.parseRange(range)));
+  return tags.filter((tag) =>
+    semver.satisfies(semver.parse(tag.version), semver.parseRange(range))
+  );
 }
 
 function extractCommit(refs: string): Omit<Tag, "date" | "hash">[] {
