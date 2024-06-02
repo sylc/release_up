@@ -12,7 +12,3 @@ export { delay } from "jsr:@std/async@0.224.0/delay";
 export { step } from "jsr:@sylc/step-spinner@0.0.3";
 
 export { Command, EnumType } from "jsr:@cliffy/command@1.0.0-rc.4";
-
-// others
-export type { Commit as CCCommit } from "https://deno.land/x/commit@0.1.5/mod.ts";
-export { parse as ccparse } from "https://deno.land/x/commit@0.1.5/mod.ts";

@@ -1,5 +1,3 @@
-import { type CCCommit, ccparse } from "../deps.ts";
-
 import { git } from "./git.ts";
 import type { Tag } from "./tags.ts";
 import { ReleaseError } from "./error.ts";
@@ -9,7 +7,11 @@ export interface RawCommit {
   title: string;
   description: string;
   author: string;
-  cc: CCCommit;
+  cc: {
+    /** the description part of the title */
+    header: string | null;
+    type?: string | null;
+  };
 }
 
 export async function fetchRawCommits(
@@ -44,14 +46,9 @@ export async function fetchRawCommits(
       const description = details[3] || "";
       const author = details[2];
 
-      const body = `${title}\n${description}`;
-      const cc = ccparse(body, {
-        // Allow for ! after the scope
-        headerPattern: new RegExp(
-          /^(\w*)(?:\(([\w\$\.\-\* ]*)\))?(?:\:|!\:) (.*)$/,
-        ),
-      });
-
+      const parsed = parseCommit(title)
+      const cc = parsed
+      
       return {
         hash,
         title,
@@ -109,4 +106,26 @@ export async function fetchCommits(
   }
 
   return all;
+}
+
+export function parseCommit(title: string){
+  const titlePattern = new RegExp(/^(\w*)(?:\(([\w\$\.\-\* ]*)\))?(?:\:|!\:) (.*)$/)
+  
+  // Regex groups are: 
+  // const groups = [
+  //   "type",
+  //   "scope",
+  //   "description"
+  // ]
+  
+  const matches = title.match(titlePattern)
+  const res: { header: string; type: string | null } = {
+    header: title,
+    type: null
+  }
+  if (matches) {
+    res.header = matches[3]
+    res.type = matches[1]
+  }
+  return res
 }

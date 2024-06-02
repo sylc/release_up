@@ -65,7 +65,7 @@ export async function fetchRepo(path: string): Promise<Repo> {
     }
   }
 
-  const tags = await fetchTags(path);
+  const tags = fetchTags(path);
   const commits = await fetchCommits(path, tags);
 
   const status = fetchStatus(path);

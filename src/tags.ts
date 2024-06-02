@@ -60,7 +60,7 @@ interface FetchOptions {
   rev?: string;
 }
 
-export async function fetchTags(repo: string, options?: FetchOptions | string) {
+export function fetchTags(repo: string, options?: FetchOptions | string) {
   if (typeof options === "string") options = { range: options };
   const range = options && options.range;
   const rev = options && options.rev;
@@ -69,7 +69,7 @@ export async function fetchTags(repo: string, options?: FetchOptions | string) {
     ? `log --simplify-by-decoration ${fmt} ${rev}`
     : `log --no-walk --tags ${fmt}`;
 
-  const [success, output, err] = await git(repo, cmd);
+  const [success, output, err] = git(repo, cmd);
   if (!success) throw new ReleaseError("GIT_EXE", err);
 
   const lines = output.split("\n");
