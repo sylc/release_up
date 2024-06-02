@@ -24,7 +24,7 @@ Most changes are optionals and configurable.
 # Installation
 
 ```
-$ deno install --global --force --allow-run --allow-net -n release_up jsr:@sylc/release-up
+deno install --global --force -A -n release_up jsr:@sylc/release-up
 ```
 
 # Usage
