@@ -5,12 +5,6 @@
   },
   "regex": [
     {
-      "file": "README.md",
-      "patterns": [
-        "(?<=@)(.*)(?=\/cli)"
-      ]
-    },
-    {
       "file": "deno.json",
       "patterns": [
         "(?<=\"version\": \")(.*)(?=\",)"

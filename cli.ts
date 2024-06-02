@@ -159,7 +159,7 @@ await new Command()
       try {
         await plugin.setup(log);
       } catch (err) {
-        log.critical(err.message);
+        log.critical(err);
         Deno.exit(1);
       }
     }
@@ -172,7 +172,7 @@ await new Command()
     } catch (err) {
       console.log(err);
       fetch.fail();
-      log.critical(err.message);
+      log.critical(err);
       Deno.exit(1);
     }
     fetch.succeed("Project loaded correctly");
@@ -212,7 +212,7 @@ await new Command()
           log,
         );
       } catch (err) {
-        log.critical(err.message);
+        log.critical(err);
         Deno.exit(1);
       }
     }
@@ -220,7 +220,7 @@ await new Command()
     try {
       repo = await fetchRepo(Deno.cwd());
     } catch (err) {
-      log.critical(err.message);
+      log.critical(err);
       Deno.exit(1);
     }
 
@@ -231,19 +231,19 @@ await new Command()
     ).start();
     if (!opts.dry) {
       try {
-        await ezgit(repo.path, "add -A");
-        await ezgit(repo.path, [
+        ezgit(repo.path, "add -A");
+        ezgit(repo.path, [
           "commit",
           "--allow-empty",
           "--message",
-          `chore: release ${to}`,
+          `chore: release ${semver.format(to)}`,
         ]);
-        await ezgit(repo.path, `tag ${to}`);
-        await ezgit(repo.path, "push");
-        await ezgit(repo.path, "push --tags");
+        ezgit(repo.path, `tag ${semver.format(to)}`);
+        ezgit(repo.path, "push");
+        ezgit(repo.path, "push --tags");
       } catch (err) {
         bump.fail(`Unable to release ${colors.bold(semver.format(to))}\n`);
-        log.critical(err.message);
+        log.critical(err);
         Deno.exit(1);
       }
       bump.succeed(`Released ${colors.bold(semver.format(to))}!`);
@@ -270,7 +270,7 @@ await new Command()
           log,
         );
       } catch (err) {
-        log.critical(err.message);
+        log.critical(err);
         Deno.exit(1);
       }
     }
