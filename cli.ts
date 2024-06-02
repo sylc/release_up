@@ -53,7 +53,8 @@ await new Command()
       * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name.0")}
       * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-name.0")}
       * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}
-      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}`)
+      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}
+    name default to 'canary'`)
   .type("semver", new EnumType(release_type))
   .arguments("<release_type:semver> [name:string]")
   .option("--config <config_path>", "Define the path of the config.", {
@@ -71,7 +72,7 @@ await new Command()
   .option("--allowUncommitted", "Allow uncommited change in the repo.")
   .option("--debug", "Enable debug logging.")
   .action(async (opts, release_type, name) => {
-    await initLogger(opts.debug);
+    initLogger(opts.debug);
     log.debug(opts, release_type, name);
 
     let suffix: string | undefined = undefined;
