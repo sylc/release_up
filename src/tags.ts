@@ -76,6 +76,6 @@ export function fetchTags(repo: string, options?: FetchOptions | string) {
   const tags = lines.map(parseLine).flat();
 
   return filterByRange(tags, range).sort((a, b) => {
-    return semver.compare(semver.parse(a.version), semver.parse(b.version));
+    return semver.compare(semver.parse(b.version), semver.parse(a.version));
   });
 }
