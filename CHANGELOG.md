@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2024-06-02
+
+### Breaking
+
+- feat!: Migrate to JSR.io (#26) ([bf06cf7])
+
+### Bug Fixes
+
+- fix:  correct release format ([2097c8e])
+- fix(jsr):  plugins do not depends on https import. (#27) ([6c2acc8])
+
+### Others
+
+- chore: add missing lock file ([168201c])
+- chore(doc): fix readme deno.json pattern ([8db55e8])
+
+Full Changelog: [0.8.0...0.9.0]
+
 ## [0.8.0] - 2024-02-11
 
 ### Breaking
@@ -15,6 +33,7 @@ All notable changes to this project will be documented in this file.
 
 ### Others
 
+- chore: release 0.8.0 ([584bec3])
 - chore: fix CI ([d40bfd5])
 - chore: add deno publish ([beca7b8])
 
@@ -240,10 +259,18 @@ Full Changelog: [0.0.1...0.0.2]
 - fmt ([60834d2])
 - init ([74fd7b5])
 
+[0.9.0]: https://github.com/sylc/release_up/compare/0.8.0...0.9.0
+[bf06cf7]: https://github.com/sylc/release_up/commit/bf06cf7a312426bba1ce9055a0062d9d26fb067e
+[2097c8e]: https://github.com/sylc/release_up/commit/2097c8e66d85e342d76d0dfe775b6730cd00a17b
+[6c2acc8]: https://github.com/sylc/release_up/commit/6c2acc8189dd7a1f4dfd8672e0602540662e7050
+[168201c]: https://github.com/sylc/release_up/commit/168201c2d7532b140af64dc4a9c191b4bdc08895
+[8db55e8]: https://github.com/sylc/release_up/commit/8db55e84dcb484f2d28b321b543aaaa77f7f49c2
+[0.8.0...0.9.0]: https://github.com/sylc/release_up/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/sylc/release_up/compare/0.7.0...0.8.0
 [d506093]: https://github.com/sylc/release_up/commit/d506093de54ab667989e04afa317f310c4122e4b
 [e7caf2d]: https://github.com/sylc/release_up/commit/e7caf2d066b17749b6767cc6c335ca841d37045c
 [26d739e]: https://github.com/sylc/release_up/commit/26d739e2b98eee1876854a9a1d79d2cd5c5850cd
+[584bec3]: https://github.com/sylc/release_up/commit/584bec3d8d68bc1d30052eed246a4d87aa9d4581
 [d40bfd5]: https://github.com/sylc/release_up/commit/d40bfd5638749a64d036d07723ff13541fa555f9
 [beca7b8]: https://github.com/sylc/release_up/commit/beca7b87c4435df3fbbfa9174ba0ea203c32c82d
 [0.7.0...0.8.0]: https://github.com/sylc/release_up/compare/0.7.0...0.8.0
