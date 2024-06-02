@@ -2,7 +2,6 @@ import { assertEquals } from "jsr:@std/assert@0.225.3";
 
 import { parseCommit } from "./commits.ts";
 
-
 Deno.test("parseCommit", () => {
   assertEquals(parseCommit("chore: release 0.2.1-canary.0"), {
     header: "chore: release 0.2.1-canary.0",
