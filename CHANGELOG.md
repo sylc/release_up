@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.1] - 2024-06-02
+
+### Bug Fixes
+
+- fix(doc): fix readme install ([b51bd50])
+
+Full Changelog: [0.9.0...0.9.1]
+
 ## [0.9.0] - 2024-06-02
 
 ### Breaking
@@ -15,6 +23,7 @@ All notable changes to this project will be documented in this file.
 
 ### Others
 
+- chore: release 0.9.0 ([a782d3b])
 - chore: add missing lock file ([168201c])
 - chore(doc): fix readme deno.json pattern ([8db55e8])
 
@@ -259,10 +268,14 @@ Full Changelog: [0.0.1...0.0.2]
 - fmt ([60834d2])
 - init ([74fd7b5])
 
+[0.9.1]: https://github.com/sylc/release_up/compare/0.9.0...0.9.1
+[b51bd50]: https://github.com/sylc/release_up/commit/b51bd50a652f53004e89a902e9923b9d9cc4cf80
+[0.9.0...0.9.1]: https://github.com/sylc/release_up/compare/0.9.0...0.9.1
 [0.9.0]: https://github.com/sylc/release_up/compare/0.8.0...0.9.0
 [bf06cf7]: https://github.com/sylc/release_up/commit/bf06cf7a312426bba1ce9055a0062d9d26fb067e
 [2097c8e]: https://github.com/sylc/release_up/commit/2097c8e66d85e342d76d0dfe775b6730cd00a17b
 [6c2acc8]: https://github.com/sylc/release_up/commit/6c2acc8189dd7a1f4dfd8672e0602540662e7050
+[a782d3b]: https://github.com/sylc/release_up/commit/a782d3bd1cb97a051cea96aaa2ee1a5499d427b8
 [168201c]: https://github.com/sylc/release_up/commit/168201c2d7532b140af64dc4a9c191b4bdc08895
 [8db55e8]: https://github.com/sylc/release_up/commit/8db55e84dcb484f2d28b321b543aaaa77f7f49c2
 [0.8.0...0.9.0]: https://github.com/sylc/release_up/compare/0.8.0...0.9.0
