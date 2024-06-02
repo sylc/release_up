@@ -1,8 +1,8 @@
-import { colors, delay, log, semver, wait } from "./deps.ts";
+import { colors, delay, log, semver, step } from "./deps.ts";
 import { Command, EnumType } from "./deps.ts";
 
 import type { ReleaseConfig } from "./config.ts";
-import { fetchRepo, Repo } from "./src/repo.ts";
+import { fetchRepo, type Repo } from "./src/repo.ts";
 import { ezgit } from "./src/git.ts";
 
 // Plugins
@@ -12,7 +12,7 @@ import regex from "./plugins/regex/mod.ts";
 import versionFile from "./plugins/versionFile/mod.ts";
 
 import config from "./deno.json" with { type: "json" };
-import { ReleasePlugin } from "./plugin.ts";
+import type { ReleasePlugin } from "./plugin.ts";
 import { initLogger } from "./src/log.ts";
 
 const version = config.version;
@@ -53,7 +53,8 @@ await new Command()
       * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name.0")}
       * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-name.0")}
       * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}
-      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}`)
+      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}
+    name default to 'canary'`)
   .type("semver", new EnumType(release_type))
   .arguments("<release_type:semver> [name:string]")
   .option("--config <config_path>", "Define the path of the config.", {
@@ -71,7 +72,7 @@ await new Command()
   .option("--allowUncommitted", "Allow uncommited change in the repo.")
   .option("--debug", "Enable debug logging.")
   .action(async (opts, release_type, name) => {
-    await initLogger(opts.debug);
+    initLogger(opts.debug);
     log.debug(opts, release_type, name);
 
     let suffix: string | undefined = undefined;
@@ -164,25 +165,27 @@ await new Command()
     }
 
     // Load Repo
-    const fetch = wait("Loading project info").start();
+    const fetch = step("Loading project info").start();
     let repo: Repo;
     try {
       repo = await fetchRepo(Deno.cwd());
     } catch (err) {
-      fetch.fail(Deno.inspect(err));
+      console.log(err);
+      fetch.fail();
+      log.critical(err.message);
       Deno.exit(1);
     }
     fetch.succeed("Project loaded correctly");
 
     const [latest] = repo.tags;
     const from = latest ? latest.version : "0.0.0";
-    const to = semver.inc(from, release_type, undefined, suffix)!;
+    const to = semver.increment(semver.parse(from), release_type, suffix);
 
-    const integrity = wait("Checking the project").start();
+    const integrity = step("Checking the project").start();
     await delay(1000);
     if (repo.status.raw.length !== 0) {
       if (opts.allowUncommitted) {
-        integrity.fail(
+        console.log(
           "Uncommitted changes on your repository - allowUncommitted is true passing... ",
         );
       } else {
@@ -190,7 +193,7 @@ await new Command()
         Deno.exit(1);
       }
     } else if (!repo.commits.some((_) => _.belongs === null)) {
-      integrity.fail(`No changes since the last release!`);
+      integrity.fail("No changes since the last release!");
       Deno.exit(1);
     }
     integrity.succeed("Project check successful");
@@ -200,7 +203,14 @@ await new Command()
       if (!plugin.preCommit) continue;
       try {
         log.debug(`Executing preCommit ${plugin.name}`);
-        await plugin.preCommit(repo, release_type, from, to, config, log);
+        await plugin.preCommit(
+          repo,
+          release_type,
+          from,
+          semver.format(to),
+          config,
+          log,
+        );
       } catch (err) {
         log.critical(err.message);
         Deno.exit(1);
@@ -214,10 +224,11 @@ await new Command()
       Deno.exit(1);
     }
 
-    const bump = wait(
-      `Releasing ${colors.bold(to)} ${colors.dim(`(latest was ${from})`)}`,
+    const bump = step(
+      `Releasing ${colors.bold(semver.format(to))} ${
+        colors.dim(`(latest was ${from})`)
+      }`,
     ).start();
-
     if (!opts.dry) {
       try {
         await ezgit(repo.path, "add -A");
@@ -231,14 +242,14 @@ await new Command()
         await ezgit(repo.path, "push");
         await ezgit(repo.path, "push --tags");
       } catch (err) {
-        bump.fail(`Unable to release ${colors.bold(to)}\n`);
+        bump.fail(`Unable to release ${colors.bold(semver.format(to))}\n`);
         log.critical(err.message);
         Deno.exit(1);
       }
-      bump.succeed(`Released ${colors.bold(to)}!`);
+      bump.succeed(`Released ${colors.bold(semver.format(to))}!`);
     } else {
       bump.warn(
-        `Skipping release ${colors.bold(to)} ${
+        `Skipping release ${colors.bold(semver.format(to))} ${
           colors.dim(
             `(latest was ${from})`,
           )
@@ -250,7 +261,14 @@ await new Command()
       if (!plugin.postCommit) continue;
       try {
         log.debug(`Executing postCommit ${plugin.name}`);
-        await plugin.postCommit(repo, release_type, from, to, config, log);
+        await plugin.postCommit(
+          repo,
+          release_type,
+          from,
+          semver.format(to),
+          config,
+          log,
+        );
       } catch (err) {
         log.critical(err.message);
         Deno.exit(1);

@@ -2,7 +2,7 @@ import { join } from "./deps.ts";
 
 import type { ReleasePlugin } from "../../plugin.ts";
 import {
-  Document,
+  type Document,
   polyfillVersion,
   pushHeader,
   pushTag,

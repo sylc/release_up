@@ -18,7 +18,9 @@ function filterByRange(tags: Tag[], range?: string) {
     return tags;
   }
 
-  return tags.filter((tag) => semver.satisfies(tag.version, range));
+  return tags.filter((tag) =>
+    semver.satisfies(semver.parse(tag.version), semver.parseRange(range))
+  );
 }
 
 function extractCommit(refs: string): Omit<Tag, "date" | "hash">[] {
@@ -34,7 +36,7 @@ function extractCommit(refs: string): Omit<Tag, "date" | "hash">[] {
   return tagNames
     .map((name) => ({
       tag: name,
-      version: semver.valid(name),
+      version: semver.format(semver.parse(name)),
     }))
     .filter((tag) => tag.version != null) as Omit<Tag, "date" | "hash">[];
 }
@@ -58,7 +60,7 @@ interface FetchOptions {
   rev?: string;
 }
 
-export async function fetchTags(repo: string, options?: FetchOptions | string) {
+export function fetchTags(repo: string, options?: FetchOptions | string) {
   if (typeof options === "string") options = { range: options };
   const range = options && options.range;
   const rev = options && options.rev;
@@ -67,13 +69,13 @@ export async function fetchTags(repo: string, options?: FetchOptions | string) {
     ? `log --simplify-by-decoration ${fmt} ${rev}`
     : `log --no-walk --tags ${fmt}`;
 
-  const [success, output, err] = await git(repo, cmd);
+  const [success, output, err] = git(repo, cmd);
   if (!success) throw new ReleaseError("GIT_EXE", err);
 
   const lines = output.split("\n");
   const tags = lines.map(parseLine).flat();
 
   return filterByRange(tags, range).sort((a, b) => {
-    return semver.rcompare(a.version, b.version);
+    return semver.compare(semver.parse(b.version), semver.parse(a.version));
   });
 }

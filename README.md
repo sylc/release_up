@@ -1,4 +1,4 @@
-[![deno module](https://shield.deno.dev/x/release_up)](https://deno.land/x/release_up)
+[![JSR](https://jsr.io/badges/@sylc/release_up)](https://jsr.io/@sylc/release_up)
 
 <h1 align="center">
   🌱 release_up
@@ -24,7 +24,7 @@ Most changes are optionals and configurable.
 # Installation
 
 ```
-$ deno install -A -f -n release_up https://deno.land/x/release_up@0.8.0/cli.ts
+$ deno install --global --force --allow-run --allow-net -n release_up jsr:@sylc/release-up
 ```
 
 # Usage
