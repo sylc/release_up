@@ -22,7 +22,7 @@ jobs:
     name: version bump and publish
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    
+
     permissions:
       contents: read
       id-token: write
@@ -46,7 +46,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           deno task release ${{github.event.inputs.releaseKind}}
-      
+
       - name: Publish package
         run: deno publish
-
