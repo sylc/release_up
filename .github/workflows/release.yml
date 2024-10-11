@@ -18,10 +18,14 @@ on:
         required: true
 
 jobs:
-  build:
-    name: version bump
+  release:
+    name: version bump and publish
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - name: Clone repository
@@ -42,19 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           deno task release ${{github.event.inputs.releaseKind}}
-
-  publish:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      id-token: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-
+      
       - name: Publish package
         run: deno publish
+
