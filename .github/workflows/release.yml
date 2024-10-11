@@ -1,10 +1,10 @@
-name: version_bump
+name: release
 
 on:
   workflow_dispatch:
     inputs:
       releaseKind:
-        description: "Kind of version bump"
+        description: "Example of automated release"
         default: "minor"
         type: choice
         options:
@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
 
       - name: setup git config
         run: |
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
 
       - name: Publish package
         run: deno publish
