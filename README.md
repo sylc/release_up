@@ -1,4 +1,4 @@
-[![JSR](https://jsr.io/badges/@sylc/release_up)](https://jsr.io/@sylc/release_up)
+[![JSR](https://jsr.io/badges/@sylc/release-up)](https://jsr.io/@sylc/release-up)
 
 <h1 align="center">
   🌱 release_up
