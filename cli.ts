@@ -89,7 +89,7 @@ await new Command()
         ...(JSON.parse(Deno.readTextFileSync(opts.config))),
         ...config,
       };
-    // deno-lint-ignore no-explicit-any
+      // deno-lint-ignore no-explicit-any
     } catch (err: any) {
       if (err.code === "ENOENT" && opts.config !== DEFAULT_CONFIG_PATH) {
         log.error(`Cannot find config file at ${opts.config}`);
@@ -180,7 +180,9 @@ await new Command()
 
     const [latest] = repo.tags;
     const from = latest ? latest.version : "0.0.0";
-    const to = semver.increment(semver.parse(from), release_type, { build: suffix });
+    const to = semver.increment(semver.parse(from), release_type, {
+      build: suffix,
+    });
 
     const integrity = step("Checking the project").start();
     await delay(1000);

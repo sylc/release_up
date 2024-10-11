@@ -22,25 +22,33 @@ Deno.test("semver", () => {
   );
   assertEquals(
     semver.format(
-      semver.increment(semver.parse("1.0.0"), "prepatch", { prerelease: "canary" }),
+      semver.increment(semver.parse("1.0.0"), "prepatch", {
+        prerelease: "canary",
+      }),
     ),
     "1.0.1-canary.0",
   );
   assertEquals(
     semver.format(
-      semver.increment(semver.parse("1.0.0-canary.1"), "patch", { prerelease: "canary" }),
+      semver.increment(semver.parse("1.0.0-canary.1"), "patch", {
+        prerelease: "canary",
+      }),
     ),
     "1.0.0",
   );
   assertEquals(
     semver.format(
-      semver.increment(semver.parse("1.0.0"), "prerelease", { prerelease: "canary" }),
+      semver.increment(semver.parse("1.0.0"), "prerelease", {
+        prerelease: "canary",
+      }),
     ),
     "1.0.1-canary.0",
   );
   assertEquals(
     semver.format(
-      semver.increment(semver.parse("1.0.1-canary.0"), "prerelease", { prerelease: "canary" }),
+      semver.increment(semver.parse("1.0.1-canary.0"), "prerelease", {
+        prerelease: "canary",
+      }),
     ),
     "1.0.1-canary.1",
   );

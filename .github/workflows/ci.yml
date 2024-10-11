@@ -17,6 +17,6 @@ jobs:
 
       - name: Verify lint
         run: deno lint
-      
+
       - name: Verify ts
         run: deno check ./cli.ts

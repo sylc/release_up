@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       releaseKind:
-        description: 'Kind of version bump'
-        default: 'minor'
+        description: "Kind of version bump"
+        default: "minor"
         type: choice
         options:
           - patch
@@ -43,7 +43,6 @@ jobs:
         run: |
           deno task release ${{github.event.inputs.releaseKind}}
 
-
   publish:
     runs-on: ubuntu-latest
 
@@ -59,4 +58,3 @@ jobs:
 
       - name: Publish package
         run: deno publish
-      
