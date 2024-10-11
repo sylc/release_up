@@ -2,11 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.2] - 2024-10-11
+
+- chore: fix fmt ([6d86659])
+- chore: update deps. ([c2e859a])
+
+Full Changelog: [0.9.1...0.9.2]
+
 ## [0.9.1] - 2024-06-02
 
 ### Bug Fixes
 
 - fix(doc): fix readme install ([b51bd50])
+
+### Others
+
+- chore: release 0.9.1 ([d933375])
 
 Full Changelog: [0.9.0...0.9.1]
 
@@ -268,8 +279,13 @@ Full Changelog: [0.0.1...0.0.2]
 - fmt ([60834d2])
 - init ([74fd7b5])
 
+[0.9.2]: https://github.com/sylc/release_up/compare/0.9.1...0.9.2
+[6d86659]: https://github.com/sylc/release_up/commit/6d8665912ec292497ed4865f44ee6d24ff072196
+[c2e859a]: https://github.com/sylc/release_up/commit/c2e859a98bd3f1e28a83ec130bbb6642afc784b7
+[0.9.1...0.9.2]: https://github.com/sylc/release_up/compare/0.9.1...0.9.2
 [0.9.1]: https://github.com/sylc/release_up/compare/0.9.0...0.9.1
 [b51bd50]: https://github.com/sylc/release_up/commit/b51bd50a652f53004e89a902e9923b9d9cc4cf80
+[d933375]: https://github.com/sylc/release_up/commit/d933375bce37c58b688e03248f052008e66d2112
 [0.9.0...0.9.1]: https://github.com/sylc/release_up/compare/0.9.0...0.9.1
 [0.9.0]: https://github.com/sylc/release_up/compare/0.8.0...0.9.0
 [bf06cf7]: https://github.com/sylc/release_up/commit/bf06cf7a312426bba1ce9055a0062d9d26fb067e
