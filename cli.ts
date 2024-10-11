@@ -50,11 +50,11 @@ await new Command()
       * patch             ${colors.dim("eg: 1.2.3 -> 1.2.4")}
       * minor             ${colors.dim("eg: 1.2.3 -> 1.3.0")}
       * major             ${colors.dim("eg: 1.2.3 -> 2.0.0")}
-      * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-name.0")}
-      * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-name.0")}
-      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-name.0")}
-      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-name.1")}
-    name default to 'canary'`)
+      * prepatch <name>   ${colors.dim("eg: 1.2.3 -> 1.2.4-canary.0")}
+      * preminor <name>   ${colors.dim("eg: 1.2.3 -> 1.3.0-canary.0")}
+      * premajor <name>   ${colors.dim("eg: 1.2.3 -> 2.0.0-canary.0")}
+      * prerelease <name> ${colors.dim("eg: 1.2.3-name.0 -> 1.2.3-canary.1")}
+    name optional argument will replace 'canary'`)
   .type("semver", new EnumType(release_type))
   .arguments("<release_type:semver> [name:string]")
   .option("--config <config_path>", "Define the path of the config.", {
@@ -89,7 +89,8 @@ await new Command()
         ...(JSON.parse(Deno.readTextFileSync(opts.config))),
         ...config,
       };
-    } catch (err) {
+    // deno-lint-ignore no-explicit-any
+    } catch (err: any) {
       if (err.code === "ENOENT" && opts.config !== DEFAULT_CONFIG_PATH) {
         log.error(`Cannot find config file at ${opts.config}`);
         Deno.exit(1);
@@ -179,7 +180,7 @@ await new Command()
 
     const [latest] = repo.tags;
     const from = latest ? latest.version : "0.0.0";
-    const to = semver.increment(semver.parse(from), release_type, suffix);
+    const to = semver.increment(semver.parse(from), release_type, { build: suffix });
 
     const integrity = step("Checking the project").start();
     await delay(1000);
