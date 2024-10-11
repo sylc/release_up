@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.3] - 2024-10-11
+
+- chore: fix ci ([361daa2])
+- chore: tweak release CI template ([0c81b87])
+
+Full Changelog: [0.9.2...0.9.3]
+
 ## [0.9.2] - 2024-10-11
 
+- chore: release 0.9.2 ([41d1bae])
 - chore: fix fmt ([6d86659])
 - chore: update deps. ([c2e859a])
 
@@ -279,7 +287,12 @@ Full Changelog: [0.0.1...0.0.2]
 - fmt ([60834d2])
 - init ([74fd7b5])
 
+[0.9.3]: https://github.com/sylc/release_up/compare/0.9.2...0.9.3
+[361daa2]: https://github.com/sylc/release_up/commit/361daa2aa64b119ecaa2e3598239ca8deee87619
+[0c81b87]: https://github.com/sylc/release_up/commit/0c81b871e8ce112d8fa884c0a1ac6392e9b9c5d0
+[0.9.2...0.9.3]: https://github.com/sylc/release_up/compare/0.9.2...0.9.3
 [0.9.2]: https://github.com/sylc/release_up/compare/0.9.1...0.9.2
+[41d1bae]: https://github.com/sylc/release_up/commit/41d1baecdf84662b6142d06f08afa7a162854db1
 [6d86659]: https://github.com/sylc/release_up/commit/6d8665912ec292497ed4865f44ee6d24ff072196
 [c2e859a]: https://github.com/sylc/release_up/commit/c2e859a98bd3f1e28a83ec130bbb6642afc784b7
 [0.9.1...0.9.2]: https://github.com/sylc/release_up/compare/0.9.1...0.9.2
